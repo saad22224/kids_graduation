@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رعاية الرضيع - الأشهر الستة الأولى</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-purple-800 shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-baby text-2xl text-purple-600"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="#home" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
+                <a href="#home" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-purple-700 via-purple-600 to-pink-600 text-white py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            رعاية الرضيع في الأشهر الستة الأولى
+                        </h1>
+                        <p class="text-xl mb-8 text-purple-100 leading-relaxed">
+                            دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة بناءً على أحدث التوصيات الطبية العالمية
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="vaccination.html" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:bg-purple-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-syringe ml-2"></i>جدول التطعيمات
+                            </a>
+                            <a href="care.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-heart ml-2"></i>الرعاية اليومية
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-calendar-check text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">6 أشهر</p>
+                                <p class="text-xs">مرحلة حاسمة</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-shield-alt text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">100%</p>
+                                <p class="text-xs">محتوى موثوق</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-heartbeat text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">24/7</p>
+                                <p class="text-xs">معلومات متاحة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Main Baby Icon -->
+                        <div class="floating text-center">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-baby text-9xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
+                            <div class="bg-pink-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
+                            <div class="bg-blue-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-syringe text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
+                            <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-chart-line text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
+                            <div class="bg-yellow-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-shield-alt text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Quick Access Section -->
+    <section class="py-16 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-star text-yellow-400 ml-2"></i>
+                    وصول سريع للمعلومات
+                </h2>
+                <p class="text-lg text-gray-600">كل ما تحتاجينه لرعاية طفلك في مكان واحد</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Vaccination Card -->
+                <a href="vaccination.html" class="group">
+                    <div class="bg-white rounded-xl shadow-lg p-6 card-hover text-center h-full">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-syringe text-2xl text-blue-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-gray-800">التطعيمات</h3>
+                        <p class="text-sm text-gray-600">جدول التطعيمات الكامل</p>
+                    </div>
+                </a>
+                
+                <!-- Diseases Card -->
+                <a href="diseases.html" class="group">
+                    <div class="bg-white rounded-xl shadow-lg p-6 card-hover text-center h-full">
+                        <div class="bg-red-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-virus text-2xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-gray-800">الأمراض</h3>
+                        <p class="text-sm text-gray-600">الأمراض وعلامات الخطر</p>
+                    </div>
+                </a>
+                
+                <!-- Growth Card -->
+                <a href="growth.html" class="group">
+                    <div class="bg-white rounded-xl shadow-lg p-6 card-hover text-center h-full">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chart-line text-2xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-gray-800">النمو</h3>
+                        <p class="text-sm text-gray-600">متابعة النمو والتطور</p>
+                    </div>
+                </a>
+                
+                <!-- Care Card -->
+                <a href="care.html" class="group">
+                    <div class="bg-white rounded-xl shadow-lg p-6 card-hover text-center h-full">
+                        <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-hand-holding-heart text-2xl text-purple-500"></i>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2 text-gray-800">الرعاية</h3>
+                        <p class="text-sm text-gray-600">الرعاية اليومية</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-star text-yellow-400 ml-2"></i>
+                أهم المواضيع
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Vaccination Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-syringe text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">التطعيمات</h3>
+                    <p class="text-gray-600 mb-4 text-center">جدول التطعيمات الإلزامية للأشهر الستة الأولى وكيفية التعامل مع الآثار الجانبية</p>
+                    <div class="text-center">
+                        <a href="vaccination.html" class="text-blue-500 hover:text-blue-700 font-medium">
+                            اقرأ المزيد <i class="fas fa-arrow-left mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Diseases Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-virus text-4xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الأمراض والعلامات الخطر</h3>
+                    <p class="text-gray-600 mb-4 text-center">التعرف على الأمراض الشائعة وعلامات الخطر مثل الإنتان وكيفية التصرف</p>
+                    <div class="text-center">
+                        <a href="diseases.html" class="text-red-500 hover:text-red-700 font-medium">
+                            اقرأ المزيد <i class="fas fa-arrow-left mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Growth Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-chart-line text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">النمو والتطور</h3>
+                    <p class="text-gray-600 mb-4 text-center">متابعة نمو الطفل وحساب الوزن المناسب للعمر والمراحل التطورية</p>
+                    <div class="text-center">
+                        <a href="growth.html" class="text-green-500 hover:text-green-700 font-medium">
+                            اقرأ المزيد <i class="fas fa-arrow-left mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Care Card -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-hand-holding-heart text-4xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الرعاية اليومية</h3>
+                    <p class="text-gray-600 mb-4 text-center">النظافة الشخصية، العناية بالحفاض، الاستحمام، والنظافة العامة للطفل</p>
+                    <div class="text-center">
+                        <a href="care.html" class="text-purple-500 hover:text-purple-700 font-medium">
+                            اقرأ المزيد <i class="fas fa-arrow-left mr-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Month by Month Guide -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-calendar-alt text-purple-500 ml-2"></i>
+                    دليلك الشهري
+                </h2>
+                <p class="text-lg text-gray-600">تطور طفلك شهراً بشهر</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Month 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up">
+                    <div class="bg-gradient-to-r from-pink-400 to-pink-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر الأول</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                                <span>التركيز على الرضاعة الطبيعية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                                <span>فحص اليرقان</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                                <span>التطعيم الأول (BCG + Hepatitis B)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                                <span>نظافة السرة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Month 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-gradient-to-r from-blue-400 to-blue-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر الثاني</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                                <span>بدء الابتسامات الاجتماعية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                                <span>رفع الرأس أثناء البطن</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                                <span>التطعيمات (DTP + Polio + Hib)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                                <span>تطوير نمط النوم</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Month 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-gradient-to-r from-green-400 to-green-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر الثالث</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                <span>الضحك والغغغة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                <span>التحكم في الرأس</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                <span>متابعة الوزن والطول</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                                <span>التفاعل مع الألعاب</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Month 4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر الرابع</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 ml-2 mt-1"></i>
+                                <span>بدء الجلوس بالدعم</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 ml-2 mt-1"></i>
+                                <span>مسك الأشياء بيديه</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 ml-2 mt-1"></i>
+                                <span>التطعيمات الثانية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-yellow-500 ml-2 mt-1"></i>
+                                <span>استكشاف الأصوات</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Month 5 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-gradient-to-r from-purple-400 to-purple-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر الخامس</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 ml-2 mt-1"></i>
+                                <span>الجلوس بدون دعم قصير</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 ml-2 mt-1"></i>
+                                <span>الانقلاب من البطن للظهر</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 ml-2 mt-1"></i>
+                                <span>إصدار أصوات متنوعة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-500 ml-2 mt-1"></i>
+                                <span>الاستعداد للأطعمة الصلبة</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Month 6 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-gradient-to-r from-indigo-400 to-indigo-500 p-4 text-white">
+                        <h3 class="text-xl font-bold">الشهر السادس</h3>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                <span>الجلوس بدون دعم</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                <span>بدء الأطعمة الصلبة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                <span>التطعيمات الأخيرة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                <span>ظهور الأسنان الأولى</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tips Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-lightbulb text-yellow-400 ml-2"></i>
+                    نصائح ذهبية للأمهات
+                </h2>
+                <p class="text-lg text-gray-600">نصائح مهمة لرعاية طفلك بشكل صحيح</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tip 1 -->
+                <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-6 card-hover" data-aos="fade-up">
+                    <div class="bg-pink-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">الصبر والحب</h3>
+                    <p class="text-gray-600">كل طفل فريد ومختلف. كوني صبورة وحبيبة، فهذا أساس النمو الصحيح.</p>
+                </div>
+                
+                <!-- Tip 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-bed text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">النوم الآمن</h3>
+                    <p class="text-gray-600">ضعي طفلك على ظهره للنوم، في سرير خالٍ من الألعاب والبطانيات.</p>
+                </div>
+                
+                <!-- Tip 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-apple-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">تغذية الأم</h3>
+                    <p class="text-gray-600">اهتمي بتغذيتك وصحتك، فهذا يؤثر على جودة حليبك وصحتك النفسية.</p>
+                </div>
+                
+                <!-- Tip 4 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">اطلبي المساعدة</h3>
+                    <p class="text-gray-600">لا تترددي في طلب المساعدة من العائلة والأصدقاء. رعاية الطفل مسؤولية مشتركة.</p>
+                </div>
+                
+                <!-- Tip 5 -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-camera text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">وثقي اللحظات</h3>
+                    <p class="text-gray-600">صوري وسجلي اللحظات المهمة. الوقت يمر بسرعة وهذه الذكريات ثمينة.</p>
+                </div>
+                
+                <!-- Tip 6 -->
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl p-6 card-hover" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-user-md text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-3">ثقي بحدسك</h3>
+                    <p class="text-gray-600">أنتِ أعلم الناس بطفلك. إذا شعرتِ أن هناك شيئاً غير طبيعي، استشيري الطبيب.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Additional Features -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Breastfeeding -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-baby-carriage text-3xl text-pink-500 ml-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">الرضاعة الطبيعية</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">تقنيات الرضاعة الصحيحة والمشاكل الشائعة وكيفية التعامل معها</p>
+                    <a href="breastfeeding.html" class="text-pink-500 hover:text-pink-700 font-medium">
+                        التفاصيل <i class="fas fa-arrow-left mr-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Safety -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-shield-alt text-3xl text-indigo-500 ml-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">السلامة والأمان</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">إجراءات السلامة، النوم الآمن، وتجنب المخاطر المنزلية</p>
+                    <a href="safety.html" class="text-indigo-500 hover:text-indigo-700 font-medium">
+                        التفاصيل <i class="fas fa-arrow-left mr-1"></i>
+                    </a>
+                </div>
+                
+                <!-- Follow-up -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-calendar-check text-3xl text-teal-500 ml-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">جدول المتابعة</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">مواعيد الزيارات الطبية والفحوصات الدورية للأشهر الستة الأولى</p>
+                    <a href="followup.html" class="text-teal-500 hover:text-teal-700 font-medium">
+                        التفاصيل <i class="fas fa-arrow-left mr-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Section -->
+    <section class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <div class="flex items-center justify-between flex-col md:flex-row">
+                    <div class="mb-6 md:mb-0">
+                        <h2 class="text-3xl font-bold text-red-600 mb-4">
+                            <i class="fas fa-exclamation-triangle text-red-500 ml-2"></i>
+                            حالات الطوارئ
+                        </h2>
+                        <p class="text-gray-700 mb-6">تعرفي على علامات الخطر التي تتطلب استشارة طبية فورية</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-thermometer text-red-500 ml-2 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-gray-800">ارتفاع درجة الحرارة</p>
+                                    <p class="text-sm text-gray-600">أعلى من 38°C</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-lungs text-red-500 ml-2 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-gray-800">صعوبة في التنفس</p>
+                                    <p class="text-sm text-gray-600">تنفس سريع أو صعوبة</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-gray-800">الجفاف الشديد</p>
+                                    <p class="text-sm text-gray-600">جفاف الفم، قلة التبول</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-brain text-red-500 ml-2 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-gray-800">خمول شديد</p>
+                                    <p class="text-sm text-gray-600">عدم الاستجابة</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl p-6 text-center">
+                        <i class="fas fa-phone-alt text-4xl mb-3"></i>
+                        <h3 class="text-xl font-bold mb-2">طوارئ طبية</h3>
+                        <p class="text-2xl font-bold mb-1">123</p>
+                        <p class="text-sm">اتصلي فوراً في الحالات الطارئة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-book-medical text-blue-500 ml-2"></i>
+                    مصادر موثوقة
+                </h2>
+                <p class="text-lg text-gray-600">معلوماتنا معتمدة من مصادر طبية عالمية</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up">
+                    <div class="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-globe text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">منظمة الصحة العالمية</h3>
+                    <p class="text-gray-600 mb-4">WHO - التوصيات العالمية لرعاية الأطفال</p>
+                    <a href="https://www.who.int" target="_blank" class="text-blue-500 hover:text-blue-700 font-medium">
+                        زيارة الموقع <i class="fas fa-external-link-alt mr-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-md text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">الأكاديمية الأمريكية</h3>
+                    <p class="text-gray-600 mb-4">AAP - إرشادات طب الأطفال المعتمدة</p>
+                    <a href="https://www.aap.org" target="_blank" class="text-green-500 hover:text-green-700 font-medium">
+                        زيارة الموقع <i class="fas fa-external-link-alt mr-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hands-helping text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">اليونيسف</h3>
+                    <p class="text-gray-600 mb-4">UNICEF - دعم صحة الطفل والأم</p>
+                    <a href="https://www.unicef.org" target="_blank" class="text-purple-500 hover:text-purple-700 font-medium">
+                        زيارة الموقع <i class="fas fa-external-link-alt mr-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-gradient-to-br from-purple-100 to-pink-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    <i class="fas fa-chart-bar text-purple-500 ml-2"></i>
+                    حقائق وأرقام
+                </h2>
+                <p class="text-lg text-gray-600">معلومات مهمة عن رعاية الرضع</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-aos="fade-up">
+                    <i class="fas fa-heart text-4xl text-red-500 mb-4"></i>
+                    <p class="text-3xl font-bold text-gray-800 mb-2">2.5M</p>
+                    <p class="text-gray-600">وفيات الأطفال يمكن تجنبها سنوياً</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-shield-alt text-4xl text-green-500 mb-4"></i>
+                    <p class="text-3xl font-bold text-gray-800 mb-2">95%</p>
+                    <p class="text-gray-600">فعالية الرضاعة الطبيعية في الحماية</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-syringe text-4xl text-blue-500 mb-4"></i>
+                    <p class="text-3xl font-bold text-gray-800 mb-2">85%</p>
+                    <p class="text-gray-600">تغطية التطعيمات العالمية</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-bed text-4xl text-purple-500 mb-4"></i>
+                    <p class="text-3xl font-bold text-gray-800 mb-2">50%</p>
+                    <p class="text-gray-600">تقليل وفيات المهد بوضعيات النوم الآمنة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
+                    <p class="text-gray-300 mb-4">دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.</p>
+                    <div class="flex space-x-4 space-x-reverse">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="vaccination.html" class="text-gray-300 hover:text-white transition duration-300">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-300 hover:text-white transition duration-300">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-300 hover:text-white transition duration-300">النمو والتطور</a></li>
+                        <li><a href="care.html" class="text-gray-300 hover:text-white transition duration-300">الرعاية اليومية</a></li>
+                        <li><a href="breastfeeding.html" class="text-gray-300 hover:text-white transition duration-300">الرضاعة الطبيعية</a></li>
+                        <li><a href="safety.html" class="text-gray-300 hover:text-white transition duration-300">السلامة</a></li>
+                        <li><a href="followup.html" class="text-gray-300 hover:text-white transition duration-300">المتابعة</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">اتصل بنا</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone text-purple-400 ml-3"></i>
+                            <span class="text-gray-300">الطوارئ: 123</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-purple-400 ml-3"></i>
+                            <span class="text-gray-300">info@babycare.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-purple-400 ml-3"></i>
+                            <span class="text-gray-300">مصر</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Developer Credit -->
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center mb-4 md:mb-0">
+                        جميع الحقوق محفوظة © 2024 رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    </p>
+                    <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

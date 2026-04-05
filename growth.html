@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النمو والتطور - رعاية الرضيع</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .milestone-card {
+            transition: all 0.3s ease;
+        }
+        
+        .milestone-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-purple-800 shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-baby text-2xl text-purple-600"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-green-700 via-green-600 to-emerald-600 text-white py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-300 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            النمو والتطور
+                        </h1>
+                        <p class="text-xl mb-8 text-green-100 leading-relaxed">
+                            متابعة نمو الطفل وتطوره مع حاسبة الوزن والمراحل التطورية للأشهر الستة الأولى
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#weight-calculator" class="bg-white text-green-600 px-8 py-4 rounded-full font-bold hover:bg-green-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-calculator ml-2"></i>حاسبة الوزن
+                            </a>
+                            <a href="#milestones" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-green-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-baby ml-2"></i>المراحل التطورية
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-weight text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">3-7 كجم</p>
+                                <p class="text-xs">الوزن الطبيعي</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-ruler-vertical text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">50-70 سم</p>
+                                <p class="text-xs">الطول المتوقع</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-brain text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">100%</p>
+                                <p class="text-xs">تطور طبيعي</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Main Icon -->
+                        <div class="floating text-center">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-chart-line text-9xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
+                            <div class="bg-emerald-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-weight text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
+                            <div class="bg-teal-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-ruler text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
+                            <div class="bg-cyan-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-baby text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
+                            <div class="bg-lime-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-chart-bar text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Weight Calculator Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-calculator text-blue-500 ml-2"></i>
+                    حاسبة الوزن المثالي
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">احسب الوزن المتوقع لطفلك</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">عمر الطفل (بالشهور)</label>
+                                <input type="number" id="age-months" min="0" max="6" step="0.1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="أدخل عمر الطفل">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">جنس الطفل</label>
+                                <select id="gender" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="male">ذكر</option>
+                                    <option value="female">أنثى</option>
+                                </select>
+                            </div>
+                            <button onclick="calculateWeight()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+                                <i class="fas fa-calculator ml-2"></i>
+                                احسب الوزن
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-green-600 mb-4">النتائج</h3>
+                        <div id="weight-results" class="space-y-3">
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-gray-600">الوزن المتوقع:</p>
+                                <p id="expected-weight" class="text-2xl font-bold text-green-600">--</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-gray-600">النطاق الطبيعي:</p>
+                                <p id="weight-range" class="text-lg font-semibold text-gray-800">--</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-gray-600">معدل النمو الشهري:</p>
+                                <p id="growth-rate" class="text-lg font-semibold text-gray-800">--</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-yellow-50 rounded-lg p-4">
+                    <p class="text-sm text-yellow-800">
+                        <i class="fas fa-info-circle ml-2"></i>
+                        <strong>ملاحظة:</strong> هذه الحسابات تقديرية وتستند إلى معايير منظمة الصحة العالمية. استشر طبيبك للتقييم الدقيق.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Growth Charts Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-chart-bar text-purple-500 ml-2"></i>
+                جداول النمو المعيارية
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Boys Growth Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6" data-aos="fade-up">
+                    <h3 class="text-xl font-bold text-blue-600 mb-4">
+                        <i class="fas fa-male text-blue-500 ml-2"></i>
+                        جدول نمو الذكور (الوزن بالكيلوجرام)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-blue-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-right">العمر</th>
+                                    <th class="px-4 py-2 text-center">3%</th>
+                                    <th class="px-4 py-2 text-center">15%</th>
+                                    <th class="px-4 py-2 text-center">50%</th>
+                                    <th class="px-4 py-2 text-center">85%</th>
+                                    <th class="px-4 py-2 text-center">97%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">الميلاد</td>
+                                    <td class="px-4 py-2 text-center">2.5</td>
+                                    <td class="px-4 py-2 text-center">2.9</td>
+                                    <td class="px-4 py-2 text-center font-bold">3.3</td>
+                                    <td class="px-4 py-2 text-center">3.7</td>
+                                    <td class="px-4 py-2 text-center">4.1</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">شهر واحد</td>
+                                    <td class="px-4 py-2 text-center">3.4</td>
+                                    <td class="px-4 py-2 text-center">3.9</td>
+                                    <td class="px-4 py-2 text-center font-bold">4.5</td>
+                                    <td class="px-4 py-2 text-center">5.1</td>
+                                    <td class="px-4 py-2 text-center">5.7</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">شهران</td>
+                                    <td class="px-4 py-2 text-center">4.4</td>
+                                    <td class="px-4 py-2 text-center">5.1</td>
+                                    <td class="px-4 py-2 text-center font-bold">5.7</td>
+                                    <td class="px-4 py-2 text-center">6.4</td>
+                                    <td class="px-4 py-2 text-center">7.1</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">3 أشهر</td>
+                                    <td class="px-4 py-2 text-center">5.1</td>
+                                    <td class="px-4 py-2 text-center">5.8</td>
+                                    <td class="px-4 py-2 text-center font-bold">6.6</td>
+                                    <td class="px-4 py-2 text-center">7.4</td>
+                                    <td class="px-4 py-2 text-center">8.2</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">4 أشهر</td>
+                                    <td class="px-4 py-2 text-center">5.6</td>
+                                    <td class="px-4 py-2 text-center">6.4</td>
+                                    <td class="px-4 py-2 text-center font-bold">7.2</td>
+                                    <td class="px-4 py-2 text-center">8.0</td>
+                                    <td class="px-4 py-2 text-center">8.8</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">5 أشهر</td>
+                                    <td class="px-4 py-2 text-center">6.0</td>
+                                    <td class="px-4 py-2 text-center">6.8</td>
+                                    <td class="px-4 py-2 text-center font-bold">7.7</td>
+                                    <td class="px-4 py-2 text-center">8.6</td>
+                                    <td class="px-4 py-2 text-center">9.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">6 أشهر</td>
+                                    <td class="px-4 py-2 text-center">6.3</td>
+                                    <td class="px-4 py-2 text-center">7.1</td>
+                                    <td class="px-4 py-2 text-center font-bold">8.0</td>
+                                    <td class="px-4 py-2 text-center">8.9</td>
+                                    <td class="px-4 py-2 text-center">9.8</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Girls Growth Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-xl font-bold text-pink-600 mb-4">
+                        <i class="fas fa-female text-pink-500 ml-2"></i>
+                        جدول نمو الإناث (الوزن بالكيلوجرام)
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-pink-50">
+                                <tr>
+                                    <th class="px-4 py-2 text-right">العمر</th>
+                                    <th class="px-4 py-2 text-center">3%</th>
+                                    <th class="px-4 py-2 text-center">15%</th>
+                                    <th class="px-4 py-2 text-center">50%</th>
+                                    <th class="px-4 py-2 text-center">85%</th>
+                                    <th class="px-4 py-2 text-center">97%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">الميلاد</td>
+                                    <td class="px-4 py-2 text-center">2.4</td>
+                                    <td class="px-4 py-2 text-center">2.8</td>
+                                    <td class="px-4 py-2 text-center font-bold">3.2</td>
+                                    <td class="px-4 py-2 text-center">3.6</td>
+                                    <td class="px-4 py-2 text-center">4.0</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">شهر واحد</td>
+                                    <td class="px-4 py-2 text-center">3.2</td>
+                                    <td class="px-4 py-2 text-center">3.7</td>
+                                    <td class="px-4 py-2 text-center font-bold">4.2</td>
+                                    <td class="px-4 py-2 text-center">4.8</td>
+                                    <td class="px-4 py-2 text-center">5.4</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">شهران</td>
+                                    <td class="px-4 py-2 text-center">4.0</td>
+                                    <td class="px-4 py-2 text-center">4.6</td>
+                                    <td class="px-4 py-2 text-center font-bold">5.2</td>
+                                    <td class="px-4 py-2 text-center">5.9</td>
+                                    <td class="px-4 py-2 text-center">6.6</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">3 أشهر</td>
+                                    <td class="px-4 py-2 text-center">4.6</td>
+                                    <td class="px-4 py-2 text-center">5.3</td>
+                                    <td class="px-4 py-2 text-center font-bold">6.0</td>
+                                    <td class="px-4 py-2 text-center">6.7</td>
+                                    <td class="px-4 py-2 text-center">7.5</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">4 أشهر</td>
+                                    <td class="px-4 py-2 text-center">5.1</td>
+                                    <td class="px-4 py-2 text-center">5.8</td>
+                                    <td class="px-4 py-2 text-center font-bold">6.5</td>
+                                    <td class="px-4 py-2 text-center">7.3</td>
+                                    <td class="px-4 py-2 text-center">8.1</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="px-4 py-2">5 أشهر</td>
+                                    <td class="px-4 py-2 text-center">5.4</td>
+                                    <td class="px-4 py-2 text-center">6.1</td>
+                                    <td class="px-4 py-2 text-center font-bold">6.9</td>
+                                    <td class="px-4 py-2 text-center">7.7</td>
+                                    <td class="px-4 py-2 text-center">8.6</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-2">6 أشهر</td>
+                                    <td class="px-4 py-2 text-center">5.7</td>
+                                    <td class="px-4 py-2 text-center">6.4</td>
+                                    <td class="px-4 py-2 text-center font-bold">7.2</td>
+                                    <td class="px-4 py-2 text-center">8.0</td>
+                                    <td class="px-4 py-2 text-center">8.9</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Developmental Milestones -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-brain text-green-500 ml-2"></i>
+                المراحل التطورية
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Newborn -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-baby text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">المولود الجديد (0-1 شهر)</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-eye text-purple-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الرؤية:</p>
+                                <p class="text-sm text-gray-600">يرى على بعد 20-30 سم، يتبع الحركة البسيطة</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-volume-up text-purple-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">السمع:</p>
+                                <p class="text-sm text-gray-600">يستجيب للأصوات العالية، يهدأ بصوت الأم</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-hand-paper text-purple-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الحركة:</p>
+                                <p class="text-sm text-gray-600">حركات عشوائية، قبضة يد قوية</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 1-2 Months -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-smile text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">1-2 شهر</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-smile-beam text-blue-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الاجتماعي:</p>
+                                <p class="text-sm text-gray-600">يبتسم استجابة للوجوه، يصدر أصواتاً</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-head-side text-blue-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الرأس:</p>
+                                <p class="text-sm text-gray-600">يرفع رأسه عند البطن 45 درجة</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-hand-rock text-blue-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الأيدي:</p>
+                                <p class="text-sm text-gray-600">يفتح يديه أحياناً، يمسك الأشياء</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 2-4 Months -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-laugh text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">2-4 أشهر</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-laugh-beam text-green-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الاجتماعي:</p>
+                                <p class="text-sm text-gray-600">يضحك بصوت عالٍ، يتفاعل مع الآخرين</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-child text-green-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الحركة:</p>
+                                <p class="text-sm text-gray-600">يحمل رأسه ثابتاً، يدعم جزء العلوي من الجسم</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-hand-sparkles text-green-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الأيدي:</p>
+                                <p class="text-sm text-gray-600">يمسك الأشياء ويضعها في فمه</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 4-6 Months -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <div class="bg-yellow-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-baby-carriage text-yellow-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">4-6 أشهر</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-comments text-yellow-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">اللغة:</p>
+                                <p class="text-sm text-gray-600">يصدر أصوات متحركة (أح، غو)، يقلد الأصوات</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-bed text-yellow-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الحركة:</p>
+                                <p class="text-sm text-gray-600">يقلب من البطن إلى الظهر، يجلس بالدعم</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-utensils text-yellow-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">التغذية:</p>
+                                <p class="text-sm text-gray-600">يبدأ في تناول الأطعمة الصلبة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cognitive Development -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-4">
+                        <div class="bg-pink-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-brain text-pink-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">التطور المعرفي</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-eye text-pink-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الانتباه:</p>
+                                <p class="text-sm text-gray-600">يتابع الأشياء بعينيه، يبحث عن مصدر الصوت</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-puzzle-piece text-pink-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الاستكشاف:</p>
+                                <p class="text-sm text-gray-600">يستكشف بيئته بالفم والأيدي</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-memory text-pink-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">الذاكرة:</p>
+                                <p class="text-sm text-gray-600">يتذكر الروتين، يتعرف على الوجوه المألوفة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Emotional -->
+                <div class="milestone-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-4">
+                        <div class="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto">
+                            <i class="fas fa-heart text-indigo-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mt-3">التطور الاجتماعي والعاطفي</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fas fa-heartbeat text-indigo-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">التعلق:</p>
+                                <p class="text-sm text-gray-600">يتعلق بالوالدين، يفرح برؤيتهم</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-smile text-indigo-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">التعبير:</p>
+                                <p class="text-sm text-gray-600">يظهر مشاعر مختلفة (فرح، غضب، خوف)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-users text-indigo-500 ml-2 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-gray-700">التفاعل:</p>
+                                <p class="text-sm text-gray-600">يستمتع باللعب مع الآخرين</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Red Flags Section -->
+    <section class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-red-600">
+                    <i class="fas fa-exclamation-triangle text-red-500 ml-2"></i>
+                    علامات التأخر التطوري التي تتطلب استشارة الطبيب
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">بحلول شهرين:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يرفع رأسه عند البطن</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يبتسم استجابة للوجوه</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يتابع الأشياء بعينيه</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">بحلول 4 أشهر:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يحمل رأسه ثابتاً</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يضحك أو يصدر أصواتاً</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يمسك الأشياء بيديه</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">بحلول 6 أشهر:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يجلس بالدعم</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يقلب من البطن إلى الظهر</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>لا يستجيب لاسمه</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">علامات خطرة في أي عمر:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>فقدان المهارات المكتسبة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>تصلب العضلات أو ارتخائها الشديد</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span>عدم التواصل البصري</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Tips for Parents -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-lightbulb text-yellow-400 ml-2"></i>
+                نصائح لتعزيز نمو الطفل
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up">
+                    <i class="fas fa-comments text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-bold text-gray-800 mb-2">التحدث مع الطفل</h3>
+                    <p class="text-gray-600 text-sm">تحدث مع طفلك باستمرار، اقرأ له القصص، غني له الأغاني</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-gamepad text-4xl text-green-500 mb-4"></i>
+                    <h3 class="font-bold text-gray-800 mb-2">اللعب التفاعلي</h3>
+                    <p class="text-gray-600 text-sm">العاب بسيطة مثل الغمغمة، التقليد، والألعاب الحركية</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-eye text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="font-bold text-gray-800 mb-2">التحفيز البصري</h3>
+                    <p class="text-gray-600 text-sm">استخدم الألوان الزاهية والأشكال المختلفة لتنمية الإدراك البصري</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-music text-4xl text-pink-500 mb-4"></i>
+                    <h3 class="font-bold text-gray-800 mb-2">الموسيقى والأصوات</h3>
+                    <p class="text-gray-600 text-sm">الموسيقى الهادئة والأصوات المختلفة تحفز تطور السمع</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
+                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
+                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <ul class="text-gray-400 text-sm mt-2">
+                        <li>• منظمة الصحة العالمية (WHO)</li>
+                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li>• اليونيسف (UNICEF)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center mb-4 md:mb-0">
+                        جميع الحقوق محفوظة 2024 رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    </p>
+                <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Weight calculation function
+        function calculateWeight() {
+            const age = parseFloat(document.getElementById('age-months').value);
+            const gender = document.getElementById('gender').value;
+            
+            if (isNaN(age) || age < 0 || age > 6) {
+                alert('الرجاء إدخال عمر صحيح بين 0 و 6 أشهر');
+                return;
+            }
+            
+            let birthWeight, monthlyGain;
+            
+            if (gender === 'male') {
+                birthWeight = 3.3; // kg
+                monthlyGain = 0.8; // kg per month for first 3 months, then 0.6
+            } else {
+                birthWeight = 3.2; // kg
+                monthlyGain = 0.7; // kg per month for first 3 months, then 0.5
+            }
+            
+            // Calculate expected weight
+            let expectedWeight;
+            if (age <= 3) {
+                expectedWeight = birthWeight + (monthlyGain * age);
+            } else {
+                expectedWeight = birthWeight + (monthlyGain * 3) + ((monthlyGain - 0.2) * (age - 3));
+            }
+            
+            // Calculate normal range (±15%)
+            const minWeight = expectedWeight * 0.85;
+            const maxWeight = expectedWeight * 1.15;
+            
+            // Display results
+            document.getElementById('expected-weight').textContent = expectedWeight.toFixed(1) + ' كجم';
+            document.getElementById('weight-range').textContent = minWeight.toFixed(1) + ' - ' + maxWeight.toFixed(1) + ' كجم';
+            
+            const growthRate = age <= 3 ? monthlyGain : monthlyGain - 0.2;
+            document.getElementById('growth-rate').textContent = growthRate.toFixed(1) + ' كجم/شهر';
+            
+            // Add color coding based on age
+            const resultsDiv = document.getElementById('weight-results');
+            if (age <= 1) {
+                resultsDiv.classList.add('border-blue-200');
+            } else if (age <= 3) {
+                resultsDiv.classList.add('border-green-200');
+            } else {
+                resultsDiv.classList.add('border-yellow-200');
+            }
+        }
+    </script>
+</body>
+</html>

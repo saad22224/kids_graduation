@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السلامة والأمان - رعاية الرضيع</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .safety-card {
+            transition: all 0.3s ease;
+        }
+        
+        .safety-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .danger-pulse {
+            animation: danger-pulse 2s infinite;
+        }
+        
+        @keyframes danger-pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-purple-800 shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-baby text-2xl text-purple-600"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-indigo-700 via-indigo-600 to-blue-600 text-white py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-300 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            السلامة والأمان
+                        </h1>
+                        <p class="text-xl mb-8 text-indigo-100 leading-relaxed">
+                            إرشادات شاملة لضمان سلامة طفلك في المنزل والخارج مع نصائح للطوارئ
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#safe-sleep" class="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold hover:bg-indigo-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-bed ml-2"></i>النوم الآمن
+                            </a>
+                            <a href="#home-safety" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-indigo-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-home ml-2"></i>سلامة المنزل
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-shield-alt text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">100%</p>
+                                <p class="text-xs">حماية</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-car-seat text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">قانون</p>
+                                <p class="text-xs">مقعد الأمان</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-first-aid text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">24/7</p>
+                                <p class="text-xs">استعداد</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Main Icon -->
+                        <div class="floating text-center">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-shield-alt text-9xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
+                            <div class="bg-blue-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-bed text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
+                            <div class="bg-indigo-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-home text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
+                            <div class="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-car text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
+                            <div class="bg-cyan-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-first-aid text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Safe Sleep Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-bed text-blue-500 ml-2"></i>
+                    النوم الآمن (Safe Sleep)
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">قواعد النوم الآمن</h3>
+                        <div class="space-y-4">
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-green-700">النوم على الظهر دائماً</p>
+                                        <p class="text-gray-600">ضعي الطفل للنوم على ظهره في كل مرة، للنوم الليلي والقيلولة</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-green-700">سرير صلب وآمن</p>
+                                        <p class="text-gray-600">استخدمي مرتبة صلبة مع غطاء مشدود، بدون وسائد أو ألعاب</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-green-700">لا شيء في السرير</p>
+                                        <p class="text-gray-600">لا تضعي وسائد، بطانيات، ألعاب، أو أي شيء آخر في سرير الطفل</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-green-700">غرفة نوم آمنة</p>
+                                        <p class="text-gray-600">درجة حرارة مناسبة (20-22°C)، لا تدخيني في الغرفة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-red-600 mb-4">مخاطر يجب تجنبها</h3>
+                        <div class="space-y-4">
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-times-circle text-red-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-red-700">النوم مع الوالدين</p>
+                                        <p class="text-gray-600">النوم المشترك يزيد من خطر الاختناق والموت المفاجئ</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-times-circle text-red-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-red-700">الأسرة غير الآمنة</p>
+                                        <p class="text-gray-600">تجنبي الأرائك والكراسي والأسرة المائية للنوم</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-times-circle text-red-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-red-700">التغطية الزائدة</p>
+                                        <p class="text-gray-600">لا تغطي الطفل بالبطانيات الثقيلة أو الملابس الكثيرة</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-times-circle text-red-500 ml-3 mt-1 text-xl"></i>
+                                    <div>
+                                        <p class="font-bold text-red-700">الحرارة الزائدة</p>
+                                        <p class="text-gray-600">لا ترتدي الطفل ملابس كثيرة أو ترفعي درجة حرارة الغرفة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-blue-50 rounded-lg p-6">
+                    <h4 class="font-bold text-blue-700 mb-3">
+                        <i class="fas fa-info-circle text-blue-500 ml-2"></i>
+                        نصائح إضافية للنوم الآمن
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
+                                <span>ضعي سرير الطفل في غرفة الوالدين للأشهر الستة الأولى</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
+                                <span>استخدمي كيس النوم بدلاً من البطانيات</span>
+                            </li>
+                        </ul>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
+                                <span>أعطي الطفل مصاصة للنوم (إذا كان يرضع طبيعياً)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
+                                <span>تجنبي وضع الطفل في السيارة أو مقعد السيارة للنوم</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Home Safety Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-home text-green-500 ml-2"></i>
+                سلامة المنزل
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Electrical Safety -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-plug text-4xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">السلامة الكهربائية</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• غطي جميع المقابس الكهربائية</li>
+                        <li>• ابعد الأسلاك عن متناول الطفل</li>
+                        <li>• لا تتركي أجهزة كهربائية قريبة</li>
+                        <li>• افصلي التيار الكهربائي عند عدم الاستخدام</li>
+                    </ul>
+                </div>
+                
+                <!-- Chemical Safety -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-flask text-4xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">السلامة الكيميائية</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• احفظي المواد الكيميائية في خزائن مقفلة</li>
+                        <li>• ابعد المنظفات والصابون عن متناول الطفل</li>
+                        <li>• لا تتركي الأدوية في متناول اليد</li>
+                        <li>• استخدمي أقفال الأمان للخزائن</li>
+                    </ul>
+                </div>
+                
+                <!-- Fall Prevention -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الوقاية من السقوط</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• لا تتركي الطفل وحيداً على السرير</li>
+                        <li>• استخدمي حواجز الأمان للسلالم</li>
+                        <li>• ثبتي الأثاث بالحائط</li>
+                        <li>• ضعي وسادات حماية على الزوايا الحادة</li>
+                    </ul>
+                </div>
+                
+                <!-- Water Safety -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-water text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">السلامة المائية</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• لا تتركي الطفل وحيداً بالقرب من الماء</li>
+                        <li>• أغلقي حمام السباحة دائماً</li>
+                        <li>• لا تتركي دلاء الماء ممتلئة</li>
+                        <li>• راقبي الطفل أثناء الاستحمام</li>
+                    </ul>
+                </div>
+                
+                <!-- Choking Prevention -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-lungs text-4xl text-orange-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الوقاية من الاختناق</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• لا تعطي الطفل أطعمة صلبة</li>
+                        <li>• تجنبي الألعاب الصغيرة</li>
+                        <li>• قطعي الطعام لقطع صغيرة جداً</li>
+                        <li>• راقبي الطفل أثناء الأكل</li>
+                    </ul>
+                </div>
+                
+                <!-- Burn Prevention -->
+                <div class="safety-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-fire text-4xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الوقاية من الحروق</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>• اختبري درجة حرارة الماء</li>
+                        <li>• لا تحملي الأواني الساخنة والطفل</li>
+                        <li>• استخدمي أغطية الموقد</li>
+                        <li>• ابعد الطفل عن الموقد</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Car Safety Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-car text-indigo-500 ml-2"></i>
+                    السلامة في السيارة
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">مقعد السيارة للأطفال</h3>
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 rounded-lg p-4">
+                                <h4 class="font-bold text-indigo-700 mb-2">اختيار المقعد المناسب</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>مقعد مواجه للخلف للأطفال تحت 2 سنة</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>تأكدي من ملاءمة المقعد لوزن وطول الطفل</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>اختاري مقعداً معتمداً ومعتمد عليه</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-indigo-50 rounded-lg p-4">
+                                <h4 class="font-bold text-indigo-700 mb-2">التثبيت الصحيح</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>ثبتي المقعد بإحكام في السيارة</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>استخدمي نظام LATCH أو حزام الأمان</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>تأكدي من عدم تحرك المقعد أكثر من 2.5 سم</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">قواعد السلامة في السيارة</h3>
+                        <div class="space-y-4">
+                            <div class="bg-yellow-50 rounded-lg p-4">
+                                <h4 class="font-bold text-yellow-700 mb-2">ملاحظات هامة</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500 ml-2 mt-1"></i>
+                                        <span>لا تضعي مقعد الطفل في المقعد الأمامي</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500 ml-2 mt-1"></i>
+                                        <span>لا تتركي الطفل وحيداً في السيارة أبداً</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-exclamation-triangle text-yellow-500 ml-2 mt-1"></i>
+                                        <span>تجنبي الملابس السميكة تحت أحزمة الأمان</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-bold text-green-700 mb-2">نصائح إضافية</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-lightbulb text-green-500 ml-2 mt-1"></i>
+                                        <span>ضعي تذكيراً في السيارة بعدم ترك الطفل</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-lightbulb text-green-500 ml-2 mt-1"></i>
+                                        <span>تحققي من تثبيت الطفل في كل رحلة</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-lightbulb text-green-500 ml-2 mt-1"></i>
+                                        <span>تأكدي من أن الأحزمة مشدودة بشكل صحيح</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Preparedness Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-red-600">
+                    <i class="fas fa-first-aid text-red-500 ml-2"></i>
+                    الاستعداد للطوارئ
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-red-600 mb-4">حقيبة الإسعافات الأولية</h3>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <h4 class="font-bold text-red-700 mb-3">المحتويات الأساسية:</h4>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <i class="fas fa-band-aid text-red-500 ml-2 mt-1"></i>
+                                    <span>ضمادات معقمة بأحجام مختلفة</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-pills text-red-500 ml-2 mt-1"></i>
+                                    <span>أدوية أساسية (خافض حرارة، مسكن ألم)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-thermometer text-red-500 ml-2 mt-1"></i>
+                                    <span>ميزان حرارة</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-spray-can text-red-500 ml-2 mt-1"></i>
+                                    <span>مطهر للجروح</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-cut text-red-500 ml-2 mt-1"></i>
+                                    <span>مقص صغير ومقلم أظافر</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
+                                    <span>محلول ملحي لتنظيف العين</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-phone text-red-500 ml-2 mt-1"></i>
+                                    <span>قائمة بأرقام الطوارئ</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-red-600 mb-4">الإجراءات الطارئة</h3>
+                        <div class="space-y-4">
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <h4 class="font-bold text-orange-700 mb-2">
+                                    <i class="fas fa-thermometer-full text-orange-500 ml-2"></i>
+                                    ارتفاع درجة الحرارة
+                                </h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• قيسي درجة الحرارة</li>
+                                    <li>• أعطي خافض حرارة مناسباً</li>
+                                    <li>• خففي الملابس</li>
+                                    <li>• استشيري الطبيب إذا زادت عن 38.5°C</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <h4 class="font-bold text-orange-700 mb-2">
+                                    <i class="fas fa-lungs text-orange-500 ml-2"></i>
+                                    الاختناق
+                                </h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• اتصلي بالطوارئ فوراً</li>
+                                    <li>• لا تضربي على ظهر الطفل</li>
+                                    <li>• لا تحاولي إزالة الجسم باليد</li>
+                                    <li>• ابدئي الإسعافات إذا كنت مدربة</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <h4 class="font-bold text-orange-700 mb-2">
+                                    <i class="fas fa-tint text-orange-500 ml-2"></i>
+                                    الجفاف
+                                </h4>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>• انظري لعلامات الجفاف</li>
+                                    <li>• أعطي سوائل إضافية</li>
+                                    <li>• راقبي عدد مرات التبول</li>
+                                    <li>• اذهبي للمستشفى في الحالات الشديدة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-red-100 rounded-lg p-6 text-center">
+                    <h4 class="font-bold text-red-700 mb-3">
+                        <i class="fas fa-phone-alt text-red-500 ml-2"></i>
+                        أرقام الطوارئ الهامة
+                    </h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="font-bold text-red-600 text-lg">123</p>
+                            <p class="text-gray-700">الطوارئ الطبية</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="font-bold text-red-600 text-lg">999</p>
+                            <p class="text-gray-700">الإسعاف</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="font-bold text-red-600 text-lg">911</p>
+                            <p class="text-gray-700">مركز سموم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seasonal Safety Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-cloud-sun text-yellow-500 ml-2"></i>
+                السلامة حسب الفصول
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Summer Safety -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl shadow-lg p-6" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-sun text-4xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الصيف</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• حماية من الشمس</li>
+                        <li>• تجنب الحرارة العالية</li>
+                        <li>• ترطيب مستمر</li>
+                        <li>• ملابس خفيفة</li>
+                        <li>• تجنب ساعات الذروة</li>
+                    </ul>
+                </div>
+                
+                <!-- Winter Safety -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-snowflake text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الشتاء</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• تدفئة كافية</li>
+                        <li>• تجنب التدفئة الزائدة</li>
+                        <li>• ترطيب الهواء</li>
+                        <li>• ملابس طبقية</li>
+                        <li>• حماية من البرد</li>
+                    </ul>
+                </div>
+                
+                <!-- Spring Safety -->
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-seedling text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الربيع</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• حماية من الحساسية</li>
+                        <li>• تجنب الحشرات</li>
+                        <li>• نظافة اليدين</li>
+                        <li>• تهوية الغرفة</li>
+                        <li>• تجنب الأماكن المزدحمة</li>
+                    </ul>
+                </div>
+                
+                <!-- Autumn Safety -->
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-leaf text-4xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">الخريف</h3>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li>• تجنب تغيرات الطقس</li>
+                        <li>• تقوية المناعة</li>
+                        <li>• تجنب الأتربة</li>
+                        <li>• تهوية مناسبة</li>
+                        <li>• تغذية سليمة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Warning Signs Section -->
+    <section class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-red-600">
+                    <i class="fas fa-exclamation-triangle text-red-500 ml-2 danger-pulse"></i>
+                    علامات الخطر التي تتطلب استشارة طبية فورية
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">مشاكل التنفس:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• صعوبة في التنفس</li>
+                            <li>• تنفس سريع جداً</li>
+                            <li>• زرقة في الشفاه أو الأطراف</li>
+                            <li>• صوت صفير عند التنفس</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">مشاكل عصبية:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• نوبات تشنجية</li>
+                            <li>• خمول شديد أو فقدان وعي</li>
+                            <li>• بكاء مستمر لا يمكن تهدئته</li>
+                            <li>• تصلب الرقبة</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">مشاكل التغذية:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• رفض الرضاعة المتكرر</li>
+                            <li>• قيء شديد أو مستمر</li>
+                            <li>• جفاف شديد</li>
+                            <li>• إسهال دموي</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-600 mb-3">أعراض أخرى:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• حمى أعلى من 39°C</li>
+                            <li>• طفح جلدي أرجواني</li>
+                            <li>• تورم مفاجئ</li>
+                            <li>• صعوبة في الاستيقاظ</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-red-100 rounded-lg p-4 text-center">
+                    <p class="text-red-800 font-bold text-lg">
+                        <i class="fas fa-phone-alt ml-2"></i>
+                        في حالة وجود أي من هذه الأعراض، اتصل بالطوارئ فوراً
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
+                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
+                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <ul class="text-gray-400 text-sm mt-2">
+                        <li>• منظمة الصحة العالمية (WHO)</li>
+                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li>• اليونيسف (UNICEF)</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Developer Credit -->
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center mb-4 md:mb-0">
+                        جميع الحقوق محفوظة © 2024 رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    </p>
+                  <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

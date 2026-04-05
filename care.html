@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرعاية اليومية - رعاية الرضيع</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .procedure-card {
+            transition: all 0.3s ease;
+        }
+        
+        .procedure-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            border: 2px dashed #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-purple-800 shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-baby text-2xl text-purple-600"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-purple-700 via-purple-600 to-pink-600 text-white py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-pink-300 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            الرعاية اليومية
+                        </h1>
+                        <p class="text-xl mb-8 text-purple-100 leading-relaxed">
+                            إرشادات شاملة للنظافة الشخصية والعناية اليومية بطفلك في الأشهر الستة الأولى
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#diaper-care" class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:bg-purple-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-baby ml-2"></i>العناية بالحفاض
+                            </a>
+                            <a href="#bathing" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-bath ml-2"></i>الاستحمام
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-soap text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">مرتين</p>
+                                <p class="text-xs">استحمام أسبوعياً</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-clock text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">24/7</p>
+                                <p class="text-xs">رعاية مستمرة</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-heart text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">100%</p>
+                                <p class="text-xs">نظافة وصحة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Main Icon -->
+                        <div class="floating text-center">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-hand-holding-heart text-9xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
+                            <div class="bg-pink-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-bath text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
+                            <div class="bg-purple-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-soap text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
+                            <div class="bg-indigo-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-tint text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
+                            <div class="bg-blue-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-baby text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Diaper Care Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-baby text-blue-500 ml-2"></i>
+                    العناية بالحفاض
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">خطوات تغيير الحفاض</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">التحضير</p>
+                                    <p class="text-gray-600">جهزي كل الأدوات اللازمة: حفاض نظيف، مناديل مبللة، كريم وقاية، حفاضة قديمة</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">إزالة الحفاض القديم</p>
+                                    <p class="text-gray-600">افتحي الحفاض القديم واستخدمي الجزء النظيف لمسح البراز من الأعلى إلى الأسفل</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">التنظيف</p>
+                                    <p class="text-gray-600">نظفي المنطقة جيداً بالمناديل المبللة أو الماء الدافئ والصابون اللطيف</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">4</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">التجفيف</p>
+                                    <p class="text-gray-600">جففي المنطقة تماماً بمنشفة ناعمة، مع التركيز على طيات الجلد</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">5</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">الحماية</p>
+                                    <p class="text-gray-600">ضعي كريم وقاية من الحفاض إذا لزم الأمر</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 rounded-full w-8 h-8 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-blue-600 font-bold">6</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-800">وضع الحفاض الجديد</p>
+                                    <p class="text-gray-600">ضعي الحفاض النظيف وتأكدي من أنه مريح ومحكم</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">نصائح هامة</h3>
+                        <div class="bg-blue-50 rounded-lg p-4 space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">غيري الحفاض كل 2-3 ساعات أو فوراً عند البلل</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">دائماً نظفي من الأمام إلى الخلف لتجنب العدوى</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">اتركي المنطقة مفتوحة لبضع دقائق يومياً</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">استخدمي منتجات خالية من العطور والكحول</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 mb-3">مشاكل الحفاض الشائعة</h4>
+                            <div class="space-y-3">
+                                <div class="bg-yellow-50 rounded-lg p-3">
+                                    <p class="font-medium text-yellow-700">طفح الحفاض:</p>
+                                    <p class="text-sm text-gray-600">احمرار في منطقة الحفاض، علاجه بالحفاظ على نظافة وجفاف المنطقة</p>
+                                </div>
+                                <div class="bg-red-50 rounded-lg p-3">
+                                    <p class="font-medium text-red-700">التهاب الجلد الفطري:</p>
+                                    <p class="text-sm text-gray-600">بقع حمراء منتشرة، يتطلب علاج طبي</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Placeholder -->
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 mb-3">فيديو تعليمي</h4>
+                            <div class="video-placeholder rounded-lg h-48 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-play-circle text-4xl text-gray-400 mb-2"></i>
+                                    <p class="text-gray-500">فيديو: كيفية تغيير الحفاض</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bathing Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-bath text-cyan-500 ml-2"></i>
+                    الاستحمام
+                </h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-600 mb-4">التحضير للاستحمام</h3>
+                        <div class="space-y-4">
+                            <div class="bg-cyan-50 rounded-lg p-4">
+                                <h4 class="font-bold text-cyan-700 mb-2">قبل البدء:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-thermometer-half text-cyan-500 ml-2 mt-1"></i>
+                                        <span>تأكدي من درجة حرارة الغرفة (24-26°C)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-tint text-cyan-500 ml-2 mt-1"></i>
+                                        <span>جهزي ماء دافئ (37-38°C)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-soap text-cyan-500 ml-2 mt-1"></i>
+                                        <span>استخدمي صابون وشامبو خاص بالأطفال</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-towel text-cyan-500 ml-2 mt-1"></i>
+                                        <span>جهزي منشفة ناعمة وملابس نظيفة</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-cyan-600 mb-4 mt-6">خطوات الاستحمام</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">1</span>
+                                </div>
+                                <p class="text-gray-700">املئي حوض الاستحمام بالماء الدافئ (5-7 سم)</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">2</span>
+                                </div>
+                                <p class="text-gray-700">اغسلي وجه الطفل ورأسه أولاً بالماء والصابون</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">3</span>
+                                </div>
+                                <p class="text-gray-700">انزلي الطفل ببطء في الماء مع إمساكه جيداً</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">4</span>
+                                </div>
+                                <p class="text-gray-700">اغسلي جسم الطفل بالترتيب من الأعلى إلى الأسفل</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">5</span>
+                                </div>
+                                <p class="text-gray-700">اشطفي الطفل جيداً بالماء النظيف</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-cyan-100 rounded-full w-6 h-6 flex items-center justify-center ml-3 flex-shrink-0">
+                                    <span class="text-cyan-600 text-sm font-bold">6</span>
+                                </div>
+                                <p class="text-gray-700">لفي الطفل بالمنشفة وجففيه بلطف</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-cyan-600 mb-4">نصائح الأمان</h3>
+                        <div class="bg-red-50 rounded-lg p-4 space-y-3">
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700"><strong>لا تتركي الطفل وحيداً أبداً</strong> حتى للحظة واحدة</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">تحقق من درجة حرارة الماء بمرفقك</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">أمسكي الطفل بإحكام أثناء الاستحمام</p>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                                <p class="text-gray-700">لا تملئي الحوض أكثر من اللازم</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 mb-3">متى نستحم الطفل؟</h4>
+                            <div class="grid grid-cols-1 gap-3">
+                                <div class="bg-green-50 rounded-lg p-3">
+                                    <p class="font-medium text-green-700">في الأسبوع الأول:</p>
+                                    <p class="text-sm text-gray-600">استحمام بالإسفنج فقط حتى يلتئم السرة</p>
+                                </div>
+                                <div class="bg-blue-50 rounded-lg p-3">
+                                    <p class="font-medium text-blue-700">بعد الأسبوع الأول:</p>
+                                    <p class="text-sm text-gray-600">يمكن الاستحمام في الحوض 2-3 مرات أسبوعياً</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Placeholder -->
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 mb-3">فيديو تعليمي</h4>
+                            <div class="video-placeholder rounded-lg h-48 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-play-circle text-4xl text-gray-400 mb-2"></i>
+                                    <p class="text-gray-500">فيديو: كيفية استحمام الرضيع</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skin Care Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-hand-sparkles text-pink-500 ml-2"></i>
+                العناية بالبشرة
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Face Cleaning -->
+                <div class="procedure-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-face-smile text-4xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">تنظيف الوجه</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <p><strong>الطريقة:</strong></p>
+                        <ul class="text-sm space-y-1 mr-4">
+                            <li>• استخدمي قطنة مبللة بالماء الدافئ</li>
+                            <li>• نظفي من الداخل إلى الخارج</li>
+                            <li>• ركزي على العينين والفم</li>
+                            <li>• جففي بلطف بمنشفة ناعمة</li>
+                        </ul>
+                        <div class="bg-pink-50 rounded p-2 mt-3">
+                            <p class="text-xs text-pink-700">ملاحظة: لا تستخدمي مناديل معطرة</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nail Care -->
+                <div class="procedure-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-hand text-4xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">العناية بالأظافر</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <p><strong>الطريقة:</strong></p>
+                        <ul class="text-sm space-y-1 mr-4">
+                            <li>• استخدمي مقص أظافر خاص بالأطفال</li>
+                            <li>• قصي الأظافر وهي ناعمة بعد الاستحمام</li>
+                            <li>• قصي بشكل مستقيم</li>
+                            <li>• لا تقصي الجلد المحيط</li>
+                        </ul>
+                        <div class="bg-purple-50 rounded p-2 mt-3">
+                            <p class="text-xs text-purple-700">ملاحظة: قصي الأظافر أسبوعياً</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Umbilical Cord Care -->
+                <div class="procedure-card bg-white rounded-xl shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-circle text-4xl text-yellow-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">العناية بالسرة</h3>
+                    <div class="space-y-3 text-gray-600">
+                        <p><strong>الطريقة:</strong></p>
+                        <ul class="text-sm space-y-1 mr-4">
+                            <li>• حافظي على منطقة السرة جافة</li>
+                            <li>• نظفي بالكحول 70% حسب تعليمات الطبيب</li>
+                            <li>• غطي الحفاض بحيث لا يلامس السرة</li>
+                            <li>• انتظري سقوطها naturally</li>
+                        </ul>
+                        <div class="bg-yellow-50 rounded p-2 mt-3">
+                            <p class="text-xs text-yellow-700">تنبيه: استشيري الطبيب إذا حدث احمرار أو تورم</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hair Care Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-cut text-indigo-500 ml-2"></i>
+                    العناية بالشعر
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">غسل الشعر</h3>
+                        <div class="space-y-4">
+                            <div class="bg-indigo-50 rounded-lg p-4">
+                                <h4 class="font-bold text-indigo-700 mb-2">التعليمات:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>استخدمي شامبو خاص بالأطفال خالٍ من الدموع</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>اغسلي الشعر 1-2 مرات أسبوعياً</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>دلكي فروة الرأس بلطف</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-indigo-500 ml-2 mt-1"></i>
+                                        <span>اشطفي جيداً لتجنب تهيج الجلد</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">مشاكل الشعر الشائعة</h3>
+                        <div class="space-y-4">
+                            <div class="bg-yellow-50 rounded-lg p-4">
+                                <h4 class="font-bold text-yellow-700 mb-2">
+                                    <i class="fas fa-brain text-yellow-500 ml-2"></i>
+                                    قشرة الرأس (Cradle Cap)
+                                </h4>
+                                <p class="text-gray-700 mb-2">بقع دهنية صفراء على فروة الرأس</p>
+                                <div class="text-sm text-gray-600">
+                                    <p class="font-medium">العلاج:</p>
+                                    <ul class="mr-4 space-y-1">
+                                        <li>• دلكي فروة الرأس بالزيت</li>
+                                        <li>• اتركيه لمدة ساعة</li>
+                                        <li>• مشطي بلطف بمشط ناعم</li>
+                                        <li>• اغسلي بالشامبو</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <h4 class="font-bold text-blue-700 mb-2">
+                                    <i class="fas fa-exclamation-circle text-blue-500 ml-2"></i>
+                                    تساقط الشعر
+                                </h4>
+                                <p class="text-gray-700">تساقط مؤقت للشعر في الأشهر الأولى</p>
+                                <p class="text-sm text-gray-600 mt-2">طبيعي وينمو الشعر الجديد خلال عدة أشهر</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Oral Care Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-tooth text-teal-500 ml-2"></i>
+                    العناية بالفم والأسنان
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-teal-600 mb-4">قبل ظهور الأسنان</h3>
+                        <div class="space-y-4">
+                            <div class="bg-teal-50 rounded-lg p-4">
+                                <h4 class="font-bold text-teal-700 mb-2">نظافة الفم:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>نظفي اللثة بقطعة قماش ناعمة مبللة</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>افعلي ذلك بعد كل رضاعة</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>تجنبي وضع الطفل للنوم والرضاعة في فمه</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-teal-600 mb-4 mt-6">بعد ظهور الأسنان</h3>
+                        <div class="space-y-4">
+                            <div class="bg-teal-50 rounded-lg p-4">
+                                <h4 class="font-bold text-teal-700 mb-2">تنظيف الأسنان:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>استخدمي فرشاة أسنان ناعمة جداً</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>استخدمي كمية قليلة من معجون الأسنان</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-teal-500 ml-2 mt-1"></i>
+                                        <span>نظفي مرتين يومياً</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-teal-600 mb-4">التسنين</h3>
+                        <div class="space-y-4">
+                            <div class="bg-yellow-50 rounded-lg p-4">
+                                <h4 class="font-bold text-yellow-700 mb-2">أعراض التسنين:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• زيادة اللعاب</li>
+                                    <li>• مضغ الأصابع والألعاب</li>
+                                    <li>• تهيج وانزعاج</li>
+                                    <li>• تورم اللثة</li>
+                                    <li>• قلة النوم</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <h4 class="font-bold text-green-700 mb-2">طرق التخفيف:</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li>• تدليك اللثة بلطف</li>
+                                    <li>• إعطاء ألعاب تسنين باردة</li>
+                                    <li>• استخدام أقراص التسنين</li>
+                                    <li>• مسكنات الألم حسب إرشادات الطبيب</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Video Placeholder -->
+                        <div class="mt-6">
+                            <h4 class="font-bold text-gray-800 mb-3">فيديو تعليمي</h4>
+                            <div class="video-placeholder rounded-lg h-48 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-play-circle text-4xl text-gray-400 mb-2"></i>
+                                    <p class="text-gray-500">فيديو: العناية بفم الرضيع</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Daily Schedule Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-clock text-orange-500 ml-2"></i>
+                جدول الرعاية اليومي المقترح
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Morning -->
+                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-orange-600 mb-4">
+                            <i class="fas fa-sun text-orange-500 ml-2"></i>
+                            الصباح (6:00 - 12:00)
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-orange-500 ml-2 mt-1"></i>
+                                <span>الاستيقاظ والرضاعة الأولى</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-diaper text-orange-500 ml-2 mt-1"></i>
+                                <span>تغيير الحفاض</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-play text-orange-500 ml-2 mt-1"></i>
+                                <span>وقت اللعب والتفاعل</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-orange-500 ml-2 mt-1"></i>
+                                <span>الرضاعة الثانية</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bed text-orange-500 ml-2 mt-1"></i>
+                                <span>القيلولة الأولى</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Afternoon -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">
+                            <i class="fas fa-cloud-sun text-blue-500 ml-2"></i>
+                            بعد الظهر (12:00 - 18:00)
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
+                                <span>الاستيقاظ والرضاعة الثالثة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-diaper text-blue-500 ml-2 mt-1"></i>
+                                <span>تغيير الحفاض</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bath text-blue-500 ml-2 mt-1"></i>
+                                <span>وقت الاستحمام (أيام محددة)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-play text-blue-500 ml-2 mt-1"></i>
+                                <span>اللعب الهادئ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bed text-blue-500 ml-2 mt-1"></i>
+                                <span>القيلولة الثانية</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Evening -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-600 mb-4">
+                            <i class="fas fa-moon text-purple-500 ml-2"></i>
+                            المساء (18:00 - 24:00)
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-purple-500 ml-2 mt-1"></i>
+                                <span>الرضاعة الرابعة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-diaper text-purple-500 ml-2 mt-1"></i>
+                                <span>تغيير الحفاض</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-book text-purple-500 ml-2 mt-1"></i>
+                                <span>وقت هادئ قبل النوم</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-music text-purple-500 ml-2 mt-1"></i>
+                                <span>أغاني هادئة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bed text-purple-500 ml-2 mt-1"></i>
+                                <span>النوم الليلي</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-yellow-50 rounded-lg p-4">
+                    <p class="text-yellow-800 text-center">
+                        <i class="fas fa-info-circle ml-2"></i>
+                        <strong>ملاحظة:</strong> هذا جدول مقترح وقد يختلف حسب احتياجات طفلك الفردية
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
+                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
+                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <ul class="text-gray-400 text-sm mt-2">
+                        <li>• منظمة الصحة العالمية (WHO)</li>
+                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li>• اليونيسف (UNICEF)</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Developer Credit -->
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center mb-4 md:mb-0">
+                        جميع الحقوق محفوظة © 2024 رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    </p>
+                   <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

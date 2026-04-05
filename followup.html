@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول المتابعة - رعاية الرضيع</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #667eea;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20px;
+            width: 40px;
+            height: 2px;
+            background: #e5e7eb;
+            transform: translateY(-50%);
+        }
+        
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        
+        .checklist-item {
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background-color: #f9fafb;
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-gradient-to-r from-purple-600 to-purple-800 shadow-2xl sticky top-0 z-50 backdrop-blur-lg bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="bg-white rounded-full p-2 shadow-lg">
+                        <i class="fas fa-baby text-2xl text-purple-600"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                </div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-teal-700 via-teal-600 to-cyan-600 text-white py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-300 rounded-full filter blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            جدول المتابعة الطبية
+                        </h1>
+                        <p class="text-xl mb-8 text-teal-100 leading-relaxed">
+                            الجدول الكامل للزيارات الطبية والفحوصات الدورية للأشهر الستة الأولى من عمر الطفل
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                            <a href="#timeline" class="bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-teal-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-calendar-alt ml-2"></i>الجدول الزمني
+                            </a>
+                            <a href="#checklist" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-teal-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-clipboard-check ml-2"></i>قائمة المراجعة
+                            </a>
+                        </div>
+                        
+                        <!-- Quick Stats -->
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-user-md text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">6 زيارات</p>
+                                <p class="text-xs">أساسية</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-stethoscope text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">12 فحص</p>
+                                <p class="text-xs">شامل</p>
+                            </div>
+                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                                <i class="fas fa-chart-line text-2xl mb-1"></i>
+                                <p class="text-sm font-medium">100%</p>
+                                <p class="text-xs">متابعة</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative">
+                        <!-- Main Icon -->
+                        <div class="floating text-center">
+                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
+                                <i class="fas fa-calendar-check text-9xl text-white"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Icons -->
+                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
+                            <div class="bg-cyan-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-stethoscope text-white text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
+                            <div class="bg-teal-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-user-md text-white text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
+                            <div class="bg-green-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-weight text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
+                            <div class="bg-blue-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
+                                <i class="fas fa-ruler text-white text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Follow-up Schedule Timeline -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                    <i class="fas fa-calendar-alt text-teal-500 ml-2"></i>
+                    جدول الزيارات الطبية
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Birth Visit -->
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-red-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                0
+                            </div>
+                            <div class="mr-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة ما بعد الولادة (2-5 أيام)</h3>
+                                <div class="bg-red-50 rounded-lg p-4">
+                                    <h4 class="font-bold text-red-700 mb-3">أهداف الزيارة:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">فحص الطفل:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• تقييم الوزن والطول</li>
+                                                <li>• فحص السرة</li>
+                                                <li>• تقييم اليرقان</li>
+                                                <li>• فحص التغذية</li>
+                                                <li>• التأكد من الرضاعة الطبيعية</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">فحص الأم:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• تقييم فترة النفاس</li>
+                                                <li>• فحص الحالة النفسية</li>
+                                                <li>• التأكد من الشفاء</li>
+                                                <li>• الإجابة على استفسارات</li>
+                                                <li>• التخطيم للمتابعة</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 1 Month Visit -->
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-blue-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                1
+                            </div>
+                            <div class="mr-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الأول</h3>
+                                <div class="bg-blue-50 rounded-lg p-4">
+                                    <h4 class="font-bold text-blue-700 mb-3">أهداف الزيارة:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">النمو والتطور:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• قياس الوزن والطول ومحيط الرأس</li>
+                                                <li>• تقييم النمو على منحنيات النمو</li>
+                                                <li>• فحص المراحل التطورية</li>
+                                                <li>• تقييم الحواس</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">الصحة العامة:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• فحص شامل</li>
+                                                <li>• تقييم التغذية</li>
+                                                <li>• الكشف عن أي مشاكل</li>
+                                                <li>• نصائح للوالدين</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2 Months Visit -->
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-green-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                2
+                            </div>
+                            <div class="mr-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الثاني</h3>
+                                <div class="bg-green-50 rounded-lg p-4">
+                                    <h4 class="font-bold text-green-700 mb-3">أهداف الزيارة:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• DTP (الجرعة الأولى)</li>
+                                                <li>• شلل الأطفال (الجرعة الثانية)</li>
+                                                <li>• Hib (الجرعة الأولى)</li>
+                                                <li>• التهاب الرئة (الجرعة الأولى)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطور:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• الابتسام الاجتماعي</li>
+                                                <li>• رفع الرأس</li>
+                                                <li>• تتبع الأشياء بالعين</li>
+                                                <li>• إصدار الأصوات</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4 Months Visit -->
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                4
+                            </div>
+                            <div class="mr-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الرابع</h3>
+                                <div class="bg-yellow-50 rounded-lg p-4">
+                                    <h4 class="font-bold text-yellow-700 mb-3">أهداف الزيارة:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• DTP (الجرعة الثانية)</li>
+                                                <li>• شلل الأطفال (الجرعة الثالثة)</li>
+                                                <li>• Hib (الجرعة الثانية)</li>
+                                                <li>• التهاب الرئة (الجرعة الثانية)</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطور:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• الضحك بصوت عالٍ</li>
+                                                <li>• التحكم في الرأس</li>
+                                                <li>• مسك الأشياء</li>
+                                                <li>• البدء في الجلوس بالدعم</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 6 Months Visit -->
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="bg-purple-500 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                                6
+                            </div>
+                            <div class="mr-8 flex-1">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر السادس</h3>
+                                <div class="bg-purple-50 rounded-lg p-4">
+                                    <h4 class="font-bold text-purple-700 mb-3">أهداف الزيارة:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• التهاب الكبد B (الجرعة الثالثة)</li>
+                                                <li>• شلل الأطفال (الجرعة الرابعة)</li>
+                                                <li>• DTP (الجرعة الرابعة)</li>
+                                                <li>• بدء التطعيمات الإضافية حسب البلد</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-medium text-gray-700 mb-2">التطور والتغذية:</h5>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• الجلوس بدون دعم</li>
+                                                <li>• إصدار أصوات متحركة</li>
+                                                <li>• البدء في الأطعمة الصلبة</li>
+                                                <li>• تقييم الأسنان النامية</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What to Bring Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-suitcase text-orange-500 ml-2"></i>
+                ماذا تأخذين معك للزيارة
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Medical Records -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-file-medical text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">السجلات الطبية</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                            <span>بطاقة التطعيمات</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                            <span>سجل النمو والتطور</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                            <span>نتائج الفحوصات السابقة</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
+                            <span>قائمة الأدوية الحالية</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Baby Essentials -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-baby text-4xl text-pink-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">لوازم الطفل</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                            <span>حفاضات نظيفة</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                            <span>مناديل مبللة</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                            <span>بطانية إضافية</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
+                            <span>زجاجة حليب/رضاعة</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Questions List -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-question-circle text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">قائمة الأسئلة</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                            <span>اكتبي جميع أسئلتك مسبقاً</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                            <span>ملاحظات عن سلوك الطفل</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                            <span>أي مخاوف أو قلق</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
+                            <span>معلومات عن التغذية</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Developmental Checklist Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-clipboard-check text-indigo-500 ml-2"></i>
+                قائمة المراجعة التطورية
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 0-1 Month Checklist -->
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">0-1 شهر</h3>
+                        <div class="space-y-2">
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يرفع رأسه قليلاً عند البطن</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يثبت نظره على الوجوه</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يستجيب للأصوات العالية</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يمسك بإصبعك بقوة</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2-3 Months Checklist -->
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">2-3 أشهر</h3>
+                        <div class="space-y-2">
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يبتسم استجابة للوجوه</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يحمل رأسه ثابتاً</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يصدر أصواتاً مثل الغغغة</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يفتح ويغلق يديه</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 4-5 Months Checklist -->
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">4-5 أشهر</h3>
+                        <div class="space-y-2">
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يضحك بصوت عالٍ</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يجلس بالدعم</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يمسك الأشياء ويضعها في فمه</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يقلب من البطن إلى الظهر</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 6 Months Checklist -->
+                    <div>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4">6 أشهر</h3>
+                        <div class="space-y-2">
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يجلس بدون دعم</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يقلد الأصوات</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يستجيب لاسمه</span>
+                                </label>
+                            </div>
+                            <div class="checklist-item border rounded-lg p-3">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
+                                    <span>يبدأ في تناول الأطعمة الصلبة</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-yellow-50 rounded-lg p-4">
+                    <p class="text-yellow-800 text-center">
+                        <i class="fas fa-info-circle ml-2"></i>
+                        <strong>ملاحظة:</strong> إذا كان طفلك لا يحقق معظم هذه المهارات، استشيري الطبيب
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Growth Monitoring Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                    <i class="fas fa-chart-line text-green-500 ml-2"></i>
+                    مراقبة النمو
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Weight Monitoring -->
+                    <div class="bg-green-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-green-600 mb-4">
+                            <i class="fas fa-weight text-green-500 ml-2"></i>
+                            مراقبة الوزن
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">الأسبوع الأول:</p>
+                                <p class="text-sm text-gray-600">فقدان 5-10% من وزن الولادة (طبيعي)</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">الأسبوع الثاني:</p>
+                                <p class="text-sm text-gray-600">استعادة وزن الولادة</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">الأشهر 1-6:</p>
+                                <p class="text-sm text-gray-600">زيادة 150-200 جرام أسبوعياً</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Height Monitoring -->
+                    <div class="bg-blue-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">
+                            <i class="fas fa-ruler-vertical text-blue-500 ml-2"></i>
+                            مراقبة الطول
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">الولادة:</p>
+                                <p class="text-sm text-gray-600">50 سم (متوسط)</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">3 أشهر:</p>
+                                <p class="text-sm text-gray-600">60-61 سم</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">6 أشهر:</p>
+                                <p class="text-sm text-gray-600">65-67 سم</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Head Circumference -->
+                    <div class="bg-purple-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold text-purple-600 mb-4">
+                            <i class="fas fa-circle text-purple-500 ml-2"></i>
+                            محيط الرأس
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">الولادة:</p>
+                                <p class="text-sm text-gray-600">35 سم (متوسط)</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">3 أشهر:</p>
+                                <p class="text-sm text-gray-600">40-41 سم</p>
+                            </div>
+                            <div class="bg-white rounded p-3">
+                                <p class="font-medium text-gray-700">6 أشهر:</p>
+                                <p class="text-sm text-gray-600">43-44 سم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-red-50 rounded-lg p-4">
+                    <h4 class="font-bold text-red-700 mb-2">علامات القلق:</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• عدم زيادة الوزن أو فقدان الوزن</li>
+                            <li>• نمو أبطأ من الطبيعي</li>
+                        </ul>
+                        <ul class="text-gray-700 space-y-1">
+                            <li>• محيط الرأس ينمو بسرعة أو ببطء شديد</li>
+                            <li>• السقوط تحت الخط الثالث على منحنيات النمو</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Parent Questions Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+                <i class="fas fa-comments text-teal-500 ml-2"></i>
+                أسئلة شائعة للوالدين
+            </h2>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up">
+                    <h3 class="font-bold text-gray-800 mb-2">متى يجب أن أقلق بشأن نمو طفلي؟</h3>
+                    <p class="text-gray-600">إذا كان طفلك لا يكتسب وزناً بشكل مناسب، أو إذا كان يفقد المهارات التي تعلمها، أو إذا كان نموه أبطأ بكثير من الأطفال الآخرين في نفس العمر.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="font-bold text-gray-800 mb-2">كم مرة يجب أن أزور الطبيب؟</h3>
+                    <p class="text-gray-600">خلال الأشهر الستة الأولى، عادة ما تكون الزيارات عند الولادة، ثم شهر، شهرين، أربعة أشهر، وستة أشهر. قد تحتاجين لزيارات إضافية إذا كانت هناك مخاوف صحية.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="font-bold text-gray-800 mb-2">ماذا أفعل إذا فاتني موعد تطعيم؟</h3>
+                    <p class="text-gray-600">اتصلي بالعيادة فوراً لتحديد موعد جديد. معظم التطعيمات يمكن إعطاؤها في وقت متأخر بقليل، ولكن من الأفضل الالتزام بالجدول المحدد.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="font-bold text-gray-800 mb-2">كيف أعرف أن طفلي يتطور بشكل طبيعي؟</h3>
+                    <p class="text-gray-600">راقبي المراحل التطورية المتوقعة لكل عمر. كل طفل ينمو بمعدله الخاص، ولكن يجب أن يحقق معظم المهارات في النطاق الزمني المحدد.</p>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="font-bold text-gray-800 mb-2">ما هي علامات التأخر التطوري التي يجب أن أبحث عنها؟</h3>
+                    <p class="text-gray-600">عدم رفع الرأس، عدم الابتسام، عدم التفاعل مع الآخرين، عدم متابعة الأشياء بالعين، أو فقدان المهارات المكتسبة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Emergency Contact Section -->
+    <section class="py-16 bg-red-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-8 text-red-600">
+                    <i class="fas fa-phone-alt text-red-500 ml-2"></i>
+                    متى تتصلين بالطبيب بين الزيارات
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-red-50 rounded-lg p-4">
+                        <h3 class="font-bold text-red-700 mb-3">اتصلي بالطبيب فوراً إذا:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-thermometer text-red-500 ml-2 mt-1"></i>
+                                <span>حمى أعلى من 38°C (أقل من 3 أشهر) أو 39°C (أكبر من 3 أشهر)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lungs text-red-500 ml-2 mt-1"></i>
+                                <span>صعوبة في التنفس أو تنفس سريع جداً</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
+                                <span>علامات الجفاف الشديد</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-brain text-red-500 ml-2 mt-1"></i>
+                                <span>خمول شديد أو عدم استجابة</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                                <span>طفح جلدي أرجواني أو نزيف</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-yellow-50 rounded-lg p-4">
+                        <h3 class="font-bold text-yellow-700 mb-3">اتصلي بالطبيب خلال 24 ساعة إذا:</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-baby text-yellow-500 ml-2 mt-1"></i>
+                                <span>رفض الرضاعة المتكرر</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-vomiting text-yellow-500 ml-2 mt-1"></i>
+                                <span>قيء متكرر أو إسهال شديد</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-bed text-yellow-500 ml-2 mt-1"></i>
+                                <span>نوم غير طبيعي أو صعوبة في الاستيقاظ</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-eye text-yellow-500 ml-2 mt-1"></i>
+                                <span>احمرار أو تورم في العينين</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-allergies text-yellow-500 ml-2 mt-1"></i>
+                                <span>طفح جلدي منتشر</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6 text-center">
+                    <h4 class="text-xl font-bold mb-3">احتفظي بهذه الأرقام</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <p class="font-bold text-lg">طبيب الأطفال</p>
+                            <p class="text-sm">رقم العيادة</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">الطوارئ الطبية</p>
+                            <p class="text-lg">123</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-lg">مركز السموم</p>
+                            <p class="text-lg">911</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
+                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
+                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <ul class="text-gray-400 text-sm mt-2">
+                        <li>• منظمة الصحة العالمية (WHO)</li>
+                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li>• اليونيسف (UNICEF)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-center mb-4 md:mb-0">
+                        جميع الحقوق محفوظة © 2024 رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    </p>
+                   <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
