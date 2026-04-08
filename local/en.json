@@ -112,7 +112,11 @@
     "emergency": "Emergency: 123",
     "country": "Egypt",
     "rights": "All rights reserved",
-    "designed_by": "Baby Care | Designed with care and love for mothers and babies"
+    "designed_by": "Baby Care | Designed with care and love for mothers and babies",
+    "desc": "Comprehensive and reliable guide for mothers to care for newborns in the first six months.",
+    "medical_sources": "Medical Sources",
+    "sources_desc": "Content approved by:",
+    "copyright": "All Rights Reserved"
   },
   "vaccination": {
     "meta": {
@@ -194,6 +198,12 @@
       "t1": "Monitor baby's temperature every 4 hours",
       "t2": "Increase breastfeeding to keep baby hydrated",
       "t3": "Record the next vaccination date in your calendar"
+    },
+    "vaccines": {
+      "polio": "Polio",
+      "hib": "Haemophilus Influenzae b (Hib)",
+      "pneumococcal": "Pneumococcal",
+      "dtp": "DTP (Diphtheria, Tetanus, Pertussis)"
     }
   },
   "diseases": {
@@ -236,7 +246,9 @@
       "breathing": "Breathing difficulty (flaring nostrils or chest pulling in)",
       "fever": "Fever above 38°C (for babies under 3 months)",
       "feeding": "Inability to breastfeed or persistent vomiting of everything",
-      "neuro": "Seizures, severe lethargy (hard to wake), or high-pitched crying"
+      "neuro": "Seizures, severe lethargy (hard to wake), or high-pitched crying",
+      "breathing_title": "Breathing Issues",
+      "fever_title": "High Fever"
     },
     "dehydration": {
       "title": "Signs of Dehydration",
@@ -611,6 +623,14 @@
     },
     "warning_signs": {
       "title": "Warning Signs Requiring Immediate Medical Attention"
+    },
+    "hero": {
+      "stats": {
+        "protection": {
+          "title": "Comprehensive Protection",
+          "desc": "Integrated safety guidelines"
+        }
+      }
     }
   },
   "followup": {
@@ -1537,5 +1557,6 @@
   "missing_vaccination_289": "Daily Care",
   "missing_vaccination_291": "Breastfeeding",
   "missing_vaccination_293": "Safety",
-  "missing_vaccination_295": "Routine Checkups"
+  "missing_vaccination_295": "Routine Checkups",
+  "stats_available_desc": "tips & guidelines"
 }
