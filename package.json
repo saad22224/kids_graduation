@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "i18n-js": "^4.5.3"
+  }
+}

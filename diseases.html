@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الأمراض والعلامات الخطر - رعاية الرضيع</title>
+    <title data-i18n="diseases.meta.title">الأمراض والعلامات الخطر - رعاية الرضيع</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
+        }
+
+        body.en {
+            font-family: 'Inter', sans-serif !important;
         }
         
         .gradient-bg {
@@ -78,20 +80,25 @@
                         <i class="fas fa-baby text-2xl text-purple-600"></i>
                     </div>
                     <div>
-                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
-                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                        <span class="text-2xl font-bold text-white" data-i18n="header.logo">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200" data-i18n="header.subtitle">دليلك الشامل للأشهر الستة الأولى</p>
                     </div>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-1 space-x-reverse">
-                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                    <!-- Language Switcher -->
+                    <button id="lang-switcher" onclick="toggleLang()" class="bg-white text-purple-700 px-3 py-1 rounded-lg font-bold hover:bg-purple-50 transition-all duration-300 ml-2">
+                        English
+                    </button>
                 </div>
                 
                 <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
@@ -101,14 +108,20 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
-                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                <!-- Mobile Language Switcher -->
+                <button onclick="toggleLang()" class="w-full text-left py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-purple-600 pt-2">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span data-i18n="lang.en">English</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -125,17 +138,17 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
                     <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-i18n="diseases.title">
                             الأمراض والعلامات الخطر
                         </h1>
-                        <p class="text-xl mb-8 text-red-100 leading-relaxed">
+                        <p class="text-xl mb-8 text-red-100 leading-relaxed" data-i18n="diseases.subtitle">
                             التعرف على الأمراض الشائعة وعلامات الخطر التي تتطلب استشارة طبية فورية
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#sepsis" class="bg-white text-red-600 px-8 py-4 rounded-full font-bold hover:bg-red-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#sepsis" class="bg-white text-red-600 px-8 py-4 rounded-full font-bold hover:bg-red-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="diseases.btn_sepsis">
                                 <i class="fas fa-exclamation-triangle ml-2"></i>الإنتان
                             </a>
-                            <a href="#warning-signs" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-red-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#warning-signs" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-red-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="diseases.btn_danger">
                                 <i class="fas fa-heartbeat ml-2"></i>علامات الخطر
                             </a>
                         </div>
@@ -145,17 +158,17 @@
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-procedures text-2xl mb-1"></i>
                                 <p class="text-sm font-medium">24/7</p>
-                                <p class="text-xs">مراقبة</p>
+                                <p class="text-xs" data-i18n="missing_diseases_64">مراقبة</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-phone-alt text-2xl mb-1"></i>
                                 <p class="text-sm font-medium">123</p>
-                                <p class="text-xs">طوارئ</p>
+                                <p class="text-xs" data-i18n="missing_diseases_68">طوارئ</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-shield-virus text-2xl mb-1"></i>
                                 <p class="text-sm font-medium">100%</p>
-                                <p class="text-xs">حماية</p>
+                                <p class="text-xs" data-i18n="missing_diseases_72">حماية</p>
                             </div>
                         </div>
                     </div>
@@ -204,57 +217,49 @@
                     <div class="danger-pulse inline-block">
                         <i class="fas fa-exclamation-triangle text-6xl text-red-600 mb-4"></i>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-red-600">الإنتان (Sepsis) - حالة طارئة</h2>
-                    <p class="text-lg text-red-700 mt-2">الإنتان هو استجابة جسدية شديدة للعدوى ويتطلب تدخل طبي فوري</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-red-600" data-i18n="diseases.sepsis.title">الإنتان (Sepsis) - حالة طارئة</h2>
+                    <p class="text-lg text-red-700 mt-2" data-i18n="diseases.sepsis.desc">الإنتان هو استجابة جسدية شديدة للعدوى ويتطلب تدخل طبي فوري</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-white rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4">
+                        <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.sepsis.symptoms_title">
                             <i class="fas fa-thermometer-high ml-2"></i>
                             الأعراض الرئيسية
                         </h3>
                         <ul class="space-y-3 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-temperature-high text-red-500 ml-2 mt-1"></i>
-                                <span><strong>حمى عالية:</strong> درجة حرارة أعلى من 38°C أو انخفاض شديد في درجة الحرارة</span>
+                                <span data-i18n="diseases.sepsis.s1"><strong>حمى عالية:</strong> درجة حرارة أعلى من 38°C أو انخفاض شديد في درجة الحرارة</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-heartbeat text-red-500 ml-2 mt-1"></i>
-                                <span><strong>تسارع ضربات القلب:</strong> أكثر من 160 ضربة في الدقيقة</span>
+                                <span data-i18n="diseases.sepsis.s2"><strong>تسارع ضربات القلب:</strong> أكثر من 160 ضربة في الدقيقة</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-lungs text-red-500 ml-2 mt-1"></i>
-                                <span><strong>صعوبة في التنفس:</strong> تنفس سريع أو صعوبة في التنفس</span>
+                                <span data-i18n="diseases.sepsis.s3"><strong>صعوبة في التنفس:</strong> تنفس سريع أو صعوبة في التنفس</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-brain text-red-500 ml-2 mt-1"></i>
-                                <span><strong>تغير في الوعي:</strong> خمول شديد أو عدم استجابة</span>
+                                <span data-i18n="diseases.sepsis.s4"><strong>تغير في الوعي:</strong> خمول شديد أو عدم استجابة</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
-                                <span><strong>بقع جلدية:</strong> طفح جلدي أرجواني لا يختفي عند الضغط</span>
+                                <span data-i18n="diseases.sepsis.s5"><strong>بقع جلدية:</strong> طفح جلدي أرجواني لا يختفي عند الضغط</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="bg-white rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4">
+                        <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.sepsis.action_title">
                             <i class="fas fa-ambulance ml-2"></i>
                             الإجراءات الفورية
                         </h3>
                         <div class="space-y-4">
                             <div class="bg-red-100 rounded-lg p-4">
-                                <h4 class="font-bold text-red-700 mb-2">اتصل بالطوارئ فوراً</h4>
-                                <p class="text-gray-700">الإنتان حالة طبية طارئة تتطلب علاجاً فورياً في المستشفى</p>
-                            </div>
-                            <div class="bg-yellow-50 rounded-lg p-4">
-                                <h4 class="font-bold text-yellow-700 mb-2">لا تنتظر</h4>
-                                <p class="text-gray-700">كل دقيقة مهمة في علاج الإنتان. لا تنتظر تحسن الأعراض</p>
-                            </div>
-                            <div class="bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-bold text-blue-700 mb-2">أخبر الطبيب</h4>
-                                <p class="text-gray-700">ذكر جميع الأعراض ومتى بدأت وأي عدوى حديثة</p>
+                                <h4 class="font-bold text-red-700 mb-2" data-i18n="diseases.sepsis.action_title">اتصل بالطوارئ فوراً</h4>
+                                <p class="text-gray-700" data-i18n="diseases.sepsis.action_desc">إذا لاحظت أيًا من هذه العلامات، فتوجه فورًا إلى أقرب قسم طوارئ للأطفال. التأخير قد يعرض حياة الرضيع للخطر</p>
                             </div>
                         </div>
                     </div>
@@ -266,7 +271,7 @@
     <!-- Common Diseases Section -->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="diseases.common.title">
                 <i class="fas fa-virus text-purple-500 ml-2"></i>
                 الأمراض الشائعة في الأشهر الستة الأولى
             </h2>
@@ -277,22 +282,9 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-lungs-virus text-4xl text-blue-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">التهابات الجهاز التنفسي</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.respiratory.title">التهابات الجهاز التنفسي</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p><strong>الالتهاب الرئوي:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• سعال وضيق في التنفس</li>
-                            <li>• حمى وخمول</li>
-                            <li>• صوت صفير عند التنفس</li>
-                        </ul>
-                        <p><strong>التهاب الشعب الهوائية:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• سعال قوي</li>
-                            <li>• صعوبة في التنفس</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4 bg-blue-50 rounded p-3">
-                        <p class="text-sm text-blue-700"><strong>متى تستشير الطبيب:</strong> صعوبة في التنفس أو حمى عالية</p>
+                        <p data-i18n="diseases.common.respiratory.desc">تشمل نزلات البرد والتهاب القصيبات. راقبي سرعة التنفس أو الأصوات غير الطبيعية</p>
                     </div>
                 </div>
                 
@@ -301,22 +293,9 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-stomach text-4xl text-green-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">أمراض الجهاز الهضمي</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.digestive.title">أمراض الجهاز الهضمي</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p><strong>الإسهال:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• براز سائل متكرر</li>
-                            <li>• جفاف (جفاف الفم، عدم بلل الحفاض)</li>
-                            <li>• قيء</li>
-                        </ul>
-                        <p><strong>الارتجاع:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• قيء بعد الرضاعة</li>
-                            <li>• البكاء أثناء الرضاعة</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4 bg-green-50 rounded p-3">
-                        <p class="text-sm text-green-700"><strong>متى تستشير الطبيب:</strong> علامات الجفاف أو قيء مستمر</p>
+                        <p data-i18n="diseases.common.digestive.desc">مثل المغص والارتجاع والإسهال والإمساك. راقبي عدد الحفاضات وشكل البراز</p>
                     </div>
                 </div>
                 
@@ -325,21 +304,9 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-allergies text-4xl text-yellow-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">أمراض الجلد</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.skin.title">أمراض الجلد</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p><strong>طفح الحفاض:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• احمرار في منطقة الحفاض</li>
-                            <li>• تهيج وبكاء عند تغيير الحفاض</li>
-                        </ul>
-                        <p><strong>التهاب الجلد التأتبي:</strong></p>
-                        <ul class="text-sm space-y-1 mr-4">
-                            <li>• جفاف وحكة في الجلد</li>
-                            <li>• احمرار في الوجه والمفاصل</li>
-                        </ul>
-                    </div>
-                    <div class="mt-4 bg-yellow-50 rounded p-3">
-                        <p class="text-sm text-yellow-700"><strong>متى تستشير الطبيب:</strong> طفح شديد أو عدم تحسن</p>
+                        <p data-i18n="diseases.common.skin.desc">مثل طفح الحفاض، الأكزيما، وفطريات الفم (بقع بيضاء)</p>
                     </div>
                 </div>
             </div>
@@ -349,7 +316,7 @@
     <!-- Warning Signs Section -->
     <section id="warning-signs" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-red-600" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-red-600" data-aos="fade-up" data-i18n="diseases.danger_signs.title">
                 <i class="fas fa-exclamation-circle text-red-500 ml-2"></i>
                 علامات الخطر التي تتطلب استشارة طبية فورية
             </h2>
@@ -357,104 +324,66 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Breathing Issues -->
                 <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6" data-aos="fade-up">
-                    <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.danger_signs.breathing_title">
                         <i class="fas fa-lungs text-red-500 ml-2"></i>
                         مشاكل التنفس
                     </h3>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>تنفس سريع (أكثر من 60 نفس في الدقيقة)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>صعوبة في التنفس أو انكماش الصدر</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>زرقة في الشفاه أو الأطراف</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>صوت صفير عند التنفس</span>
+                            <span data-i18n="diseases.danger_signs.breathing">صعوبة في التنفس (اتساع فتحات الأنف أو سحب الصدر للداخل)</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- Fever and Temperature -->
                 <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.danger_signs.fever_title">
                         <i class="fas fa-thermometer text-red-500 ml-2"></i>
                         الحمى ودرجة الحرارة
                     </h3>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>حمى أعلى من 38°C في أقل من 3 أشهر</span>
+                        </li><li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
+                            <span data-i18n="missing_diseases_173">حمى أعلى من 39°C في أي عمر</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>حمى أعلى من 39°C في أي عمر</span>
+                            <span data-i18n="missing_diseases_176">حمى تستمر أكثر من 3 أيام</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>حمى تستمر أكثر من 3 أيام</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>انخفاض شديد في درجة الحرارة</span>
+                            <span data-i18n="missing_diseases_179">انخفاض شديد في درجة الحرارة</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- Feeding Issues -->
                 <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="missing_diseases_181" data-i18n-html="true">
                         <i class="fas fa-baby-bottle text-red-500 ml-2"></i>
                         مشاكل التغذية
                     </h3>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>رفض الرضاعة المتكرر</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>قيء شديد أو مستمر</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>فقدان الوزن أو عدم زيادة الوزن</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>جفاف (جفاف الفم، عدم بلل الحفاض)</span>
+                            <span data-i18n="diseases.danger_signs.feeding">عدم القدرة على الرضاعة أو قيء مستمر لكل شيء</span>
                         </li>
                     </ul>
                 </div>
                 
                 <!-- Neurological Signs -->
                 <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="text-xl font-bold text-red-600 mb-4">
+                    <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="missing_diseases_188" data-i18n-html="true">
                         <i class="fas fa-brain text-red-500 ml-2"></i>
                         الأعراض العصبية
                     </h3>
                     <ul class="space-y-2 text-gray-700">
                         <li class="flex items-start">
                             <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>خمول شديد أو عدم استجابة</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>تهيج شديد أو بكاء مستمر</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>نوبات تشنجية</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                            <span>تصلب الرقبة أو تورم اليافوخ</span>
+                            <span data-i18n="diseases.danger_signs.neuro">تشنجات، خمول شديد (صعوبة في الاستيقاظ)، أو بكاء عالي النبرة</span>
                         </li>
                     </ul>
                 </div>
@@ -468,7 +397,7 @@
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-center mb-8 text-yellow-600">
                     <i class="fas fa-tint text-yellow-500 ml-2"></i>
-                    علامات الجفاف - خطر شائع
+                    <span data-i18n="diseases.dehydration.title">علامات الجفاف - خطر شائع</span>
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -476,11 +405,11 @@
                         <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-check text-green-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-green-600 mb-2">جفاف خفيف</h3>
+                        <h3 class="font-bold text-green-600 mb-2" data-i18n="diseases.dehydration.mild">جفاف خفيف</h3>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• عطش متزايد</li>
-                            <li>• جفاف الفم قليلاً</li>
-                            <li>• بكاء بدون دموع</li>
+                            <li data-i18n="missing_diseases_206">• عطش متزايد</li>
+                            <li data-i18n="missing_diseases_207">• جفاف الفم قليلاً</li>
+                            <li data-i18n="missing_diseases_208">• بكاء بدون دموع</li>
                         </ul>
                     </div>
                     
@@ -488,11 +417,11 @@
                         <div class="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-yellow-600 mb-2">جفاف متوسط</h3>
+                        <h3 class="font-bold text-yellow-600 mb-2" data-i18n="diseases.dehydration.moderate">جفاف متوسط</h3>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• جفاف الفم والشفاه</li>
-                            <li>• غور العينين</li>
-                            <li>• بلل حفاض أقل</li>
+                            <li data-i18n="missing_diseases_214">• جفاف الفم والشفاه</li>
+                            <li data-i18n="missing_diseases_215">• غور العينين</li>
+                            <li data-i18n="missing_diseases_216">• بلل حفاض أقل</li>
                         </ul>
                     </div>
                     
@@ -500,17 +429,17 @@
                         <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-times text-red-600 text-2xl"></i>
                         </div>
-                        <h3 class="font-bold text-red-600 mb-2">جفاف شديد</h3>
+                        <h3 class="font-bold text-red-600 mb-2" data-i18n="diseases.dehydration.severe">جفاف شديد</h3>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• غور العينين بشدة</li>
-                            <li>• عدم بلل الحفاض</li>
-                            <li>• خمول أو فقدان الوعي</li>
+                            <li data-i18n="missing_diseases_222">• غور العينين بشدة</li>
+                            <li data-i18n="missing_diseases_223">• عدم بلل الحفاض</li>
+                            <li data-i18n="missing_diseases_224">• خمول أو فقدان الوعي</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="bg-yellow-100 rounded-lg p-4 mt-6 text-center">
-                    <p class="text-yellow-800 font-bold">الجفاف الشديد يتطلب علاجاً طارئاً في المستشفى</p>
+                    <p class="text-yellow-800 font-bold" data-i18n="missing_diseases_226">الجفاف الشديد يتطلب علاجاً طارئاً في المستشفى</p>
                 </div>
             </div>
         </div>
@@ -520,37 +449,37 @@
     <section class="py-16">
         <div class="container mx-auto px-4">
             <div class="bg-gradient-to-r from-red-500 to-red-600 text-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8">
+                <h2 class="text-3xl font-bold text-center mb-8" data-i18n="diseases.emergency.title">
                     <i class="fas fa-hospital ml-2"></i>
                     متى تذهب إلى الطوارئ فوراً
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-white bg-opacity-10 rounded-lg p-4">
-                        <h3 class="font-bold mb-3">اتصل بالطوارئ إذا كان الطفل:</h3>
+                        <h3 class="font-bold mb-3" data-i18n="missing_diseases_234">اتصل بالطوارئ إذا كان الطفل:</h3>
                         <ul class="space-y-2 text-sm">
-                            <li>• يواجه صعوبة في التنفس</li>
-                            <li>• لديه حمى أعلى من 39°C</li>
-                            <li>• يعاني من نوبات تشنجية</li>
-                            <li>• لا يستجيب أو خامل جداً</li>
-                            <li>• لديه بقع جلدية أرجوانية</li>
+                            <li data-i18n="missing_diseases_236">• يواجه صعوبة في التنفس</li>
+                            <li data-i18n="missing_diseases_237">• لديه حمى أعلى من 39°C</li>
+                            <li data-i18n="missing_diseases_238">• يعاني من نوبات تشنجية</li>
+                            <li data-i18n="missing_diseases_239">• لا يستجيب أو خامل جداً</li>
+                            <li data-i18n="missing_diseases_240">• لديه بقع جلدية أرجوانية</li>
                         </ul>
                     </div>
                     
                     <div class="bg-white bg-opacity-10 rounded-lg p-4">
-                        <h3 class="font-bold mb-3">اذهب للمستشفى مباشرة إذا:</h3>
+                        <h3 class="font-bold mb-3" data-i18n="missing_diseases_242">اذهب للمستشفى مباشرة إذا:</h3>
                         <ul class="space-y-2 text-sm">
-                            <li>• تقيأ الدم أو القيء الأخضر</li>
-                            <li>• لديه إسهال دموي</li>
-                            <li>• يعاني من جفاف شديد</li>
-                            <li>• لديه إصابة في الرأس</li>
-                            <li>• توقف عن التنفس</li>
+                            <li data-i18n="missing_diseases_244">• تقيأ الدم أو القيء الأخضر</li>
+                            <li data-i18n="missing_diseases_245">• لديه إسهال دموي</li>
+                            <li data-i18n="missing_diseases_246">• يعاني من جفاف شديد</li>
+                            <li data-i18n="missing_diseases_247">• لديه إصابة في الرأس</li>
+                            <li data-i18n="missing_diseases_248">• توقف عن التنفس</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="text-center mt-8">
-                    <div class="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg">
+                    <div class="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg" data-i18n="missing_diseases_250" data-i18n-html="true">
                         <i class="fas fa-phone-alt ml-2"></i>
                         الطوارئ الطبية: 123
                     </div>
@@ -564,34 +493,34 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
-                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="header.logo">رعاية الرضيع</h3>
+                    <p class="text-gray-400" data-i18n="footer.desc">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
-                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
-                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
-                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.home">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.vaccination">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.diseases">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.growth">النمو والتطور</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
-                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.medical_sources">المصادر الطبية</h3>
+                    <p class="text-gray-400" data-i18n="footer.sources_desc">المحتوى معتمد على:</p>
                     <ul class="text-gray-400 text-sm mt-2">
-                        <li>• منظمة الصحة العالمية (WHO)</li>
-                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
-                        <li>• اليونيسف (UNICEF)</li>
+                        <li data-i18n="missing_diseases_273">• منظمة الصحة العالمية (WHO)</li>
+                        <li data-i18n="missing_diseases_274">• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li data-i18n="missing_diseases_275">• اليونيسف (UNICEF)</li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-center mb-4 md:mb-0">
-                        جميع الحقوق محفوظة © <span class="copyright-year">2024</span> رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                    <p class="text-gray-400 text-center mb-4 md:mb-0" data-i18n="footer.copyright">
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span class="copyright-year">2024</span> <span data-i18n="footer.designed_by">رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال</span>
                     </p>
-                   <div class="text-center" style="direction: ltr;">
+                    <div class="text-center" style="direction: ltr;">
                         <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
                             <span class="text-sm">Developed with</span>
                             <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
@@ -642,5 +571,9 @@
             });
         });
     </script>
-</body>
-</html>
+    
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
+
+
+</body></html>

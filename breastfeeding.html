@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الرضاعة الطبيعية - رعاية الرضيع</title>
+    <title data-i18n="breastfeeding.meta.title">الرضاعة الطبيعية - رعاية الرضيع</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
+        }
+
+        body.en {
+            font-family: 'Inter', sans-serif !important;
         }
         
         .gradient-bg {
@@ -81,20 +83,25 @@
                         <i class="fas fa-baby text-2xl text-purple-600"></i>
                     </div>
                     <div>
-                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
-                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                        <span class="text-2xl font-bold text-white" data-i18n="header.logo">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200" data-i18n="header.subtitle">دليلك الشامل للأشهر الستة الأولى</p>
                     </div>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-1 space-x-reverse">
-                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                    <!-- Language Switcher -->
+                    <button id="lang-switcher" onclick="toggleLang()" class="bg-white text-purple-700 px-3 py-1 rounded-lg font-bold hover:bg-purple-50 transition-all duration-300 ml-2">
+                        English
+                    </button>
                 </div>
                 
                 <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
@@ -104,14 +111,20 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
-                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                <!-- Mobile Language Switcher -->
+                <button onclick="toggleLang()" class="w-full text-left py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-purple-600 pt-2">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span data-i18n="lang.en">English</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -128,17 +141,17 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
                     <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-i18n="breastfeeding.title">
                             الرضاعة الطبيعية
                         </h1>
-                        <p class="text-xl mb-8 text-pink-100 leading-relaxed">
+                        <p class="text-xl mb-8 text-pink-100 leading-relaxed" data-i18n="breastfeeding.subtitle">
                             دليل شامل للرضاعة الطبيعية، التقنيات الصحيحة، وحل المشاكل الشائعة للأم والطفل
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#techniques" class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold hover:bg-pink-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#techniques" data-i18n="breastfeeding.techniques.title" class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold hover:bg-pink-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
                                 <i class="fas fa-heart ml-2"></i>التقنيات الصحيحة
                             </a>
-                            <a href="#problems" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-pink-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#problems" data-i18n="breastfeeding.problems.title" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-pink-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
                                 <i class="fas fa-exclamation-triangle ml-2"></i>المشاكل والحلول
                             </a>
                         </div>
@@ -147,18 +160,18 @@
                         <div class="grid grid-cols-3 gap-4 text-center">
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-heart text-2xl mb-1"></i>
-                                <p class="text-sm font-medium">6 أشهر</p>
-                                <p class="text-xs">رضاعة حصرية</p>
+                                <p class="text-sm font-medium" data-i18n="breastfeeding.stats.exclusive_title">6 أشهر</p>
+                                <p class="text-xs" data-i18n="breastfeeding.stats.exclusive_desc">رضاعة حصرية</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-clock text-2xl mb-1"></i>
-                                <p class="text-sm font-medium">2-3 ساعة</p>
-                                <p class="text-xs">كل رضعة</p>
+                                <p class="text-sm font-medium" data-i18n="breastfeeding.stats.frequency_title">2-3 ساعة</p>
+                                <p class="text-xs" data-i18n="breastfeeding.stats.frequency_desc">كل رضعة</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-tint text-2xl mb-1"></i>
-                                <p class="text-sm font-medium">100%</p>
-                                <p class="text-xs">تغذية كاملة</p>
+                                <p class="text-sm font-medium" data-i18n="breastfeeding.stats.nutrition_title">100%</p>
+                                <p class="text-xs" data-i18n="breastfeeding.stats.nutrition_desc">تغذية كاملة</p>
                             </div>
                         </div>
                     </div>
@@ -202,7 +215,7 @@
     <!-- Benefits Section -->
     <section class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="breastfeeding.benefits.title">
                 <i class="fas fa-heart text-pink-500 ml-2"></i>
                 فوائد الرضاعة الطبيعية
             </h2>
@@ -211,48 +224,48 @@
                 <!-- Baby Benefits -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up">
                     <i class="fas fa-baby text-4xl text-pink-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">للطفل</h3>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="breastfeeding.benefits.baby.title">للطفل</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• تغذية مثالية</li>
-                        <li>• تقوية المناعة</li>
-                        <li>• الوقاية من الأمراض</li>
-                        <li>• تطور عقلي أفضل</li>
+                        <li data-i18n="breastfeeding.benefits.baby.b1">• تغذية مثالية</li>
+                        <li data-i18n="breastfeeding.benefits.baby.b2">• تقوية المناعة</li>
+                        <li data-i18n="breastfeeding.benefits.baby.b3">• الوقاية من الأمراض</li>
+                        <li data-i18n="breastfeeding.benefits.baby.b4">• تطور عقلي أفضل</li>
                     </ul>
                 </div>
                 
                 <!-- Mother Benefits -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-female text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">للأم</h3>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_105">للأم</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• فقدان الوزن</li>
-                        <li>• تقليل النزيف</li>
-                        <li>• الوقاية من السرطان</li>
-                        <li>• تقوية الرابط العاطفي</li>
+                        <li data-i18n="missing_breastfeeding_107">• فقدان الوزن</li>
+                        <li data-i18n="missing_breastfeeding_108">• تقليل النزيف</li>
+                        <li data-i18n="missing_breastfeeding_109">• الوقاية من السرطان</li>
+                        <li data-i18n="missing_breastfeeding_110">• تقوية الرابط العاطفي</li>
                     </ul>
                 </div>
                 
                 <!-- Economic Benefits -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-dollar-sign text-4xl text-green-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">اقتصادية</h3>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_113">اقتصادية</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• توفير المال</li>
-                        <li>• لا تحتاج تجهيزات</li>
-                        <li>• متوفرة دائماً</li>
-                        <li>• درجة حرارة مثالية</li>
+                        <li data-i18n="missing_breastfeeding_115">• توفير المال</li>
+                        <li data-i18n="missing_breastfeeding_116">• لا تحتاج تجهيزات</li>
+                        <li data-i18n="missing_breastfeeding_117">• متوفرة دائماً</li>
+                        <li data-i18n="missing_breastfeeding_118">• درجة حرارة مثالية</li>
                     </ul>
                 </div>
                 
                 <!-- Environmental Benefits -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-leaf text-4xl text-green-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">بيئية</h3>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_121">بيئية</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
-                        <li>• لا نفايات بلاستيكية</li>
-                        <li>• لا تلوث</li>
-                        <li>• موارد طبيعية</li>
-                        <li>• مستدامة</li>
+                        <li data-i18n="missing_breastfeeding_123">• لا نفايات بلاستيكية</li>
+                        <li data-i18n="missing_breastfeeding_124">• لا تلوث</li>
+                        <li data-i18n="missing_breastfeeding_125">• موارد طبيعية</li>
+                        <li data-i18n="missing_breastfeeding_126">• مستدامة</li>
                     </ul>
                 </div>
             </div>
@@ -263,109 +276,109 @@
     <section id="techniques" class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800" data-i18n="breastfeeding.techniques.title">
                     <i class="fas fa-graduation-cap text-blue-500 ml-2"></i>
                     تقنيات الرضاعة الصحيحة
                 </h2>
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-xl font-bold text-blue-600 mb-4">الوضعيات الصحيحة للرضاعة</h3>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4" data-i18n="missing_breastfeeding_134">الوضعيات الصحيحة للرضاعة</h3>
                         <div class="space-y-4">
                             <!-- Cradle Hold -->
                             <div class="position-card bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-bold text-blue-700 mb-2">
+                                <h4 class="font-bold text-blue-700 mb-2" data-i18n="missing_breastfeeding_137" data-i18n-html="true">
                                     <i class="fas fa-baby text-blue-500 ml-2"></i>
                                     وضع المهد (Cradle Hold)
                                 </h4>
-                                <p class="text-gray-700 mb-2">الوضع التقليدي والأكثر شيوعاً</p>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_139">الوضع التقليدي والأكثر شيوعاً</p>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• ضعي رأس الطفل في ثني ذراعك</li>
-                                    <li>• دعمي ظهر الطفل بذراعك الآخر</li>
-                                    <li>• وجهي الطفل نحو ثديك</li>
-                                    <li>• مناسب للرضاعة الجلوس</li>
+                                    <li data-i18n="missing_breastfeeding_141">• ضعي رأس الطفل في ثني ذراعك</li>
+                                    <li data-i18n="missing_breastfeeding_142">• دعمي ظهر الطفل بذراعك الآخر</li>
+                                    <li data-i18n="missing_breastfeeding_143">• وجهي الطفل نحو ثديك</li>
+                                    <li data-i18n="missing_breastfeeding_144">• مناسب للرضاعة الجلوس</li>
                                 </ul>
                             </div>
                             
                             <!-- Football Hold -->
                             <div class="position-card bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-bold text-blue-700 mb-2">
+                                <h4 class="font-bold text-blue-700 mb-2" data-i18n="missing_breastfeeding_146" data-i18n-html="true">
                                     <i class="fas fa-football-ball text-blue-500 ml-2"></i>
                                     وضع كرة القدم (Football Hold)
                                 </h4>
-                                <p class="text-gray-700 mb-2">مثالي بعد الولادة القيصرية</p>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_148">مثالي بعد الولادة القيصرية</p>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• ضعي الطفل تحت ذراعك</li>
-                                    <li>• دعمي رأسه بكف يدك</li>
-                                    <li>• جسم الطفل بجانبك</li>
-                                    <li>• مناسب للتوأم</li>
+                                    <li data-i18n="missing_breastfeeding_150">• ضعي الطفل تحت ذراعك</li>
+                                    <li data-i18n="missing_breastfeeding_151">• دعمي رأسه بكف يدك</li>
+                                    <li data-i18n="missing_breastfeeding_152">• جسم الطفل بجانبك</li>
+                                    <li data-i18n="missing_breastfeeding_153">• مناسب للتوأم</li>
                                 </ul>
                             </div>
                             
                             <!-- Side-Lying -->
                             <div class="position-card bg-blue-50 rounded-lg p-4">
-                                <h4 class="font-bold text-blue-700 mb-2">
+                                <h4 class="font-bold text-blue-700 mb-2" data-i18n="missing_breastfeeding_155" data-i18n-html="true">
                                     <i class="fas fa-bed text-blue-500 ml-2"></i>
                                     وضع الاستلقاء الجانبي
                                 </h4>
-                                <p class="text-gray-700 mb-2">مثالي للرضاعة الليلية</p>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_157">مثالي للرضاعة الليلية</p>
                                 <ul class="text-sm text-gray-600 space-y-1">
-                                    <li>• استلقي على جانبك</li>
-                                    <li>• ضعي الطفل أمامك مواجهاً لك</li>
-                                    <li>• دعمي ظهر الطفل بالوسائد</li>
-                                    <li>• يسمح بالراحة للأم</li>
+                                    <li data-i18n="missing_breastfeeding_159">• استلقي على جانبك</li>
+                                    <li data-i18n="missing_breastfeeding_160">• ضعي الطفل أمامك مواجهاً لك</li>
+                                    <li data-i18n="missing_breastfeeding_161">• دعمي ظهر الطفل بالوسائد</li>
+                                    <li data-i18n="missing_breastfeeding_162">• يسمح بالراحة للأم</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     
                     <div>
-                        <h3 class="text-xl font-bold text-blue-600 mb-4">خطوات الرضاعة الصحيحة</h3>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4" data-i18n="missing_breastfeeding_164">خطوات الرضاعة الصحيحة</h3>
                         <div class="space-y-4">
                             <div class="bg-green-50 rounded-lg p-4">
-                                <h4 class="font-bold text-green-700 mb-3">التحضير للرضاعة</h4>
+                                <h4 class="font-bold text-green-700 mb-3" data-i18n="missing_breastfeeding_167">التحضير للرضاعة</h4>
                                 <ul class="space-y-2 text-gray-700">
                                     <li class="flex items-start">
                                         <div class="bg-green-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-green-600 text-xs font-bold">1</span>
                                         </div>
-                                        <span>اغسلي يديك جيداً قبل الرضاعة</span>
+                                        <span data-i18n="missing_breastfeeding_172">اغسلي يديك جيداً قبل الرضاعة</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="bg-green-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-green-600 text-xs font-bold">2</span>
                                         </div>
-                                        <span>اجلسي في وضع مريح مع دعم ظهرك</span>
+                                        <span data-i18n="missing_breastfeeding_176">اجلسي في وضع مريح مع دعم ظهرك</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="bg-green-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-green-600 text-xs font-bold">3</span>
                                         </div>
-                                        <span>استخدمي وسائد لدعم ذراعيك والطفل</span>
+                                        <span data-i18n="missing_breastfeeding_180">استخدمي وسائد لدعم ذراعيك والطفل</span>
                                     </li>
                                 </ul>
                             </div>
                             
                             <div class="bg-yellow-50 rounded-lg p-4">
-                                <h4 class="font-bold text-yellow-700 mb-3">تقنية الإمساك الصحيح</h4>
+                                <h4 class="font-bold text-yellow-700 mb-3" data-i18n="missing_breastfeeding_182">تقنية الإمساك الصحيح</h4>
                                 <ul class="space-y-2 text-gray-700">
                                     <li class="flex items-start">
                                         <div class="bg-yellow-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-yellow-600 text-xs font-bold">1</span>
                                         </div>
-                                        <span>افتحي فم الطفل عند لمسة شفتك بحلمة الثدي</span>
+                                        <span data-i18n="missing_breastfeeding_187">افتحي فم الطفل عند لمسة شفتك بحلمة الثدي</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="bg-yellow-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-yellow-600 text-xs font-bold">2</span>
                                         </div>
-                                        <span>تأكدي من أن الطفل يأخذ جزءاً كبيراً من الهالة</span>
+                                        <span data-i18n="missing_breastfeeding_191">تأكدي من أن الطفل يأخذ جزءاً كبيراً من الهالة</span>
                                     </li>
                                     <li class="flex items-start">
                                         <div class="bg-yellow-100 rounded-full w-6 h-6 flex items-center justify-center ml-2 flex-shrink-0">
                                             <span class="text-yellow-600 text-xs font-bold">3</span>
                                         </div>
-                                        <span>شفتا الطفل يجب أن تكونا مفتوحتين واسعاً</span>
+                                        <span data-i18n="missing_breastfeeding_195">شفتا الطفل يجب أن تكونا مفتوحتين واسعاً</span>
                                     </li>
                                 </ul>
                             </div>
@@ -373,11 +386,11 @@
                         
                         <!-- Video Placeholder -->
                         <div class="mt-6">
-                            <h4 class="font-bold text-gray-800 mb-3">فيديو تعليمي</h4>
+                            <h4 class="font-bold text-gray-800 mb-3" data-i18n="missing_breastfeeding_197">فيديو تعليمي</h4>
                             <div class="video-placeholder rounded-lg h-48 flex items-center justify-center">
                                 <div class="text-center">
                                     <i class="fas fa-play-circle text-4xl text-pink-400 mb-2"></i>
-                                    <p class="text-gray-600">فيديو: تقنيات الرضاعة الصحيحة</p>
+                                    <p class="text-gray-600" data-i18n="missing_breastfeeding_201">فيديو: تقنيات الرضاعة الصحيحة</p>
                                 </div>
                             </div>
                         </div>
@@ -390,7 +403,7 @@
     <!-- Common Problems Section -->
     <section id="problems" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="breastfeeding.problems.title">
                 <i class="fas fa-exclamation-triangle text-orange-500 ml-2"></i>
                 المشاكل الشائعة وحلولها
             </h2>
@@ -401,23 +414,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-exclamation-circle text-4xl text-red-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">تشقق الحلمات</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_210">تشقق الحلمات</h3>
                     <div class="space-y-3">
                         <div class="bg-red-50 rounded p-3">
-                            <p class="font-medium text-red-700 mb-1">الأسباب:</p>
+                            <p class="font-medium text-red-700 mb-1" data-i18n="missing_breastfeeding_213">الأسباب:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• وضعية الرضاعة خاطئة</li>
-                                <li>• إمساك غير صحيح بالثدي</li>
-                                <li>• نظافة مفرطة</li>
+                                <li data-i18n="missing_breastfeeding_215">• وضعية الرضاعة خاطئة</li>
+                                <li data-i18n="missing_breastfeeding_216">• إمساك غير صحيح بالثدي</li>
+                                <li data-i18n="missing_breastfeeding_217">• نظافة مفرطة</li>
                             </ul>
                         </div>
                         <div class="bg-green-50 rounded p-3">
-                            <p class="font-medium text-green-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-green-700 mb-1" data-i18n="missing_breastfeeding_219">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• تصحيح وضعية الرضاعة</li>
-                                <li>• وضع حليب الأم على الحلمات</li>
-                                <li>• استخدام كريم لانولين</li>
-                                <li>• تجنب الصابون والكحول</li>
+                                <li data-i18n="missing_breastfeeding_221">• تصحيح وضعية الرضاعة</li>
+                                <li data-i18n="missing_breastfeeding_222">• وضع حليب الأم على الحلمات</li>
+                                <li data-i18n="missing_breastfeeding_223">• استخدام كريم لانولين</li>
+                                <li data-i18n="missing_breastfeeding_224">• تجنب الصابون والكحول</li>
                             </ul>
                         </div>
                     </div>
@@ -428,23 +441,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-tint-slash text-4xl text-blue-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">قلة الحليب</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_228">قلة الحليب</h3>
                     <div class="space-y-3">
                         <div class="bg-blue-50 rounded p-3">
-                            <p class="font-medium text-blue-700 mb-1">الأسباب:</p>
+                            <p class="font-medium text-blue-700 mb-1" data-i18n="missing_breastfeeding_231">الأسباب:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• الرضاعة غير المتكررة</li>
-                                <li>• التوتر والإرهاق</li>
-                                <li>• بعض الأدوية</li>
+                                <li data-i18n="missing_breastfeeding_233">• الرضاعة غير المتكررة</li>
+                                <li data-i18n="missing_breastfeeding_234">• التوتر والإرهاق</li>
+                                <li data-i18n="missing_breastfeeding_235">• بعض الأدوية</li>
                             </ul>
                         </div>
                         <div class="bg-green-50 rounded p-3">
-                            <p class="font-medium text-green-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-green-700 mb-1" data-i18n="missing_breastfeeding_237">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• زيادة عدد الرضعات</li>
-                                <li>• الراحة والتغذية الجيدة</li>
-                                <li>• شرب السوائل بكثرة</li>
-                                <li>• ضخ الحليب بانتظام</li>
+                                <li data-i18n="missing_breastfeeding_239">• زيادة عدد الرضعات</li>
+                                <li data-i18n="missing_breastfeeding_240">• الراحة والتغذية الجيدة</li>
+                                <li data-i18n="missing_breastfeeding_241">• شرب السوائل بكثرة</li>
+                                <li data-i18n="missing_breastfeeding_242">• ضخ الحليب بانتظام</li>
                             </ul>
                         </div>
                     </div>
@@ -455,23 +468,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-expand text-4xl text-purple-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">احتقان الثدي</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_246">احتقان الثدي</h3>
                     <div class="space-y-3">
                         <div class="bg-purple-50 rounded p-3">
-                            <p class="font-medium text-purple-700 mb-1">الأعراض:</p>
+                            <p class="font-medium text-purple-700 mb-1" data-i18n="missing_breastfeeding_249">الأعراض:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• تصلب وألم في الثدي</li>
-                                <li>• تورم واحمرار</li>
-                                <li>• صعوبة في الرضاعة</li>
+                                <li data-i18n="missing_breastfeeding_251">• تصلب وألم في الثدي</li>
+                                <li data-i18n="missing_breastfeeding_252">• تورم واحمرار</li>
+                                <li data-i18n="missing_breastfeeding_253">• صعوبة في الرضاعة</li>
                             </ul>
                         </div>
                         <div class="bg-green-50 rounded p-3">
-                            <p class="font-medium text-green-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-green-700 mb-1" data-i18n="missing_breastfeeding_255">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• الرضاعة المتكررة</li>
-                                <li>• كمادات دافئة قبل الرضاعة</li>
-                                <li>• ضخ الحليب الزائد</li>
-                                <li>• تدليك الثدي بلطف</li>
+                                <li data-i18n="missing_breastfeeding_257">• الرضاعة المتكررة</li>
+                                <li data-i18n="missing_breastfeeding_258">• كمادات دافئة قبل الرضاعة</li>
+                                <li data-i18n="missing_breastfeeding_259">• ضخ الحليب الزائد</li>
+                                <li data-i18n="missing_breastfeeding_260">• تدليك الثدي بلطف</li>
                             </ul>
                         </div>
                     </div>
@@ -482,23 +495,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-thermometer text-4xl text-red-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">التهاب الثدي</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_264">التهاب الثدي</h3>
                     <div class="space-y-3">
                         <div class="bg-red-50 rounded p-3">
-                            <p class="font-medium text-red-700 mb-1">الأعراض:</p>
+                            <p class="font-medium text-red-700 mb-1" data-i18n="missing_breastfeeding_267">الأعراض:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• حمى وقشعريرة</li>
-                                <li>• ألم شديد في الثدي</li>
-                                <li>• احمرار وتورم</li>
+                                <li data-i18n="missing_breastfeeding_269">• حمى وقشعريرة</li>
+                                <li data-i18n="missing_breastfeeding_270">• ألم شديد في الثدي</li>
+                                <li data-i18n="missing_breastfeeding_271">• احمرار وتورم</li>
                             </ul>
                         </div>
                         <div class="bg-yellow-50 rounded p-3">
-                            <p class="font-medium text-yellow-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-yellow-700 mb-1" data-i18n="missing_breastfeeding_273">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• استشارة الطبيب فوراً</li>
-                                <li>• المضادات الحيوية</li>
-                                <li>• الراحة والسوائل</li>
-                                <li>• الاستمرار في الرضاعة</li>
+                                <li data-i18n="missing_breastfeeding_275">• استشارة الطبيب فوراً</li>
+                                <li data-i18n="missing_breastfeeding_276">• المضادات الحيوية</li>
+                                <li data-i18n="missing_breastfeeding_277">• الراحة والسوائل</li>
+                                <li data-i18n="missing_breastfeeding_278">• الاستمرار في الرضاعة</li>
                             </ul>
                         </div>
                     </div>
@@ -509,22 +522,22 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-bacterium text-4xl text-yellow-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">القلاع الفموي</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_282">القلاع الفموي</h3>
                     <div class="space-y-3">
                         <div class="bg-yellow-50 rounded p-3">
-                            <p class="font-medium text-yellow-700 mb-1">الأعراض:</p>
+                            <p class="font-medium text-yellow-700 mb-1" data-i18n="missing_breastfeeding_285">الأعراض:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• بقع بيضاء في فم الطفل</li>
-                                <li>• ألم في الحلمات</li>
-                                <li>• حكة وحرقان</li>
+                                <li data-i18n="missing_breastfeeding_287">• بقع بيضاء في فم الطفل</li>
+                                <li data-i18n="missing_breastfeeding_288">• ألم في الحلمات</li>
+                                <li data-i18n="missing_breastfeeding_289">• حكة وحرقان</li>
                             </ul>
                         </div>
                         <div class="bg-green-50 rounded p-3">
-                            <p class="font-medium text-green-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-green-700 mb-1" data-i18n="missing_breastfeeding_291">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• علاج طبي للأم والطفل</li>
-                                <li>• غلي الألعاب والحلمات</li>
-                                <li>• نظافة اليدين</li>
+                                <li data-i18n="missing_breastfeeding_293">• علاج طبي للأم والطفل</li>
+                                <li data-i18n="missing_breastfeeding_294">• غلي الألعاب والحلمات</li>
+                                <li data-i18n="missing_breastfeeding_295">• نظافة اليدين</li>
                             </ul>
                         </div>
                     </div>
@@ -535,23 +548,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-baby-sling text-4xl text-indigo-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">رفض الرضاعة</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_breastfeeding_299">رفض الرضاعة</h3>
                     <div class="space-y-3">
                         <div class="bg-indigo-50 rounded p-3">
-                            <p class="font-medium text-indigo-700 mb-1">الأسباب:</p>
+                            <p class="font-medium text-indigo-700 mb-1" data-i18n="missing_breastfeeding_302">الأسباب:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• ألم في الأسنان</li>
-                                <li>• مرض أو عدم راحة</li>
-                                <li>• تغير في طعم الحليب</li>
+                                <li data-i18n="missing_breastfeeding_304">• ألم في الأسنان</li>
+                                <li data-i18n="missing_breastfeeding_305">• مرض أو عدم راحة</li>
+                                <li data-i18n="missing_breastfeeding_306">• تغير في طعم الحليب</li>
                             </ul>
                         </div>
                         <div class="bg-green-50 rounded p-3">
-                            <p class="font-medium text-green-700 mb-1">الحلول:</p>
+                            <p class="font-medium text-green-700 mb-1" data-i18n="missing_breastfeeding_308">الحلول:</p>
                             <ul class="text-sm text-gray-600 space-y-1">
-                                <li>• الصبر والمحاولة المتكررة</li>
-                                <li>• تغيير وضعية الرضاعة</li>
-                                <li>• الرضاعة في مكان هادئ</li>
-                                <li>• استشارة الطبيب</li>
+                                <li data-i18n="missing_breastfeeding_310">• الصبر والمحاولة المتكررة</li>
+                                <li data-i18n="missing_breastfeeding_311">• تغيير وضعية الرضاعة</li>
+                                <li data-i18n="missing_breastfeeding_312">• الرضاعة في مكان هادئ</li>
+                                <li data-i18n="missing_breastfeeding_313">• استشارة الطبيب</li>
                             </ul>
                         </div>
                     </div>
@@ -564,7 +577,7 @@
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800" data-i18n="breastfeeding.maternal.title">
                     <i class="fas fa-female text-pink-500 ml-2"></i>
                     صعوبات الأم وكيفية التعامل معها
                 </h2>
@@ -572,46 +585,46 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- Physical Difficulties -->
                     <div>
-                        <h3 class="text-xl font-bold text-pink-600 mb-4">الصعوبات الجسدية</h3>
+                        <h3 class="text-xl font-bold text-pink-600 mb-4" data-i18n="missing_breastfeeding_321">الصعوبات الجسدية</h3>
                         <div class="space-y-4">
                             <div class="bg-pink-50 rounded-lg p-4">
-                                <h4 class="font-bold text-pink-700 mb-2">الإرهاق والتعب</h4>
-                                <p class="text-gray-700 mb-2">الإرهاق شائع في الأسابيع الأولى</p>
+                                <h4 class="font-bold text-pink-700 mb-2" data-i18n="missing_breastfeeding_324">الإرهاق والتعب</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_325">الإرهاق شائع في الأسابيع الأولى</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الحلول:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_327">الحلول:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• النوم عندما ينام الطفل</li>
-                                        <li>• طلب المساعدة من العائلة</li>
-                                        <li>• تقسيم المهام مع الشريك</li>
-                                        <li>• تجنب الأعمال غير الضرورية</li>
+                                        <li data-i18n="missing_breastfeeding_329">• النوم عندما ينام الطفل</li>
+                                        <li data-i18n="missing_breastfeeding_330">• طلب المساعدة من العائلة</li>
+                                        <li data-i18n="missing_breastfeeding_331">• تقسيم المهام مع الشريك</li>
+                                        <li data-i18n="missing_breastfeeding_332">• تجنب الأعمال غير الضرورية</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <div class="bg-pink-50 rounded-lg p-4">
-                                <h4 class="font-bold text-pink-700 mb-2">آلام الظهر والرقبة</h4>
-                                <p class="text-gray-700 mb-2">بسبب وضعيات الرضاعة الخاطئة</p>
+                                <h4 class="font-bold text-pink-700 mb-2" data-i18n="missing_breastfeeding_334">آلام الظهر والرقبة</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_335">بسبب وضعيات الرضاعة الخاطئة</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الحلول:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_337">الحلول:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• استخدام كرسي داعم</li>
-                                        <li>• وضع وسائد للدعم</li>
-                                        <li>• ممارسة تمارين الإطالة</li>
-                                        <li>• تغيير وضعيات الرضاعة</li>
+                                        <li data-i18n="missing_breastfeeding_339">• استخدام كرسي داعم</li>
+                                        <li data-i18n="missing_breastfeeding_340">• وضع وسائد للدعم</li>
+                                        <li data-i18n="missing_breastfeeding_341">• ممارسة تمارين الإطالة</li>
+                                        <li data-i18n="missing_breastfeeding_342">• تغيير وضعيات الرضاعة</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <div class="bg-pink-50 rounded-lg p-4">
-                                <h4 class="font-bold text-pink-700 mb-2">التغيرات الهرمونية</h4>
-                                <p class="text-gray-700 mb-2">تقلبات المزاج والبكاء</p>
+                                <h4 class="font-bold text-pink-700 mb-2" data-i18n="missing_breastfeeding_344">التغيرات الهرمونية</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_345">تقلبات المزاج والبكاء</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الحلول:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_347">الحلول:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• التحدث عن مشاعرك</li>
-                                        <li>• الحصول على الدعم العاطفي</li>
-                                        <li>• التغذية الجيدة والراحة</li>
-                                        <li>• استشارة الطبيب عند الحاجة</li>
+                                        <li data-i18n="missing_breastfeeding_349">• التحدث عن مشاعرك</li>
+                                        <li data-i18n="missing_breastfeeding_350">• الحصول على الدعم العاطفي</li>
+                                        <li data-i18n="missing_breastfeeding_351">• التغذية الجيدة والراحة</li>
+                                        <li data-i18n="missing_breastfeeding_352">• استشارة الطبيب عند الحاجة</li>
                                     </ul>
                                 </div>
                             </div>
@@ -620,48 +633,48 @@
                     
                     <!-- Emotional Difficulties -->
                     <div>
-                        <h3 class="text-xl font-bold text-purple-600 mb-4">الصعوبات النفسية</h3>
+                        <h3 class="text-xl font-bold text-purple-600 mb-4" data-i18n="missing_breastfeeding_354">الصعوبات النفسية</h3>
                         <div class="space-y-4">
                             <div class="bg-purple-50 rounded-lg p-4">
-                                <h4 class="font-bold text-purple-700 mb-2">القلق والأفكار السلبية</h4>
-                                <p class="text-gray-700 mb-2">القلق حول كفاية الحليب وصحة الطفل</p>
+                                <h4 class="font-bold text-purple-700 mb-2" data-i18n="missing_breastfeeding_357">القلق والأفكار السلبية</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_358">القلق حول كفاية الحليب وصحة الطفل</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الحلول:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_360">الحلول:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• الثقة بقدراتك الأمومية</li>
-                                        <li>• التعلم من مصادر موثوقة</li>
-                                        <li>• التحدث مع أمهات أخريات</li>
-                                        <li>• التركيز على إشارات الطفل الإيجابية</li>
+                                        <li data-i18n="missing_breastfeeding_362">• الثقة بقدراتك الأمومية</li>
+                                        <li data-i18n="missing_breastfeeding_363">• التعلم من مصادر موثوقة</li>
+                                        <li data-i18n="missing_breastfeeding_364">• التحدث مع أمهات أخريات</li>
+                                        <li data-i18n="missing_breastfeeding_365">• التركيز على إشارات الطفل الإيجابية</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <div class="bg-purple-50 rounded-lg p-4">
-                                <h4 class="font-bold text-purple-700 mb-2">فقدان الخصوصية</h4>
-                                <p class="text-gray-700 mb-2">الشعور بأن الطفل يحتاجك دائماً</p>
+                                <h4 class="font-bold text-purple-700 mb-2" data-i18n="missing_breastfeeding_367">فقدان الخصوصية</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_368">الشعور بأن الطفل يحتاجك دائماً</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الحلول:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_370">الحلول:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• تخصيص وقت لنفسك</li>
-                                        <li>• طلب المساعدة للخروج</li>
-                                        <li>• ضخ الحليب للرضاعة البديلة</li>
-                                        <li>• المشاركة في أنشطة ممتعة</li>
+                                        <li data-i18n="missing_breastfeeding_372">• تخصيص وقت لنفسك</li>
+                                        <li data-i18n="missing_breastfeeding_373">• طلب المساعدة للخروج</li>
+                                        <li data-i18n="missing_breastfeeding_374">• ضخ الحليب للرضاعة البديلة</li>
+                                        <li data-i18n="missing_breastfeeding_375">• المشاركة في أنشطة ممتعة</li>
                                     </ul>
                                 </div>
                             </div>
                             
                             <div class="bg-purple-50 rounded-lg p-4">
-                                <h4 class="font-bold text-purple-700 mb-2">اكتئاب ما بعد الولادة</h4>
-                                <p class="text-gray-700 mb-2">حالة طبية تتطلب علاجاً</p>
+                                <h4 class="font-bold text-purple-700 mb-2" data-i18n="missing_breastfeeding_377">اكتئاب ما بعد الولادة</h4>
+                                <p class="text-gray-700 mb-2" data-i18n="missing_breastfeeding_378">حالة طبية تتطلب علاجاً</p>
                                 <div class="text-sm text-gray-600">
-                                    <p class="font-medium mb-1">الأعراض:</p>
+                                    <p class="font-medium mb-1" data-i18n="missing_breastfeeding_380">الأعراض:</p>
                                     <ul class="mr-4 space-y-1">
-                                        <li>• حزن شديد ومستمر</li>
-                                        <li>• فقدان الاهتمام</li>
-                                        <li>• أفكار سلبية</li>
-                                        <li>• صعوبة في الرعاية</li>
+                                        <li data-i18n="missing_breastfeeding_382">• حزن شديد ومستمر</li>
+                                        <li data-i18n="missing_breastfeeding_383">• فقدان الاهتمام</li>
+                                        <li data-i18n="missing_breastfeeding_384">• أفكار سلبية</li>
+                                        <li data-i18n="missing_breastfeeding_385">• صعوبة في الرعاية</li>
                                     </ul>
-                                    <p class="font-medium text-red-600 mt-2">استشيري الطبيب فوراً</p>
+                                    <p class="font-medium text-red-600 mt-2" data-i18n="missing_breastfeeding_386">استشيري الطبيب فوراً</p>
                                 </div>
                             </div>
                         </div>
@@ -674,7 +687,7 @@
     <!-- Nutrition for Mother Section -->
     <section class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="breastfeeding.nutrition.title">
                 <i class="fas fa-apple-alt text-green-500 ml-2"></i>
                 التغذية للأم المرضعة
             </h2>
@@ -683,75 +696,75 @@
                 <!-- Fluids -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up">
                     <i class="fas fa-tint text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">السوائل</h3>
-                    <p class="text-gray-600">اشربي 2-3 لتر ماء يومياً</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_394">السوائل</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_395">اشربي 2-3 لتر ماء يومياً</p>
                     <ul class="text-sm text-gray-500 mt-2">
-                        <li>• ماء</li>
-                        <li>• عصائر طبيعية</li>
-                        <li>• شاي أعشاب</li>
-                        <li>• حساء</li>
+                        <li data-i18n="missing_breastfeeding_397">• ماء</li>
+                        <li data-i18n="missing_breastfeeding_398">• عصائر طبيعية</li>
+                        <li data-i18n="missing_breastfeeding_399">• شاي أعشاب</li>
+                        <li data-i18n="missing_breastfeeding_400">• حساء</li>
                     </ul>
                 </div>
                 
                 <!-- Protein -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-drumstick-bite text-4xl text-red-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">البروتينات</h3>
-                    <p class="text-gray-600">3 حصص يومياً</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_403">البروتينات</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_404">3 حصص يومياً</p>
                     <ul class="text-sm text-gray-500 mt-2">
-                        <li>• لحوم خفيفة</li>
-                        <li>• دجاج</li>
-                        <li>• أسماك</li>
-                        <li>• بيض وبقوليات</li>
+                        <li data-i18n="missing_breastfeeding_406">• لحوم خفيفة</li>
+                        <li data-i18n="missing_breastfeeding_407">• دجاج</li>
+                        <li data-i18n="missing_breastfeeding_408">• أسماك</li>
+                        <li data-i18n="missing_breastfeeding_409">• بيض وبقوليات</li>
                     </ul>
                 </div>
                 
                 <!-- Calcium -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-cheese text-4xl text-yellow-500 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">الكالسيوم</h3>
-                    <p class="text-gray-600">1000-1200 ملجم يومياً</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_412">الكالسيوم</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_413">1000-1200 ملجم يومياً</p>
                     <ul class="text-sm text-gray-500 mt-2">
-                        <li>• حليب ولبن</li>
-                        <li>• جبن</li>
-                        <li>• ياغورت</li>
-                        <li>• خضروات ورقية</li>
+                        <li data-i18n="missing_breastfeeding_415">• حليب ولبن</li>
+                        <li data-i18n="missing_breastfeeding_416">• جبن</li>
+                        <li data-i18n="missing_breastfeeding_417">• ياغورت</li>
+                        <li data-i18n="missing_breastfeeding_418">• خضروات ورقية</li>
                     </ul>
                 </div>
                 
                 <!-- Iron -->
                 <div class="bg-white rounded-xl shadow-lg p-6 text-center card-hover" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-pills text-4xl text-green-600 mb-4"></i>
-                    <h3 class="font-bold text-gray-800 mb-2">الحديد</h3>
-                    <p class="text-gray-600">مع فيتامين C</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_421">الحديد</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_422">مع فيتامين C</p>
                     <ul class="text-sm text-gray-500 mt-2">
-                        <li>• لحم أحمر</li>
-                        <li>• كبدة</li>
-                        <li>• سبانخ</li>
-                        <li>• عدس</li>
+                        <li data-i18n="missing_breastfeeding_424">• لحم أحمر</li>
+                        <li data-i18n="missing_breastfeeding_425">• كبدة</li>
+                        <li data-i18n="missing_breastfeeding_426">• سبانخ</li>
+                        <li data-i18n="missing_breastfeeding_427">• عدس</li>
                     </ul>
                 </div>
             </div>
             
             <div class="mt-8 bg-yellow-50 rounded-2xl p-6" data-aos="fade-up">
-                <h3 class="text-xl font-bold text-yellow-700 mb-4">أطعمة يجب تجنبها</h3>
+                <h3 class="text-xl font-bold text-yellow-700 mb-4" data-i18n="missing_breastfeeding_429">أطعمة يجب تجنبها</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white rounded-lg p-4">
-                        <h4 class="font-medium text-red-600 mb-2">تجنب:</h4>
+                        <h4 class="font-medium text-red-600 mb-2" data-i18n="missing_breastfeeding_432">تجنب:</h4>
                         <ul class="text-gray-700 space-y-1">
-                            <li>• الكحول تماماً</li>
-                            <li>• الكافيين بكثرة</li>
-                            <li>• الأسماك عالية الزئبق</li>
-                            <li>• الأطعمة غير المطهوة جيداً</li>
+                            <li data-i18n="missing_breastfeeding_434">• الكحول تماماً</li>
+                            <li data-i18n="missing_breastfeeding_435">• الكافيين بكثرة</li>
+                            <li data-i18n="missing_breastfeeding_436">• الأسماك عالية الزئبق</li>
+                            <li data-i18n="missing_breastfeeding_437">• الأطعمة غير المطهوة جيداً</li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-lg p-4">
-                        <h4 class="font-medium text-orange-600 mb-2">قلل من:</h4>
+                        <h4 class="font-medium text-orange-600 mb-2" data-i18n="missing_breastfeeding_439">قلل من:</h4>
                         <ul class="text-gray-700 space-y-1">
-                            <li>• الأطعمة المسببة للغازات</li>
-                            <li>• التوابل القوية</li>
-                            <li>• الأطعمة الحارة</li>
-                            <li>• الأطعمة المعلبة</li>
+                            <li data-i18n="missing_breastfeeding_441">• الأطعمة المسببة للغازات</li>
+                            <li data-i18n="missing_breastfeeding_442">• التوابل القوية</li>
+                            <li data-i18n="missing_breastfeeding_443">• الأطعمة الحارة</li>
+                            <li data-i18n="missing_breastfeeding_444">• الأطعمة المعلبة</li>
                         </ul>
                     </div>
                 </div>
@@ -762,30 +775,30 @@
     <!-- FAQ Section -->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="missing_breastfeeding_447" data-i18n-html="true">
                 <i class="fas fa-question-circle text-indigo-500 ml-2"></i>
                 أسئلة شائعة
             </h2>
             
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up">
-                    <h3 class="font-bold text-gray-800 mb-2">كم مرة يجب أن أرضع طفلي؟</h3>
-                    <p class="text-gray-600">8-12 مرة في اليوم خلال الأسابيع الأولى، وعند الطلب بعد ذلك. انتبهي لإشارات الجوع عند طفلك.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_451">كم مرة يجب أن أرضع طفلي؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_452">8-12 مرة في اليوم خلال الأسابيع الأولى، وعند الطلب بعد ذلك. انتبهي لإشارات الجوع عند طفلك.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="font-bold text-gray-800 mb-2">كيف أعرف أن طفلي يحصل على كفاية الحليب؟</h3>
-                    <p class="text-gray-600">6 حفاضات مبللة يومياً، زيادة في الوزن، الطفل يبدو سعيداً ونشيطاً بعد الرضاعة.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_454">كيف أعرف أن طفلي يحصل على كفاية الحليب؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_455">6 حفاضات مبللة يومياً، زيادة في الوزن، الطفل يبدو سعيداً ونشيطاً بعد الرضاعة.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="font-bold text-gray-800 mb-2">هل يمكنني أخذ أدوية أثناء الرضاعة؟</h3>
-                    <p class="text-gray-600">استشيري طبيبك قبل تناول أي دواء. معظم الأدوية آمنة ولكن هناك بعض الاستثناءات.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_457">هل يمكنني أخذ أدوية أثناء الرضاعة؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_458">استشيري طبيبك قبل تناول أي دواء. معظم الأدوية آمنة ولكن هناك بعض الاستثناءات.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="font-bold text-gray-800 mb-2">متى أبدأ بإعطاء طفلي أطعمة أخرى؟</h3>
-                    <p class="text-gray-600">يوصي الأطباء بالانتظار حتى 6 أشهر قبل إدخال الأطعمة الصلبة، مع الاستمرار في الرضاعة الطبيعية.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_breastfeeding_460">متى أبدأ بإعطاء طفلي أطعمة أخرى؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_breastfeeding_461">يوصي الأطباء بالانتظار حتى 6 أشهر قبل إدخال الأطعمة الصلبة، مع الاستمرار في الرضاعة الطبيعية.</p>
                 </div>
             </div>
         </div>
@@ -796,25 +809,25 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
-                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="header.logo">رعاية الرضيع</h3>
+                    <p class="text-gray-400" data-i18n="footer.desc">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
-                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
-                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
-                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.home">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.vaccination">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.diseases">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.growth">النمو والتطور</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
-                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="missing_breastfeeding_480">المصادر الطبية</h3>
+                    <p class="text-gray-400" data-i18n="missing_breastfeeding_481">المحتوى معتمد على:</p>
                     <ul class="text-gray-400 text-sm mt-2">
-                        <li>• منظمة الصحة العالمية (WHO)</li>
-                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
-                        <li>• اليونيسف (UNICEF)</li>
+                        <li data-i18n="missing_breastfeeding_483">• منظمة الصحة العالمية (WHO)</li>
+                        <li data-i18n="missing_breastfeeding_484">• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li data-i18n="missing_breastfeeding_485">• اليونيسف (UNICEF)</li>
                     </ul>
                 </div>
             </div>
@@ -822,7 +835,7 @@
             <div class="border-t border-gray-700 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-center mb-4 md:mb-0">
-                        جميع الحقوق محفوظة © <span class="copyright-year">2024</span> رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span class="copyright-year">2024</span> <span data-i18n="footer.designed_by">رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال</span>
                     </p>
                    <div class="text-center" style="direction: ltr;">
                         <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
@@ -875,5 +888,9 @@
             });
         });
     </script>
-</body>
-</html>
+    
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
+
+
+</body></html>

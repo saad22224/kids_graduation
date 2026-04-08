@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جدول المتابعة - رعاية الرضيع</title>
+    <title data-i18n="followup.meta.title">جدول المتابعة - رعاية الرضيع</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
     
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
+        }
+
+        body.en {
+            font-family: 'Inter', sans-serif !important;
         }
         
         .gradient-bg {
@@ -96,20 +98,25 @@
                         <i class="fas fa-baby text-2xl text-purple-600"></i>
                     </div>
                     <div>
-                        <span class="text-2xl font-bold text-white">رعاية الرضيع</span>
-                        <p class="text-xs text-purple-200">دليلك الشامل للأشهر الستة الأولى</p>
+                        <span class="text-2xl font-bold text-white" data-i18n="header.logo">رعاية الرضيع</span>
+                        <p class="text-xs text-purple-200" data-i18n="header.subtitle">دليلك الشامل للأشهر الستة الأولى</p>
                     </div>
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-1 space-x-reverse">
-                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                    <a href="index.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                    <a href="followup.html" class="nav-link text-white hover:bg-purple-700 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                    <!-- Language Switcher -->
+                    <button id="lang-switcher" onclick="toggleLang()" class="bg-white text-purple-700 px-3 py-1 rounded-lg font-bold hover:bg-purple-50 transition-all duration-300 ml-2">
+                        English
+                    </button>
                 </div>
                 
                 <button id="mobile-menu-btn" class="md:hidden text-white hover:bg-purple-700 p-2 rounded-lg transition-all duration-300">
@@ -119,14 +126,20 @@
             
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
-                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                <a href="index.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="growth.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="care.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="followup.html" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                <!-- Mobile Language Switcher -->
+                <button onclick="toggleLang()" class="w-full text-left py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-purple-600 pt-2">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span data-i18n="lang.en">English</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -143,17 +156,17 @@
             <div class="flex flex-col lg:flex-row items-center">
                 <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
                     <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-i18n="followup.title">
                             جدول المتابعة الطبية
                         </h1>
-                        <p class="text-xl mb-8 text-teal-100 leading-relaxed">
+                        <p class="text-xl mb-8 text-teal-100 leading-relaxed" data-i18n="followup.subtitle">
                             الجدول الكامل للزيارات الطبية والفحوصات الدورية للأشهر الستة الأولى من عمر الطفل
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#timeline" class="bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-teal-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#timeline" class="bg-white text-teal-600 px-8 py-4 rounded-full font-bold hover:bg-teal-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="missing_followup_56" data-i18n-html="true">
                                 <i class="fas fa-calendar-alt ml-2"></i>الجدول الزمني
                             </a>
-                            <a href="#checklist" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-teal-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="#checklist" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-teal-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="missing_followup_58" data-i18n-html="true">
                                 <i class="fas fa-clipboard-check ml-2"></i>قائمة المراجعة
                             </a>
                         </div>
@@ -162,18 +175,18 @@
                         <div class="grid grid-cols-3 gap-4 text-center">
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-user-md text-2xl mb-1"></i>
-                                <p class="text-sm font-medium">6 زيارات</p>
-                                <p class="text-xs">أساسية</p>
+                                <p class="text-sm font-medium" data-i18n="missing_followup_63">6 زيارات</p>
+                                <p class="text-xs" data-i18n="missing_followup_64">أساسية</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-stethoscope text-2xl mb-1"></i>
-                                <p class="text-sm font-medium">12 فحص</p>
-                                <p class="text-xs">شامل</p>
+                                <p class="text-sm font-medium" data-i18n="missing_followup_67">12 فحص</p>
+                                <p class="text-xs" data-i18n="missing_followup_68">شامل</p>
                             </div>
                             <div class="bg-white bg-opacity-20 rounded-lg p-3">
                                 <i class="fas fa-chart-line text-2xl mb-1"></i>
                                 <p class="text-sm font-medium">100%</p>
-                                <p class="text-xs">متابعة</p>
+                                <p class="text-xs" data-i18n="missing_followup_72">متابعة</p>
                             </div>
                         </div>
                     </div>
@@ -218,7 +231,7 @@
     <section id="timeline" class="py-16">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-i18n="missing_followup_93" data-i18n-html="true">
                     <i class="fas fa-calendar-alt text-teal-500 ml-2"></i>
                     جدول الزيارات الطبية
                 </h2>
@@ -231,28 +244,28 @@
                                 0
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة ما بعد الولادة (2-5 أيام)</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="missing_followup_100">زيارة ما بعد الولادة (2-5 أيام)</h3>
                                 <div class="bg-red-50 rounded-lg p-4">
-                                    <h4 class="font-bold text-red-700 mb-3">أهداف الزيارة:</h4>
+                                    <h4 class="font-bold text-red-700 mb-3" data-i18n="missing_followup_102">أهداف الزيارة:</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">فحص الطفل:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_105">فحص الطفل:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• تقييم الوزن والطول</li>
-                                                <li>• فحص السرة</li>
-                                                <li>• تقييم اليرقان</li>
-                                                <li>• فحص التغذية</li>
-                                                <li>• التأكد من الرضاعة الطبيعية</li>
+                                                <li data-i18n="missing_followup_107">• تقييم الوزن والطول</li>
+                                                <li data-i18n="missing_followup_108">• فحص السرة</li>
+                                                <li data-i18n="missing_followup_109">• تقييم اليرقان</li>
+                                                <li data-i18n="missing_followup_110">• فحص التغذية</li>
+                                                <li data-i18n="missing_followup_111">• التأكد من الرضاعة الطبيعية</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">فحص الأم:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_113">فحص الأم:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• تقييم فترة النفاس</li>
-                                                <li>• فحص الحالة النفسية</li>
-                                                <li>• التأكد من الشفاء</li>
-                                                <li>• الإجابة على استفسارات</li>
-                                                <li>• التخطيم للمتابعة</li>
+                                                <li data-i18n="missing_followup_115">• تقييم فترة النفاس</li>
+                                                <li data-i18n="missing_followup_116">• فحص الحالة النفسية</li>
+                                                <li data-i18n="missing_followup_117">• التأكد من الشفاء</li>
+                                                <li data-i18n="missing_followup_118">• الإجابة على استفسارات</li>
+                                                <li data-i18n="missing_followup_119">• التخطيم للمتابعة</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -268,26 +281,26 @@
                                 1
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الأول</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="missing_followup_124">زيارة الشهر الأول</h3>
                                 <div class="bg-blue-50 rounded-lg p-4">
-                                    <h4 class="font-bold text-blue-700 mb-3">أهداف الزيارة:</h4>
+                                    <h4 class="font-bold text-blue-700 mb-3" data-i18n="missing_followup_126">أهداف الزيارة:</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">النمو والتطور:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_129">النمو والتطور:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• قياس الوزن والطول ومحيط الرأس</li>
-                                                <li>• تقييم النمو على منحنيات النمو</li>
-                                                <li>• فحص المراحل التطورية</li>
-                                                <li>• تقييم الحواس</li>
+                                                <li data-i18n="missing_followup_131">• قياس الوزن والطول ومحيط الرأس</li>
+                                                <li data-i18n="missing_followup_132">• تقييم النمو على منحنيات النمو</li>
+                                                <li data-i18n="missing_followup_133">• فحص المراحل التطورية</li>
+                                                <li data-i18n="missing_followup_134">• تقييم الحواس</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">الصحة العامة:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_136">الصحة العامة:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• فحص شامل</li>
-                                                <li>• تقييم التغذية</li>
-                                                <li>• الكشف عن أي مشاكل</li>
-                                                <li>• نصائح للوالدين</li>
+                                                <li data-i18n="missing_followup_138">• فحص شامل</li>
+                                                <li data-i18n="missing_followup_139">• تقييم التغذية</li>
+                                                <li data-i18n="missing_followup_140">• الكشف عن أي مشاكل</li>
+                                                <li data-i18n="missing_followup_141">• نصائح للوالدين</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -303,26 +316,26 @@
                                 2
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الثاني</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="missing_followup_146">زيارة الشهر الثاني</h3>
                                 <div class="bg-green-50 rounded-lg p-4">
-                                    <h4 class="font-bold text-green-700 mb-3">أهداف الزيارة:</h4>
+                                    <h4 class="font-bold text-green-700 mb-3" data-i18n="missing_followup_148">أهداف الزيارة:</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_151">التطعيمات:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• DTP (الجرعة الأولى)</li>
-                                                <li>• شلل الأطفال (الجرعة الثانية)</li>
-                                                <li>• Hib (الجرعة الأولى)</li>
-                                                <li>• التهاب الرئة (الجرعة الأولى)</li>
+                                                <li data-i18n="missing_followup_153">• DTP (الجرعة الأولى)</li>
+                                                <li data-i18n="missing_followup_154">• شلل الأطفال (الجرعة الثانية)</li>
+                                                <li data-i18n="missing_followup_155">• Hib (الجرعة الأولى)</li>
+                                                <li data-i18n="missing_followup_156">• التهاب الرئة (الجرعة الأولى)</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطور:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_158">التطور:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• الابتسام الاجتماعي</li>
-                                                <li>• رفع الرأس</li>
-                                                <li>• تتبع الأشياء بالعين</li>
-                                                <li>• إصدار الأصوات</li>
+                                                <li data-i18n="missing_followup_160">• الابتسام الاجتماعي</li>
+                                                <li data-i18n="missing_followup_161">• رفع الرأس</li>
+                                                <li data-i18n="missing_followup_162">• تتبع الأشياء بالعين</li>
+                                                <li data-i18n="missing_followup_163">• إصدار الأصوات</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -338,26 +351,26 @@
                                 4
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر الرابع</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="missing_followup_168">زيارة الشهر الرابع</h3>
                                 <div class="bg-yellow-50 rounded-lg p-4">
-                                    <h4 class="font-bold text-yellow-700 mb-3">أهداف الزيارة:</h4>
+                                    <h4 class="font-bold text-yellow-700 mb-3" data-i18n="missing_followup_170">أهداف الزيارة:</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_173">التطعيمات:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• DTP (الجرعة الثانية)</li>
-                                                <li>• شلل الأطفال (الجرعة الثالثة)</li>
-                                                <li>• Hib (الجرعة الثانية)</li>
-                                                <li>• التهاب الرئة (الجرعة الثانية)</li>
+                                                <li data-i18n="missing_followup_175">• DTP (الجرعة الثانية)</li>
+                                                <li data-i18n="missing_followup_176">• شلل الأطفال (الجرعة الثالثة)</li>
+                                                <li data-i18n="missing_followup_177">• Hib (الجرعة الثانية)</li>
+                                                <li data-i18n="missing_followup_178">• التهاب الرئة (الجرعة الثانية)</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطور:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_180">التطور:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• الضحك بصوت عالٍ</li>
-                                                <li>• التحكم في الرأس</li>
-                                                <li>• مسك الأشياء</li>
-                                                <li>• البدء في الجلوس بالدعم</li>
+                                                <li data-i18n="missing_followup_182">• الضحك بصوت عالٍ</li>
+                                                <li data-i18n="missing_followup_183">• التحكم في الرأس</li>
+                                                <li data-i18n="missing_followup_184">• مسك الأشياء</li>
+                                                <li data-i18n="missing_followup_185">• البدء في الجلوس بالدعم</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -373,26 +386,26 @@
                                 6
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-2xl font-bold text-gray-800 mb-3">زيارة الشهر السادس</h3>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-3" data-i18n="missing_followup_190">زيارة الشهر السادس</h3>
                                 <div class="bg-purple-50 rounded-lg p-4">
-                                    <h4 class="font-bold text-purple-700 mb-3">أهداف الزيارة:</h4>
+                                    <h4 class="font-bold text-purple-700 mb-3" data-i18n="missing_followup_192">أهداف الزيارة:</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطعيمات:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_195">التطعيمات:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• التهاب الكبد B (الجرعة الثالثة)</li>
-                                                <li>• شلل الأطفال (الجرعة الرابعة)</li>
-                                                <li>• DTP (الجرعة الرابعة)</li>
-                                                <li>• بدء التطعيمات الإضافية حسب البلد</li>
+                                                <li data-i18n="missing_followup_197">• التهاب الكبد B (الجرعة الثالثة)</li>
+                                                <li data-i18n="missing_followup_198">• شلل الأطفال (الجرعة الرابعة)</li>
+                                                <li data-i18n="missing_followup_199">• DTP (الجرعة الرابعة)</li>
+                                                <li data-i18n="missing_followup_200">• بدء التطعيمات الإضافية حسب البلد</li>
                                             </ul>
                                         </div>
                                         <div>
-                                            <h5 class="font-medium text-gray-700 mb-2">التطور والتغذية:</h5>
+                                            <h5 class="font-medium text-gray-700 mb-2" data-i18n="missing_followup_202">التطور والتغذية:</h5>
                                             <ul class="text-sm text-gray-600 space-y-1">
-                                                <li>• الجلوس بدون دعم</li>
-                                                <li>• إصدار أصوات متحركة</li>
-                                                <li>• البدء في الأطعمة الصلبة</li>
-                                                <li>• تقييم الأسنان النامية</li>
+                                                <li data-i18n="missing_followup_204">• الجلوس بدون دعم</li>
+                                                <li data-i18n="missing_followup_205">• إصدار أصوات متحركة</li>
+                                                <li data-i18n="missing_followup_206">• البدء في الأطعمة الصلبة</li>
+                                                <li data-i18n="missing_followup_207">• تقييم الأسنان النامية</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -408,7 +421,7 @@
     <!-- What to Bring Section -->
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="missing_followup_210" data-i18n-html="true">
                 <i class="fas fa-suitcase text-orange-500 ml-2"></i>
                 ماذا تأخذين معك للزيارة
             </h2>
@@ -419,23 +432,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-file-medical text-4xl text-blue-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">السجلات الطبية</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_followup_216">السجلات الطبية</h3>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
-                            <span>بطاقة التطعيمات</span>
+                            <span data-i18n="missing_followup_220">بطاقة التطعيمات</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
-                            <span>سجل النمو والتطور</span>
+                            <span data-i18n="missing_followup_223">سجل النمو والتطور</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
-                            <span>نتائج الفحوصات السابقة</span>
+                            <span data-i18n="missing_followup_226">نتائج الفحوصات السابقة</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-blue-500 ml-2 mt-1"></i>
-                            <span>قائمة الأدوية الحالية</span>
+                            <span data-i18n="missing_followup_229">قائمة الأدوية الحالية</span>
                         </li>
                     </ul>
                 </div>
@@ -445,23 +458,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-baby text-4xl text-pink-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">لوازم الطفل</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_followup_233">لوازم الطفل</h3>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start">
                             <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
-                            <span>حفاضات نظيفة</span>
+                            <span data-i18n="missing_followup_237">حفاضات نظيفة</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
-                            <span>مناديل مبللة</span>
+                            <span data-i18n="missing_followup_240">مناديل مبللة</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
-                            <span>بطانية إضافية</span>
+                            <span data-i18n="missing_followup_243">بطانية إضافية</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-pink-500 ml-2 mt-1"></i>
-                            <span>زجاجة حليب/رضاعة</span>
+                            <span data-i18n="missing_followup_246">زجاجة حليب/رضاعة</span>
                         </li>
                     </ul>
                 </div>
@@ -471,23 +484,23 @@
                     <div class="text-center mb-4">
                         <i class="fas fa-question-circle text-4xl text-green-500"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center">قائمة الأسئلة</h3>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="missing_followup_250">قائمة الأسئلة</h3>
                     <ul class="space-y-2 text-gray-600">
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
-                            <span>اكتبي جميع أسئلتك مسبقاً</span>
+                            <span data-i18n="missing_followup_254">اكتبي جميع أسئلتك مسبقاً</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
-                            <span>ملاحظات عن سلوك الطفل</span>
+                            <span data-i18n="missing_followup_257">ملاحظات عن سلوك الطفل</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
-                            <span>أي مخاوف أو قلق</span>
+                            <span data-i18n="missing_followup_260">أي مخاوف أو قلق</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-check text-green-500 ml-2 mt-1"></i>
-                            <span>معلومات عن التغذية</span>
+                            <span data-i18n="missing_followup_263">معلومات عن التغذية</span>
                         </li>
                     </ul>
                 </div>
@@ -498,7 +511,7 @@
     <!-- Developmental Checklist Section -->
     <section id="checklist" class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="missing_followup_266" data-i18n-html="true">
                 <i class="fas fa-clipboard-check text-indigo-500 ml-2"></i>
                 قائمة المراجعة التطورية
             </h2>
@@ -507,30 +520,30 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <!-- 0-1 Month Checklist -->
                     <div>
-                        <h3 class="text-xl font-bold text-indigo-600 mb-4">0-1 شهر</h3>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4" data-i18n="missing_followup_271">0-1 شهر</h3>
                         <div class="space-y-2">
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يرفع رأسه قليلاً عند البطن</span>
+                                    <span data-i18n="missing_followup_276">يرفع رأسه قليلاً عند البطن</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يثبت نظره على الوجوه</span>
+                                    <span data-i18n="missing_followup_280">يثبت نظره على الوجوه</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يستجيب للأصوات العالية</span>
+                                    <span data-i18n="missing_followup_284">يستجيب للأصوات العالية</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يمسك بإصبعك بقوة</span>
+                                    <span data-i18n="missing_followup_288">يمسك بإصبعك بقوة</span>
                                 </label>
                             </div>
                         </div>
@@ -538,30 +551,30 @@
                     
                     <!-- 2-3 Months Checklist -->
                     <div>
-                        <h3 class="text-xl font-bold text-indigo-600 mb-4">2-3 أشهر</h3>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4" data-i18n="missing_followup_290">2-3 أشهر</h3>
                         <div class="space-y-2">
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يبتسم استجابة للوجوه</span>
+                                    <span data-i18n="missing_followup_295">يبتسم استجابة للوجوه</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يحمل رأسه ثابتاً</span>
+                                    <span data-i18n="missing_followup_299">يحمل رأسه ثابتاً</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يصدر أصواتاً مثل الغغغة</span>
+                                    <span data-i18n="missing_followup_303">يصدر أصواتاً مثل الغغغة</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يفتح ويغلق يديه</span>
+                                    <span data-i18n="missing_followup_307">يفتح ويغلق يديه</span>
                                 </label>
                             </div>
                         </div>
@@ -569,30 +582,30 @@
                     
                     <!-- 4-5 Months Checklist -->
                     <div>
-                        <h3 class="text-xl font-bold text-indigo-600 mb-4">4-5 أشهر</h3>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4" data-i18n="missing_followup_309">4-5 أشهر</h3>
                         <div class="space-y-2">
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يضحك بصوت عالٍ</span>
+                                    <span data-i18n="missing_followup_314">يضحك بصوت عالٍ</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يجلس بالدعم</span>
+                                    <span data-i18n="missing_followup_318">يجلس بالدعم</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يمسك الأشياء ويضعها في فمه</span>
+                                    <span data-i18n="missing_followup_322">يمسك الأشياء ويضعها في فمه</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يقلب من البطن إلى الظهر</span>
+                                    <span data-i18n="missing_followup_326">يقلب من البطن إلى الظهر</span>
                                 </label>
                             </div>
                         </div>
@@ -600,30 +613,30 @@
                     
                     <!-- 6 Months Checklist -->
                     <div>
-                        <h3 class="text-xl font-bold text-indigo-600 mb-4">6 أشهر</h3>
+                        <h3 class="text-xl font-bold text-indigo-600 mb-4" data-i18n="missing_followup_328">6 أشهر</h3>
                         <div class="space-y-2">
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يجلس بدون دعم</span>
+                                    <span data-i18n="missing_followup_333">يجلس بدون دعم</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يقلد الأصوات</span>
+                                    <span data-i18n="missing_followup_337">يقلد الأصوات</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يستجيب لاسمه</span>
+                                    <span data-i18n="missing_followup_341">يستجيب لاسمه</span>
                                 </label>
                             </div>
                             <div class="checklist-item border rounded-lg p-3">
                                 <label class="flex items-center cursor-pointer">
                                     <input type="checkbox" class="ml-3 w-5 h-5 text-indigo-600">
-                                    <span>يبدأ في تناول الأطعمة الصلبة</span>
+                                    <span data-i18n="missing_followup_345">يبدأ في تناول الأطعمة الصلبة</span>
                                 </label>
                             </div>
                         </div>
@@ -631,7 +644,7 @@
                 </div>
                 
                 <div class="mt-6 bg-yellow-50 rounded-lg p-4">
-                    <p class="text-yellow-800 text-center">
+                    <p class="text-yellow-800 text-center" data-i18n="missing_followup_347" data-i18n-html="true">
                         <i class="fas fa-info-circle ml-2"></i>
                         <strong>ملاحظة:</strong> إذا كان طفلك لا يحقق معظم هذه المهارات، استشيري الطبيب
                     </p>
@@ -644,7 +657,7 @@
     <section class="py-16 bg-gray-100">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">
+                <h2 class="text-3xl font-bold text-center mb-8 text-gray-800" data-i18n="missing_followup_353" data-i18n-html="true">
                     <i class="fas fa-chart-line text-green-500 ml-2"></i>
                     مراقبة النمو
                 </h2>
@@ -652,81 +665,81 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Weight Monitoring -->
                     <div class="bg-green-50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-green-600 mb-4">
+                        <h3 class="text-xl font-bold text-green-600 mb-4" data-i18n="missing_followup_357" data-i18n-html="true">
                             <i class="fas fa-weight text-green-500 ml-2"></i>
                             مراقبة الوزن
                         </h3>
                         <div class="space-y-3">
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">الأسبوع الأول:</p>
-                                <p class="text-sm text-gray-600">فقدان 5-10% من وزن الولادة (طبيعي)</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_361">الأسبوع الأول:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_362">فقدان 5-10% من وزن الولادة (طبيعي)</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">الأسبوع الثاني:</p>
-                                <p class="text-sm text-gray-600">استعادة وزن الولادة</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_364">الأسبوع الثاني:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_365">استعادة وزن الولادة</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">الأشهر 1-6:</p>
-                                <p class="text-sm text-gray-600">زيادة 150-200 جرام أسبوعياً</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_367">الأشهر 1-6:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_368">زيادة 150-200 جرام أسبوعياً</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Height Monitoring -->
                     <div class="bg-blue-50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-blue-600 mb-4">
+                        <h3 class="text-xl font-bold text-blue-600 mb-4" data-i18n="missing_followup_370" data-i18n-html="true">
                             <i class="fas fa-ruler-vertical text-blue-500 ml-2"></i>
                             مراقبة الطول
                         </h3>
                         <div class="space-y-3">
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">الولادة:</p>
-                                <p class="text-sm text-gray-600">50 سم (متوسط)</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_374">الولادة:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_375">50 سم (متوسط)</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">3 أشهر:</p>
-                                <p class="text-sm text-gray-600">60-61 سم</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_377">3 أشهر:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_378">60-61 سم</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">6 أشهر:</p>
-                                <p class="text-sm text-gray-600">65-67 سم</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_380">6 أشهر:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_381">65-67 سم</p>
                             </div>
                         </div>
                     </div>
                     
                     <!-- Head Circumference -->
                     <div class="bg-purple-50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-purple-600 mb-4">
+                        <h3 class="text-xl font-bold text-purple-600 mb-4" data-i18n="missing_followup_383" data-i18n-html="true">
                             <i class="fas fa-circle text-purple-500 ml-2"></i>
                             محيط الرأس
                         </h3>
                         <div class="space-y-3">
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">الولادة:</p>
-                                <p class="text-sm text-gray-600">35 سم (متوسط)</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_387">الولادة:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_388">35 سم (متوسط)</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">3 أشهر:</p>
-                                <p class="text-sm text-gray-600">40-41 سم</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_390">3 أشهر:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_391">40-41 سم</p>
                             </div>
                             <div class="bg-white rounded p-3">
-                                <p class="font-medium text-gray-700">6 أشهر:</p>
-                                <p class="text-sm text-gray-600">43-44 سم</p>
+                                <p class="font-medium text-gray-700" data-i18n="missing_followup_393">6 أشهر:</p>
+                                <p class="text-sm text-gray-600" data-i18n="missing_followup_394">43-44 سم</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="mt-6 bg-red-50 rounded-lg p-4">
-                    <h4 class="font-bold text-red-700 mb-2">علامات القلق:</h4>
+                    <h4 class="font-bold text-red-700 mb-2" data-i18n="missing_followup_396">علامات القلق:</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <ul class="text-gray-700 space-y-1">
-                            <li>• عدم زيادة الوزن أو فقدان الوزن</li>
-                            <li>• نمو أبطأ من الطبيعي</li>
+                            <li data-i18n="missing_followup_399">• عدم زيادة الوزن أو فقدان الوزن</li>
+                            <li data-i18n="missing_followup_400">• نمو أبطأ من الطبيعي</li>
                         </ul>
                         <ul class="text-gray-700 space-y-1">
-                            <li>• محيط الرأس ينمو بسرعة أو ببطء شديد</li>
-                            <li>• السقوط تحت الخط الثالث على منحنيات النمو</li>
+                            <li data-i18n="missing_followup_402">• محيط الرأس ينمو بسرعة أو ببطء شديد</li>
+                            <li data-i18n="missing_followup_403">• السقوط تحت الخط الثالث على منحنيات النمو</li>
                         </ul>
                     </div>
                 </div>
@@ -737,35 +750,35 @@
     <!-- Parent Questions Section -->
     <section class="py-16">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-aos="fade-up" data-i18n="missing_followup_406" data-i18n-html="true">
                 <i class="fas fa-comments text-teal-500 ml-2"></i>
                 أسئلة شائعة للوالدين
             </h2>
             
             <div class="max-w-3xl mx-auto space-y-4">
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up">
-                    <h3 class="font-bold text-gray-800 mb-2">متى يجب أن أقلق بشأن نمو طفلي؟</h3>
-                    <p class="text-gray-600">إذا كان طفلك لا يكتسب وزناً بشكل مناسب، أو إذا كان يفقد المهارات التي تعلمها، أو إذا كان نموه أبطأ بكثير من الأطفال الآخرين في نفس العمر.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_followup_410">متى يجب أن أقلق بشأن نمو طفلي؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_followup_411">إذا كان طفلك لا يكتسب وزناً بشكل مناسب، أو إذا كان يفقد المهارات التي تعلمها، أو إذا كان نموه أبطأ بكثير من الأطفال الآخرين في نفس العمر.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="font-bold text-gray-800 mb-2">كم مرة يجب أن أزور الطبيب؟</h3>
-                    <p class="text-gray-600">خلال الأشهر الستة الأولى، عادة ما تكون الزيارات عند الولادة، ثم شهر، شهرين، أربعة أشهر، وستة أشهر. قد تحتاجين لزيارات إضافية إذا كانت هناك مخاوف صحية.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_followup_413">كم مرة يجب أن أزور الطبيب؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_followup_414">خلال الأشهر الستة الأولى، عادة ما تكون الزيارات عند الولادة، ثم شهر، شهرين، أربعة أشهر، وستة أشهر. قد تحتاجين لزيارات إضافية إذا كانت هناك مخاوف صحية.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="font-bold text-gray-800 mb-2">ماذا أفعل إذا فاتني موعد تطعيم؟</h3>
-                    <p class="text-gray-600">اتصلي بالعيادة فوراً لتحديد موعد جديد. معظم التطعيمات يمكن إعطاؤها في وقت متأخر بقليل، ولكن من الأفضل الالتزام بالجدول المحدد.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_followup_416">ماذا أفعل إذا فاتني موعد تطعيم؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_followup_417">اتصلي بالعيادة فوراً لتحديد موعد جديد. معظم التطعيمات يمكن إعطاؤها في وقت متأخر بقليل، ولكن من الأفضل الالتزام بالجدول المحدد.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="300">
-                    <h3 class="font-bold text-gray-800 mb-2">كيف أعرف أن طفلي يتطور بشكل طبيعي؟</h3>
-                    <p class="text-gray-600">راقبي المراحل التطورية المتوقعة لكل عمر. كل طفل ينمو بمعدله الخاص، ولكن يجب أن يحقق معظم المهارات في النطاق الزمني المحدد.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_followup_419">كيف أعرف أن طفلي يتطور بشكل طبيعي؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_followup_420">راقبي المراحل التطورية المتوقعة لكل عمر. كل طفل ينمو بمعدله الخاص، ولكن يجب أن يحقق معظم المهارات في النطاق الزمني المحدد.</p>
                 </div>
                 
                 <div class="bg-white rounded-lg shadow-lg p-6" data-aos="fade-up" data-aos-delay="400">
-                    <h3 class="font-bold text-gray-800 mb-2">ما هي علامات التأخر التطوري التي يجب أن أبحث عنها؟</h3>
-                    <p class="text-gray-600">عدم رفع الرأس، عدم الابتسام، عدم التفاعل مع الآخرين، عدم متابعة الأشياء بالعين، أو فقدان المهارات المكتسبة.</p>
+                    <h3 class="font-bold text-gray-800 mb-2" data-i18n="missing_followup_422">ما هي علامات التأخر التطوري التي يجب أن أبحث عنها؟</h3>
+                    <p class="text-gray-600" data-i18n="missing_followup_423">عدم رفع الرأس، عدم الابتسام، عدم التفاعل مع الآخرين، عدم متابعة الأشياء بالعين، أو فقدان المهارات المكتسبة.</p>
                 </div>
             </div>
         </div>
@@ -775,78 +788,78 @@
     <section class="py-16 bg-red-50">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8 text-red-600">
+                <h2 class="text-3xl font-bold text-center mb-8 text-red-600" data-i18n="missing_followup_427" data-i18n-html="true">
                     <i class="fas fa-phone-alt text-red-500 ml-2"></i>
                     متى تتصلين بالطبيب بين الزيارات
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-red-50 rounded-lg p-4">
-                        <h3 class="font-bold text-red-700 mb-3">اتصلي بالطبيب فوراً إذا:</h3>
+                        <h3 class="font-bold text-red-700 mb-3" data-i18n="missing_followup_431">اتصلي بالطبيب فوراً إذا:</h3>
                         <ul class="space-y-2 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-thermometer text-red-500 ml-2 mt-1"></i>
-                                <span>حمى أعلى من 38°C (أقل من 3 أشهر) أو 39°C (أكبر من 3 أشهر)</span>
+                                <span data-i18n="missing_followup_435">حمى أعلى من 38°C (أقل من 3 أشهر) أو 39°C (أكبر من 3 أشهر)</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-lungs text-red-500 ml-2 mt-1"></i>
-                                <span>صعوبة في التنفس أو تنفس سريع جداً</span>
+                                <span data-i18n="missing_followup_438">صعوبة في التنفس أو تنفس سريع جداً</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
-                                <span>علامات الجفاف الشديد</span>
+                                <span data-i18n="missing_followup_441">علامات الجفاف الشديد</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-brain text-red-500 ml-2 mt-1"></i>
-                                <span>خمول شديد أو عدم استجابة</span>
+                                <span data-i18n="missing_followup_444">خمول شديد أو عدم استجابة</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-exclamation-triangle text-red-500 ml-2 mt-1"></i>
-                                <span>طفح جلدي أرجواني أو نزيف</span>
+                                <span data-i18n="missing_followup_447">طفح جلدي أرجواني أو نزيف</span>
                             </li>
                         </ul>
                     </div>
                     
                     <div class="bg-yellow-50 rounded-lg p-4">
-                        <h3 class="font-bold text-yellow-700 mb-3">اتصلي بالطبيب خلال 24 ساعة إذا:</h3>
+                        <h3 class="font-bold text-yellow-700 mb-3" data-i18n="missing_followup_449">اتصلي بالطبيب خلال 24 ساعة إذا:</h3>
                         <ul class="space-y-2 text-gray-700">
                             <li class="flex items-start">
                                 <i class="fas fa-baby text-yellow-500 ml-2 mt-1"></i>
-                                <span>رفض الرضاعة المتكرر</span>
+                                <span data-i18n="missing_followup_453">رفض الرضاعة المتكرر</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-vomiting text-yellow-500 ml-2 mt-1"></i>
-                                <span>قيء متكرر أو إسهال شديد</span>
+                                <span data-i18n="missing_followup_456">قيء متكرر أو إسهال شديد</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-bed text-yellow-500 ml-2 mt-1"></i>
-                                <span>نوم غير طبيعي أو صعوبة في الاستيقاظ</span>
+                                <span data-i18n="missing_followup_459">نوم غير طبيعي أو صعوبة في الاستيقاظ</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-eye text-yellow-500 ml-2 mt-1"></i>
-                                <span>احمرار أو تورم في العينين</span>
+                                <span data-i18n="missing_followup_462">احمرار أو تورم في العينين</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-allergies text-yellow-500 ml-2 mt-1"></i>
-                                <span>طفح جلدي منتشر</span>
+                                <span data-i18n="missing_followup_465">طفح جلدي منتشر</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="mt-6 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-lg p-6 text-center">
-                    <h4 class="text-xl font-bold mb-3">احتفظي بهذه الأرقام</h4>
+                    <h4 class="text-xl font-bold mb-3" data-i18n="missing_followup_467">احتفظي بهذه الأرقام</h4>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                            <p class="font-bold text-lg">طبيب الأطفال</p>
-                            <p class="text-sm">رقم العيادة</p>
+                            <p class="font-bold text-lg" data-i18n="missing_followup_470">طبيب الأطفال</p>
+                            <p class="text-sm" data-i18n="missing_followup_471">رقم العيادة</p>
                         </div>
                         <div>
-                            <p class="font-bold text-lg">الطوارئ الطبية</p>
+                            <p class="font-bold text-lg" data-i18n="missing_followup_473">الطوارئ الطبية</p>
                             <p class="text-lg">123</p>
                         </div>
                         <div>
-                            <p class="font-bold text-lg">مركز السموم</p>
+                            <p class="font-bold text-lg" data-i18n="missing_followup_476">مركز السموم</p>
                             <p class="text-lg">911</p>
                         </div>
                     </div>
@@ -860,32 +873,32 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">رعاية الرضيع</h3>
-                    <p class="text-gray-400">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.site_name">رعاية الرضيع</h3>
+                    <p class="text-gray-400" data-i18n="missing_followup_483">دليل شامل وموثوق لرعاية الأطفال في الأشهر الستة الأولى من العمر</p>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">روابط سريعة</h3>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
-                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition">التطعيمات</a></li>
-                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition">الأمراض</a></li>
-                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition">النمو والتطور</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.home">الرئيسية</a></li>
+                        <li><a href="vaccination.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.vaccination">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.diseases">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-gray-400 hover:text-white transition" data-i18n="nav.growth">النمو والتطور</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-xl font-bold mb-4">المصادر الطبية</h3>
-                    <p class="text-gray-400">المحتوى معتمد على:</p>
+                    <h3 class="text-xl font-bold mb-4" data-i18n="missing_followup_496">المصادر الطبية</h3>
+                    <p class="text-gray-400" data-i18n="missing_followup_497">المحتوى معتمد على:</p>
                     <ul class="text-gray-400 text-sm mt-2">
-                        <li>• منظمة الصحة العالمية (WHO)</li>
-                        <li>• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
-                        <li>• اليونيسف (UNICEF)</li>
+                        <li data-i18n="missing_followup_499">• منظمة الصحة العالمية (WHO)</li>
+                        <li data-i18n="missing_followup_500">• الأكاديمية الأمريكية لطب الأطفال (AAP)</li>
+                        <li data-i18n="missing_followup_501">• اليونيسف (UNICEF)</li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-center mb-4 md:mb-0">
-                        جميع الحقوق محفوظة © <span class="copyright-year">2024</span> رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span class="copyright-year">2024</span> <span data-i18n="footer.designed_by">رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال</span>
                     </p>
                    <div class="text-center" style="direction: ltr;">
                         <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
@@ -938,5 +951,9 @@
             });
         });
     </script>
-</body>
-</html>
+    
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
+
+
+</body></html>
