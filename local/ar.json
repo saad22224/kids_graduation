@@ -10,7 +10,7 @@
     "followup": "المتابعة"
   },
   "hero": {
-    "title": "رعاية الرضيع في الأشهر الستة الأولى",
+    "title": "بداية حياة - BEDAYA HAYAT",
     "subtitle": "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة بناءً على أحدث التوصيات الطبية العالمية",
     "btn_vaccination": "جدول التطعيمات",
     "btn_care": "الرعاية اليومية",
@@ -101,18 +101,18 @@
     "toggle": "English"
   },
   "header": {
-    "logo": "رعاية الرضيع",
+    "logo": "بداية حياة | BEDAYA HAYAT",
     "subtitle": "دليلك الشامل للأشهر الستة الأولى"
   },
   "footer": {
-    "site_name": "رعاية الرضيع",
+    "site_name": "بداية حياة | BEDAYA HAYAT",
     "site_desc": "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.",
     "quick_links": "روابط سريعة",
     "contact_us": "اتصل بنا",
     "emergency": "الطوارئ: 123",
     "country": "مصر",
     "rights": "جميع الحقوق محفوظة",
-    "designed_by": "رعاية الرضيع | مصمم بعناية وحب للأمهات والأطفال",
+    "designed_by": "بداية حياة | BEDAYA HAYAT | مصمم بعناية وحب للأمهات والأطفال",
     "desc": "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.",
     "medical_sources": "المصادر الطبية",
     "sources_desc": "المحتوى معتمد على:",
@@ -1288,8 +1288,8 @@
   "missing_followup_499": "• منظمة الصحة العالمية (WHO)",
   "missing_followup_500": "• الأكاديمية الأمريكية لطب الأطفال (AAP)",
   "missing_followup_501": "• اليونيسف (UNICEF)",
-  "missing_growth_4": "النمو والتطور - رعاية الرضيع",
-  "missing_growth_19": "رعاية الرضيع",
+  "missing_growth_4": "النمو والتطور - بداية حياة | BEDAYA HAYAT",
+  "missing_growth_19": "بداية حياة | BEDAYA HAYAT",
   "missing_growth_20": "دليلك الشامل للأشهر الستة الأولى",
   "missing_growth_97": "احسب الوزن المتوقع لطفلك",
   "missing_growth_100": "عمر الطفل (بالشهور)",
@@ -1390,8 +1390,8 @@
   "missing_growth_485": "• منظمة الصحة العالمية (WHO)",
   "missing_growth_486": "• الأكاديمية الأمريكية لطب الأطفال (AAP)",
   "missing_growth_487": "• اليونيسف (UNICEF)",
-  "missing_growth_490": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> رعاية الرضيع | مصمم بعناية وحب\n                        للأمهات والأطفال",
-  "missing_index_481": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> رعاية الرضيع | <span data-i18n=\"footer.designed_by\">مصمم بعناية وحب للأمهات والأطفال</span>",
+  "missing_growth_490": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> بداية حياة | BEDAYA HAYAT | مصمم بعناية وحب\n                        للأمهات والأطفال",
+  "missing_index_481": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> بداية حياة | BEDAYA HAYAT | <span data-i18n=\"footer.designed_by\">مصمم بعناية وحب للأمهات والأطفال</span>",
   "missing_safety_67": "قانون",
   "missing_safety_68": "مقعد الأمان",
   "missing_safety_72": "استعداد",

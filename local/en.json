@@ -10,7 +10,7 @@
     "followup": "Follow-up"
   },
   "hero": {
-    "title": "Baby Care in the First Six Months",
+    "title": "بداية حياة - BEDAYA HAYAT",
     "subtitle": "A comprehensive and reliable guide for mothers to care for newborns based on the latest global medical recommendations",
     "btn_vaccination": "Vaccination Schedule",
     "btn_care": "Daily Care",
@@ -101,18 +101,18 @@
     "toggle": "Arabic"
   },
   "header": {
-    "logo": "Baby Care",
+    "logo": "BEDAYA HAYAT",
     "subtitle": "Your complete guide for the first 6 months"
   },
   "footer": {
-    "site_name": "Baby Care",
+    "site_name": "BEDAYA HAYAT",
     "site_desc": "A comprehensive and trusted guide for mothers to care for newborns in the first six months.",
     "quick_links": "Quick Links",
     "contact_us": "Contact Us",
     "emergency": "Emergency: 123",
     "country": "Egypt",
     "rights": "All rights reserved",
-    "designed_by": "Baby Care | Designed with care and love for mothers and babies",
+    "designed_by": "BEDAYA HAYAT | Designed with care and love for mothers and babies",
     "desc": "Comprehensive and reliable guide for mothers to care for newborns in the first six months.",
     "medical_sources": "Medical Sources",
     "sources_desc": "Content approved by:",
@@ -1288,8 +1288,8 @@
   "missing_followup_499": "• World Health Organization (WHO)",
   "missing_followup_500": "• American Academy of Pediatrics (AAP)",
   "missing_followup_501": "• UNICEF",
-  "missing_growth_4": "Growth and Development - Baby Care",
-  "missing_growth_19": "Baby Care",
+  "missing_growth_4": "Growth and Development - BEDAYA HAYAT",
+  "missing_growth_19": "BEDAYA HAYAT",
   "missing_growth_20": "Comprehensive Guide for First 6 Months",
   "missing_growth_97": "Calculate Expected Baby Weight",
   "missing_growth_100": "Baby's Age (Months)",
@@ -1390,8 +1390,8 @@
   "missing_growth_485": "• World Health Organization (WHO)",
   "missing_growth_486": "• American Academy of Pediatrics (AAP)",
   "missing_growth_487": "• UNICEF",
-  "missing_growth_490": "<span data-i18n=\"footer.rights\">All Rights Reserved</span> © <span class=\"copyright-year\">2024</span> Baby Care | Designed with care\n                        for mothers and babies",
-  "missing_index_481": "<span data-i18n=\"footer.rights\">All Rights Reserved</span> © <span class=\"copyright-year\">2024</span> Baby Care | <span data-i18n=\"footer.designed_by\">Designed with love for moms and babies</span>",
+  "missing_growth_490": "<span data-i18n=\"footer.rights\">All Rights Reserved</span> © <span class=\"copyright-year\">2024</span> BEDAYA HAYAT | Designed with care\n                        for mothers and babies",
+  "missing_index_481": "<span data-i18n=\"footer.rights\">All Rights Reserved</span> © <span class=\"copyright-year\">2024</span> BEDAYA HAYAT | <span data-i18n=\"footer.designed_by\">Designed with love for moms and babies</span>",
   "missing_safety_67": "Law",
   "missing_safety_68": "Car Seat",
   "missing_safety_72": "Readiness",
