@@ -32,8 +32,16 @@
             font-family: 'Inter', sans-serif;
         }
 
+        :root {
+            --primary: #0ea5e9;
+            --primary-dark: #0284c7;
+            --primary-light: #e0f2fe;
+            --secondary: #f8fafc;
+            --accent: #14b8a6;
+        }
+        
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
         }
 
         .timeline-dot {
@@ -89,50 +97,47 @@
 <body class="bg-gray-50">
 
     <!-- Navigation -->
-    <nav class="bg-white shadow-2xl sticky top-0 z-50 backdrop-blur-lg border-b border-gray-200">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-lg border-b border-slate-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
                 <a href="index.html" class="hover:opacity-90 transition-opacity">
-                    <img src="assets/Gemini_Generated_Image_ldkzaxldkzaxldkz-removebg-preview.webp" alt="بداية حياة" class="h-16 w-auto object-contain drop-shadow-lg">
+                    <img src="assets/Gemini_Generated_Image_ldkzaxldkzaxldkz-removebg-preview.webp" alt="بداية حياة" class="h-16 w-auto object-contain">
                 </a>
 
                 <div class="hidden md:flex items-center space-x-1 space-x-reverse">
-                    <a href="index.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
-                    <a href="vaccination.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
-                    <a href="diseases.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
-                    <a href="growth.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو
-                        والتطور</a>
-                    <a href="care.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية
-                        اليومية</a>
-                    <a href="breastfeeding.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة
-                        الطبيعية</a>
-                    <a href="safety.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
-                    <a href="followup.html" class="nav-link text-purple-700 hover:bg-purple-100 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+                    <a href="index.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                    <a href="vaccination.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                    <a href="diseases.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                    <a href="growth.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                    <a href="care.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                    <a href="breastfeeding.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                    <a href="safety.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                    <a href="followup.html" class="nav-link text-slate-700 hover:bg-sky-50 hover:text-sky-600 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
 
                     <!-- Language Switcher -->
-                      <button id="lang-switcher" onclick="toggleLang()" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-full transition-all duration-300 font-bold ml-4">
+                      <button id="lang-switcher" onclick="toggleLang()" class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-full transition-all duration-300 font-bold ml-4">
                         English
                     </button>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden text-purple-700 hover:bg-purple-100 p-2 rounded-lg transition-all duration-300">
+                <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:bg-sky-50 p-2 rounded-lg transition-all duration-300">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
 
           <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
-                <a href="#home" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
-                <a href="vaccination.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
-                <a href="diseases.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
-                <a href="growth.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
-                <a href="care.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
-                <a href="breastfeeding.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
-                <a href="safety.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
-                <a href="followup.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-slate-200 mt-3 pt-3">
+                <a href="index.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="diseases.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="growth.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="care.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="followup.html" class="block py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
                 
                 <!-- Mobile Language Switcher -->
-                <button onclick="toggleLang()" class="w-full text-left py-2 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-purple-600 pt-2">
+                <button onclick="toggleLang()" class="w-full text-left py-2 hover:text-sky-600 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-slate-200 pt-2">
                     <i class="fas fa-globe ml-2"></i>
                     <span data-i18n="lang.en">English</span>
                 </button>
@@ -141,80 +146,70 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-600 text-white py-24 overflow-hidden">
+    <section class="relative bg-gradient-to-br from-sky-500 to-teal-500 text-white py-20 overflow-hidden">
         <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 opacity-5">
             <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-300 rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-200 rounded-full filter blur-3xl"></div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center">
-                <div class="lg:w-1/2 mb-12 lg:mb-0" data-aos="fade-right">
-                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-8">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight" data-i18n="vaccination.title">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" data-i18n="vaccination.title">
                             جدول التطعيمات
                         </h1>
-                        <p class="text-xl mb-8 text-blue-100 leading-relaxed" data-i18n="vaccination.subtitle">
+                        <p class="text-xl mb-8 text-sky-50 leading-relaxed" data-i18n="vaccination.subtitle">
                             الجدول الكامل للتطعيمات الإلزامية للأشهر الستة الأولى مع إرشادات مهمة للآثار الجانبية
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#schedule" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="vaccination.btn_schedule">
+                            <a href="#schedule" class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="vaccination.btn_schedule">
                                 <i class="fas fa-calendar-alt ml-2"></i>الجدول الكامل
                             </a>
-                            <a href="#side-effects" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="vaccination.btn_side_effects">
+                            <a href="#side-effects" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-sky-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="vaccination.btn_side_effects">
                                 <i class="fas fa-exclamation-triangle ml-2"></i>الآثار الجانبية
                             </a>
                         </div>
 
                         <!-- Quick Stats -->
                         <div class="grid grid-cols-3 gap-4 text-center">
-                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                            <div class="bg-white/20 rounded-lg p-3">
                                 <i class="fas fa-shield-alt text-2xl mb-1"></i>
                                 <p class="text-sm font-medium" data-i18n="hero.stats_months">6 أشهر</p>
-                                <p class="text-xs" data-i18n="vaccination.stats.protection">حماية كاملة</p>
+                                <p class="text-xs opacity-80" data-i18n="vaccination.stats.protection">حماية كاملة</p>
                             </div>
-                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                            <div class="bg-white/20 rounded-lg p-3">
                                 <i class="fas fa-syringe text-2xl mb-1"></i>
                                 <p class="text-sm font-medium" data-i18n="vaccination.stats.vaccines">8+</p>
-                                <p class="text-xs" data-i18n="features.vaccination">تطعيم أساسي</p>
+                                <p class="text-xs opacity-80" data-i18n="features.vaccination">تطعيم أساسي</p>
                             </div>
-                            <div class="bg-white bg-opacity-20 rounded-lg p-3">
+                            <div class="bg-white/20 rounded-lg p-3">
                                 <i class="fas fa-heartbeat text-2xl mb-1"></i>
                                 <p class="text-sm font-medium" data-i18n="vaccination.stats.efficacy">95%</p>
-                                <p class="text-xs" data-i18n="stats_available_desc">فعالية</p>
+                                <p class="text-xs opacity-80" data-i18n="stats_available_desc">فعالية</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-1/2" data-aos="fade-left">
                     <div class="relative">
-                        <!-- Main Icon -->
-                        <div class="floating text-center">
-                            <div class="bg-white bg-opacity-20 backdrop-blur-md rounded-full w-64 h-64 mx-auto flex items-center justify-center shadow-2xl">
-                                <i class="fas fa-syringe text-9xl text-white"></i>
-                            </div>
+                        <!-- Main Image -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&h=500&fit=crop" alt="تطعيمات الأطفال" class="w-full h-auto object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-sky-900/30 to-transparent"></div>
                         </div>
-
-                        <!-- Floating Icons -->
-                        <div class="absolute top-0 left-10 floating" style="animation-delay: 0.5s;">
-                            <div class="bg-cyan-500 rounded-full w-16 h-16 flex items-center justify-center shadow-lg">
-                                <i class="fas fa-shield-alt text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="absolute top-20 right-10 floating" style="animation-delay: 1s;">
-                            <div class="bg-green-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
-                                <i class="fas fa-check text-white text-xl"></i>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-10 left-20 floating" style="animation-delay: 1.5s;">
-                            <div class="bg-yellow-500 rounded-full w-12 h-12 flex items-center justify-center shadow-lg">
-                                <i class="fas fa-calendar text-white text-lg"></i>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-20 right-20 floating" style="animation-delay: 2s;">
-                            <div class="bg-red-500 rounded-full w-14 h-14 flex items-center justify-center shadow-lg">
-                                <i class="fas fa-heart text-white text-xl"></i>
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl p-4 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                            <div class="flex items-center gap-3">
+                                <div class="bg-sky-100 rounded-full w-12 h-12 flex items-center justify-center">
+                                    <i class="fas fa-shield-alt text-sky-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-800">حماية مضمونة</p>
+                                    <p class="text-xs text-slate-500">من الأمراض الخطيرة</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -224,11 +219,10 @@
     </section>
 
     <!-- Vaccination Schedule -->
-    <section id="schedule" class="py-16">
+    <section id="schedule" class="py-16 bg-white">
         <div class="container mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800" data-i18n="vaccination.schedule.title">
-                    <i class="fas fa-calendar-alt text-blue-500 ml-2"></i>
+            <div class="bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-100" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-center mb-12 text-slate-800" data-i18n="vaccination.schedule.title">
                     جدول التطعيمات للأشهر الستة الأولى
                 </h2>
 
@@ -236,24 +230,30 @@
                     <!-- At Birth -->
                     <div class="timeline-item">
                         <div class="flex items-start">
-                            <div class="timeline-dot bg-blue-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                            <div class="timeline-dot bg-sky-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
                                 0
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="vaccination.schedule.0.age">عند الولادة</h3>
-                                <div class="bg-blue-50 rounded-lg p-4">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.0.age">عند الولادة</h3>
+                                <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div class="flex items-center">
-                                            <i class="fas fa-syringe text-blue-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.0.v1">التهاب الكبد B (الجرعة الأولى)</span>
+                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-syringe text-sky-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.0.v1">التهاب الكبد B (الجرعة الأولى)</span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-shield-virus text-blue-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.0.v2">BCG (درن)</span>
+                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-shield-virus text-sky-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.0.v2">BCG (درن)</span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-virus text-blue-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الأولى)</span>
+                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-virus text-sky-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الأولى)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -264,28 +264,36 @@
                     <!-- 6 Weeks -->
                     <div class="timeline-item">
                         <div class="flex items-start">
-                            <div class="timeline-dot bg-green-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                            <div class="timeline-dot bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
                                 6
                             </div>
                             <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="vaccination.schedule.6w.age">6 أسابيع (شهر ونصف)</h3>
-                                <div class="bg-green-50 rounded-lg p-4">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.6w.age">6 أسابيع (شهر ونصف)</h3>
+                                <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div class="flex items-center">
-                                            <i class="fas fa-syringe text-green-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.6w.v1">DTP (خانوق، تيتانوس، سعال ديكي)</span>
+                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-syringe text-teal-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.6w.v1">DTP (خانوق، تيتانوس، سعال ديكي)</span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-virus text-green-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الثانية)</span>
+                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-virus text-teal-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الثانية)</span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-bacterium text-green-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.hib">Hib (انفلونزا المستدمية)</span>
+                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-bacterium text-teal-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.hib">Hib (انفلونزا المستدمية)</span>
                                         </div>
                                         <div class="flex items-center">
-                                            <i class="fas fa-lungs text-green-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.pneumococcal">التهاب الرئة (PCV)</span>
+                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
+                                                <i class="fas fa-lungs text-teal-600"></i>
+                                            </div>
+                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.pneumococcal">التهاب الرئة (PCV)</span>
                                         </div>
                                     </div>
                                 </div>
@@ -296,7 +304,7 @@
                     <!-- 10 Weeks -->
                     <div class="timeline-item">
                         <div class="flex items-start">
-                            <div class="timeline-dot bg-yellow-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                            <div class="timeline-dot bg-sky-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
                                 10
                             </div>
                             <div class="mr-8 flex-1">
@@ -540,43 +548,39 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-slate-900 text-white py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="header.logo">بداية حياة | BEDAYA HAYAT</h3>
-                    <p class="text-gray-300 mb-4" data-i18n="footer.desc"><span data-i18n="footer.site_desc">دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.</span></p>
-                                    </div>
-
+                    <h3 class="text-xl font-bold mb-4 text-sky-400" data-i18n="footer.site_name">بداية حياة | BEDAYA HAYAT</h3>
+                    <p class="text-slate-400 mb-4" data-i18n="footer.site_desc">دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.</p>
+                    </div>
+                
                 <div>
-                    <h3 class="text-xl font-bold mb-4" data-i18n="footer.quick_links">روابط سريعة</h3>
+                    <h3 class="text-xl font-bold mb-4 text-sky-400" data-i18n="footer.quick_links">روابط سريعة</h3>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_281">الرئيسية</a></li>
-                        <li><a href="vaccination.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_283">التطعيمات</a></li>
-                        <li><a href="diseases.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_285">الأمراض</a></li>
-                        <li><a href="growth.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_287">النمو
-                                والتطور</a></li>
-                        <li><a href="care.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_289">الرعاية
-                                اليومية</a></li>
-                        <li><a href="breastfeeding.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_291">الرضاعة الطبيعية</a></li>
-                        <li><a href="safety.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_293">السلامة</a></li>
-                        <li><a href="followup.html" class="text-gray-300 hover:text-white transition duration-300" data-i18n="missing_vaccination_295">المتابعة</a></li>
+                        <li><a href="vaccination.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.vaccination">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.diseases">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.growth">النمو والتطور</a></li>
+                        <li><a href="care.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.care">الرعاية اليومية</a></li>
+                        <li><a href="breastfeeding.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a></li>
+                        <li><a href="safety.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.safety">السلامة</a></li>
+                        <li><a href="followup.html" class="text-slate-400 hover:text-sky-400 transition duration-300" data-i18n="nav.followup">المتابعة</a></li>
                     </ul>
                 </div>
             </div>
-
+            
             <!-- Developer Credit -->
-            <div class="border-t border-gray-700 mt-8 pt-8">
+            <div class="border-t border-slate-800 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-center mb-4 md:mb-0" data-i18n="footer.copyright">
-                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span class="copyright-year">2026</span> <span data-i18n="footer.designed_by">BEDAYET HAYA | تحت إشراف د مني شاهين</span>
+                    <p class="text-slate-500 text-center mb-4 md:mb-0" data-i18n="missing_index_481" data-i18n-html="true">
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> &copy; <span class="copyright-year">2026</span> <span data-i18n="footer.designed_by">BEDAYET HAYA | تحت إشراف د مني شاهين</span>
                     </p>
                     <div class="text-center" style="direction: ltr;">
-                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
+                        <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-all duration-300 group">
                             <span class="text-sm">Developed with</span>
-                            <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
-                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad
-                                Harera</span>
+                            <i class="fas fa-heart text-sky-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-sky-300 transition-colors"> By Eng Saad Harera</span>
                         </a>
                     </div>
                 </div>
