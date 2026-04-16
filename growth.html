@@ -97,20 +97,21 @@
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
+             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-purple-700 mt-3 pt-3">
-                <a href="index.html" data-i18n="nav.home" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                <a href="vaccination.html" data-i18n="nav.vaccination" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                <a href="diseases.html" data-i18n="nav.diseases" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                <a href="growth.html" data-i18n="nav.growth" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                <a href="care.html" data-i18n="nav.care" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
-                <a href="breastfeeding.html" data-i18n="nav.breastfeeding" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
-                <a href="safety.html" data-i18n="nav.safety" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">السلامة</a>
-                <a href="followup.html" data-i18n="nav.followup" class="block py-2 text-purple-100 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
+                <a href="#home" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="vaccination.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="diseases.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="growth.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="care.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="breastfeeding.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="safety.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="followup.html" class="block py-2  hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
                 
-                <button onclick="toggleLang()" class="w-full text-right py-3 text-white border-t border-purple-500 mt-3 font-bold flex items-center justify-between">
-                    <span data-i18n="lang.toggle">English</span>
-                    <i class="fas fa-language text-xl"></i>
+                <!-- Mobile Language Switcher -->
+                <button onclick="toggleLang()" class="w-full text-left py-2 hover:text-white hover:bg-purple-700 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-purple-600 pt-2">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span data-i18n="lang.en">English</span>
                 </button>
             </div>
         </div>
@@ -794,14 +795,13 @@
             <div class="border-t border-gray-700 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-center mb-4 md:mb-0" data-i18n="missing_growth_490" data-i18n-html="true">
-                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> © <span class="copyright-year">2024</span> بداية حياة | BEDAYA HAYAT | مصمم بعناية وحب
-                        للأمهات والأطفال
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> &copy; <span class="copyright-year">2026</span> <span data-i18n="footer.designed_by">BEDAYET HAYA | تحت إشراف د مني شاهين</span>
                     </p>
                     <div class="text-center" style="direction: ltr;">
                         <a href="https://wa.me/201099615358" target="_blank" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-300 group">
                             <span class="text-sm">Developed with</span>
                             <i class="fas fa-heart text-red-500 mx-2 animate-pulse"></i>
-                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad
+                            <span class="font-bold text-white hover:text-purple-300 transition-colors"> By Eng Saad Harera</span>
                                 Harera</span>
                         </a>
                     </div>

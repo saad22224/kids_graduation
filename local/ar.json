@@ -1390,8 +1390,8 @@
   "missing_growth_485": "• منظمة الصحة العالمية (WHO)",
   "missing_growth_486": "• الأكاديمية الأمريكية لطب الأطفال (AAP)",
   "missing_growth_487": "• اليونيسف (UNICEF)",
-  "missing_growth_490": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> بداية حياة | BEDAYA HAYAT | مصمم بعناية وحب\n                        للأمهات والأطفال",
-  "missing_index_481": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2024</span> بداية حياة | BEDAYA HAYAT | <span data-i18n=\"footer.designed_by\">مصمم بعناية وحب للأمهات والأطفال</span>",
+  "missing_growth_490": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2026</span> BEDAYET HAYA | تحت إشراف د مني شاهين",
+  "missing_index_481": "<span data-i18n=\"footer.rights\">جميع الحقوق محفوظة</span> © <span class=\"copyright-year\">2026</span> BEDAYET HAYA | <span data-i18n=\"footer.designed_by\">تحت إشراف د مني شاهين</span>",
   "missing_safety_67": "قانون",
   "missing_safety_68": "مقعد الأمان",
   "missing_safety_72": "استعداد",
@@ -1558,5 +1558,6 @@
   "missing_vaccination_291": "الرضاعة الطبيعية",
   "missing_vaccination_293": "السلامة",
   "missing_vaccination_295": "المتابعة",
-  "stats_available_desc": "نصيحة وإرشاد"
+  "stats_available_desc": "نصيحة وإرشاد",
+  "footer.designed_by": "BEDAYET HAYA | تحت إشراف د مني شاهين"
 }
