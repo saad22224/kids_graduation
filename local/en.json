@@ -120,90 +120,101 @@
   },
   "vaccination": {
     "meta": {
-      "title": "Vaccination Schedule - Baby Care"
+      "title": "Vaccination Schedule - Bedaya Hayat"
     },
     "title": "Vaccination Schedule",
-    "subtitle": "Mandatory vaccination schedule for the first six months and how to deal with side effects",
+    "subtitle": "Complete schedule of mandatory vaccinations for the first 18 months with important side-effect instructions",
+    "schedule_title": "Vaccination Schedule (0-18 Months)",
     "btn_schedule": "Full Schedule",
     "btn_side_effects": "Side Effects",
     "stats": {
+      "months": "18 Months",
       "protection": "Full Protection",
-      "vaccines": "8+ Basic Vaccines",
+      "vaccines": "8+ Core Vaccines",
       "efficacy": "95% Efficacy"
     },
     "schedule": {
-      "0": {
-        "age": "At Birth (within 24 hours)",
-        "v1": "Hepatitis B (1st Dose)",
-        "v2": "BCG (Tuberculosis)"
+      "birth": {
+        "age": "At Birth",
+        "desc": "Hepatitis B + Oral Polio (OPV)"
       },
-      "title": "Vaccination Timeline",
-      "6w": {
-        "age": "6 Weeks (1.5 Months)",
-        "v1": "Hexavalent (DTP + HepB + Hib + Polio)",
-        "v2": "Pneumococcal (1st Dose)",
-        "v3": "Rotavirus (1st Dose)"
+      "month2preg": {
+        "age": "From Birth to 2 Months",
+        "desc": "BCG (Tuberculosis) Vaccine"
       },
-      "10w": {
-        "age": "10 Weeks (2.5 Months)",
-        "v1": "Hexavalent (2nd Dose)",
-        "v2": "Pneumococcal (2nd Dose)",
-        "v3": "Rotavirus (2nd Dose)"
+      "month2": {
+        "age": "2 Months",
+        "desc": "Oral & Injected Polio + Pentavalent Vaccine"
       },
-      "14w": {
-        "age": "14 Weeks (3.5 Months)",
-        "v1": "Hexavalent (3rd Dose)",
-        "v2": "Pneumococcal (3rd Dose)",
-        "v3": "IPV (Injectable Polio)"
+      "month4": {
+        "age": "4 Months",
+        "desc": "Oral & Injected Polio + Pentavalent Vaccine"
       },
-      "6m": {
+      "month6": {
         "age": "6 Months",
-        "v1": "Hepatitis B (3rd Dose)",
-        "v2": "Oral Polio (OPV)"
+        "desc": "Oral & Injected Polio + Pentavalent + Vitamin A (100k IU)"
+      },
+      "month9": {
+        "age": "9 Months",
+        "desc": "Oral Polio (OPV)"
+      },
+      "month12": {
+        "age": "12 Months (1 Year)",
+        "desc": "Oral Polio + MMR Vaccine + Vitamin A (200k IU)"
+      },
+      "month18": {
+        "age": "18 Months",
+        "desc": "Oral Polio + MMR + DTP Booster + Vitamin A (200k IU)"
       }
     },
     "side_effects": {
       "title": "Side Effects & How to Handle Them",
       "fever": {
-        "title": "Fever",
+        "title": "High Temperature",
         "desc": "Normal immune system reaction",
-        "handle": "Use lukewarm water compresses, give paracetamol based on weight (after consulting doctor)"
+        "handle": "Use lukewarm compresses and paracetamol based on weight (after medical advice)"
       },
       "pain": {
-        "title": "Pain & Swelling at Injection Site",
-        "desc": "Mild redness or swelling",
-        "handle": "Apply cold compresses to the site, avoid massaging the area"
+        "title": "Swelling at Injection Site",
+        "desc": "Redness and slight swelling for 2-3 days",
+        "handle_new": "Apply cold compresses initially, then warm compresses for 15 minutes."
       },
       "mood": {
         "title": "Irritability & Crying",
-        "desc": "Change in sleep pattern or appetite",
-        "handle": "Increase cuddling and breastfeeding to soothe the baby"
+        "desc": "Increased crying and irritation for 24-48 hours",
+        "handle_new": "Continuous breastfeeding is crucial during and after vaccination to soothe the child."
       }
     },
     "warning": {
-      "title": "Signs Requiring Immediate Medical Attention",
-      "fever_39": "Fever higher than 39°C",
-      "allergic": "Sudden rash or breathing difficulties",
-      "crying": "Persistent crying for more than 3 hours",
-      "swelling": "Extreme swelling or pus at injection site"
+      "title": "Danger Signs - Call Doctor Immediately",
+      "fever_39": "High Fever (over 39°C)",
+      "allergic": "Allergic Reactions (Difficulty breathing or rash)",
+      "convulsions": "Convulsions (Seizures)",
+      "convulsions_desc": "Occurrence of convulsions or sudden loss of consciousness",
+      "abscess": "Abscess at injection site",
+      "abscess_desc": "Appearance of an abscess or pussy lump at the injection site"
+    },
+    "notes": {
+      "opv": {
+        "title": "Important Notes on Oral Polio Vaccine (OPV)",
+        "breastfeeding": "Breastfeeding does not affect the Oral Polio Vaccine.",
+        "spit": "If the child spits out the vaccine, it can be re-administered safely.",
+        "health": "The vaccine should be given when the child is completely healthy.",
+        "diarrhea": "Diarrhea is one of the conditions that may make vaccines ineffective."
+      }
     },
     "tips_before": {
       "title": "Tips Before Vaccination",
-      "t1": "Inform the doctor if the baby is ill or has allergies",
-      "t2": "Breastfeed the baby 30 minutes before for comfort",
-      "t3": "Dress baby in easy-to-remove clothing"
+      "t1": "Inform doctor if child is sick or has allergies",
+      "t2": "Breastfeed 30 mins before vaccination to soothe",
+      "t3": "Dress child in easy-to-remove clothes",
+      "t4": "Avoid vaccinating the child (especially oral vaccines) if they have diarrhea, as it prevents effective absorption, requiring the dose to be repeated after recovery."
     },
     "tips_after": {
       "title": "Tips After Vaccination",
-      "t1": "Monitor baby's temperature every 4 hours",
-      "t2": "Increase breastfeeding to keep baby hydrated",
-      "t3": "Record the next vaccination date in your calendar"
-    },
-    "vaccines": {
-      "polio": "Polio",
-      "hib": "Haemophilus Influenzae b (Hib)",
-      "pneumococcal": "Pneumococcal",
-      "dtp": "DTP (Diphtheria, Tetanus, Pertussis)"
+      "t1": "Monitor temperature every 4 hours",
+      "t2": "Increase breastfeeding to maintain hydration",
+      "t3": "Record next appointment date"
     }
   },
   "diseases": {
@@ -212,33 +223,38 @@
     },
     "title": "Diseases & Danger Signs",
     "subtitle": "Comprehensive guide to common diseases, danger signs, and emergencies in infants",
-    "btn_sepsis": "Sepsis",
     "btn_danger": "Danger Signs",
-    "sepsis": {
-      "title": "Neonatal Sepsis",
-      "desc": "A serious medical emergency resulting from the body's response to infection",
-      "symptoms_title": "Common Sepsis Symptoms:",
-      "s1": "Sudden temperature change (high or very low)",
-      "s2": "Difficulty breathing or very fast breathing",
-      "s3": "Weak feeding or total refusal to feed",
-      "s4": "Severe lethargy or abnormal irritability",
-      "s5": "Skin color changes (paleness or bluish tint)",
-      "action_title": "What should you do?",
-      "action_desc": "If you notice any of these signs, go immediately to the nearest pediatric emergency room. Delay may endanger the baby's life"
-    },
     "common": {
       "title": "Common Diseases in the First Months",
       "respiratory": {
         "title": "Respiratory Diseases",
-        "desc": "Including colds and bronchiolitis. Watch for fast breathing or abnormal sounds"
+        "desc": "Observe danger signs like rapid breathing and abnormal chest sounds (wheezing or whistling). Consult a doctor immediately."
       },
       "digestive": {
-        "title": "Digestive Problems",
-        "desc": "Like colic, reflux, diarrhea, and constipation. Monitor diaper count and stool consistency"
+        "title": "Digestive System Diseases",
+        "desc": "Diarrhea, colic, and reflux. Monitor frequency and stool consistency.",
+        "diarrhea": {
+          "title": "Danger Signs during Diarrhea",
+          "list": [
+            "Significantly increased bowel movements",
+            "Blood in stool",
+            "High fever",
+            "Persistent vomiting with diarrhea",
+            "Convulsions (Seizures)"
+          ]
+        },
+        "dehydration_treatment": {
+          "title": "Dehydration Management Protocol",
+          "step1": "Administer Oral Rehydration Salts (ORS) at home as per medical advice.",
+          "step2": "Continue breastfeeding or formula feeding regularly.",
+          "step3": "Give Zinc syrup to reduce the severity of diarrhea.",
+          "step4": "Maintain strict hygiene for hands and feeding tools."
+        }
       },
       "skin": {
-        "title": "Skin Diseases",
-        "desc": "Like diaper rash, eczema, and oral thrush (white fungal patches)"
+        "title": "Skin & Oral Conditions",
+        "desc": "Mainly Oral Thrush (dense white patches on tongue and inner cheeks) and diaper rash.",
+        "thrush_title": "Oral Thrush"
       }
     },
     "danger_signs": {
@@ -397,7 +413,31 @@
       "cradle_cap_desc": "Yellowish greasy patches on the scalp"
     },
     "schedule": {
-      "title": "Suggested Daily Care Schedule"
+      "title": "Suggested Daily Care Schedule",
+      "morning": {
+        "title": "Morning (6:00 - 12:00)",
+        "wake": "Waking up and Feeding (On Demand)",
+        "diaper": "Diaper change and skin cleaning",
+        "play": "Playtime and visual interaction",
+        "feeding2": "Feeding (On Demand)",
+        "nap": "First nap (in a quiet place)"
+      },
+      "afternoon": {
+        "title": "Afternoon (12:00 - 18:00)",
+        "wake": "Waking up and Feeding (On Demand)",
+        "diaper": "Diaper change and air time",
+        "bath": "Bath time (twice a week)",
+        "play": "Quiet play and massage",
+        "nap": "Second nap"
+      },
+      "evening": {
+        "title": "Evening (18:00 - 24:00)",
+        "feeding": "Feeding (On Demand)",
+        "diaper": "Final diaper change",
+        "quiet": "Quiet time (dim lights)",
+        "songs": "Quiet songs or a short story",
+        "sleep": "Regular nightly sleep"
+      }
     }
   },
   "breastfeeding": {
@@ -436,7 +476,7 @@
         "list": [
           "Weight loss",
           "Reduced bleeding",
-          "Cancer prevention",
+          "Breast and cervical cancer prevention",
           "Stronger emotional bond"
         ]
       },
@@ -500,7 +540,7 @@
         "solutions": "Correct position, apply breast milk to nipple, lanolin cream"
       },
       "low_supply": {
-        "title": "Low Milk Supply",
+        "title": "Blocked Milk Ducts",
         "causes": "Infrequent feeds, stress, exhaustion",
         "solutions": "Increase feedings, rest, drink plenty of fluids"
       },
@@ -528,6 +568,36 @@
     },
     "maternal": {
       "title": "Maternal Difficulties & How to Handle Them"
+    },
+    "positions_note": "There is no ideal breastfeeding position, but there is a comfortable position for the mother during breastfeeding. Choose the position that suits you best.",
+    "refusal_note": "Breastfeeding refusal is a temporary matter that resolves when the underlying cause is addressed.",
+    "safe_sleep": {
+      "title": "Safe Sleep",
+      "pacifier_title": "Pacifier & Breastfeeding",
+      "pacifier_rule": "Do NOT give a pacifier to your baby during the breastfeeding period",
+      "pacifier_reason": "Using a pacifier during the breastfeeding period may cause Nipple Confusion and negatively affect breastfeeding success.",
+      "no_pacifier_bf": "No Pacifier with Breastfeeding - Avoid giving a pacifier to your infant during the breastfeeding period.",
+      "rules_title": "Safe Sleep Rules for Infants",
+      "rule1": "Always place baby on their back to sleep",
+      "rule2": "Firm crib with no pillows or toys",
+      "rule3": "Appropriate room temperature (20-22°C)",
+      "rule4": "No smoking near the baby"
+    },
+    "emergency": {
+      "title": "Emergency Procedures",
+      "fever_title": "High Temperature",
+      "fever_step1_title": "First: Water Compresses",
+      "fever_step1_desc": "Apply lukewarm (not cold) water compresses on the baby's forehead, underarms, and between thighs.",
+      "fever_step2_title": "Second: Fever Reducer",
+      "fever_step2_desc": "Give an age-appropriate fever reducer as per doctor's instructions (after applying compresses first).",
+      "fever_warning": "If the fever persists or is above 38.5°C in an infant, see a doctor immediately.",
+      "choking_title": "Choking",
+      "choking_action_title": "First Aid:",
+      "choking_step1": "The mother performs first aid for the child until emergency services arrive.",
+      "choking_step2": "Perform back blows - 5 firm blows between the shoulder blades.",
+      "choking_step3": "The goal is to dislodge the object the child has swallowed.",
+      "choking_warning": "WARNING: Do NOT try to squeeze or press on the child's chest. Use the back blow technique only.",
+      "choking_call": "Call emergency services immediately at 123 while performing first aid."
     }
   },
   "safety": {

@@ -150,10 +150,7 @@
                             التعرف على الأمراض الشائعة وعلامات الخطر التي تتطلب استشارة طبية فورية
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                            <a href="#sepsis" class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="diseases.btn_sepsis">
-                                <i class="fas fa-exclamation-triangle ml-2"></i>الإنتان
-                            </a>
-                            <a href="#warning-signs" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-sky-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="diseases.btn_danger">
+                            <a href="#warning-signs" class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="diseases.btn_danger">
                                 <i class="fas fa-heartbeat ml-2"></i>علامات الخطر
                             </a>
                         </div>
@@ -182,7 +179,7 @@
                     <div class="relative">
                         <!-- Main Image -->
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&h=500&fit=crop" alt="الأمراض" class="w-full h-auto object-cover">
+                            <img src="assets/sick_infant_care.png" alt="طفل مريض" class="w-full h-auto object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-sky-900/30 to-transparent"></div>
                         </div>
                         
@@ -204,64 +201,6 @@
         </div>
     </section>
     
-    <!-- Sepsis Section - Most Critical -->
-    <section id="sepsis" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="bg-red-50 border-2 border-red-200 rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <div class="text-center mb-8">
-                    <div class="danger-pulse inline-block">
-                        <i class="fas fa-exclamation-triangle text-6xl text-red-600 mb-4"></i>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-red-600" data-i18n="diseases.sepsis.title">الإنتان (Sepsis) - حالة طارئة</h2>
-                    <p class="text-lg text-red-700 mt-2" data-i18n="diseases.sepsis.desc">الإنتان هو استجابة جسدية شديدة للعدوى ويتطلب تدخل طبي فوري</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.sepsis.symptoms_title">
-                            <i class="fas fa-thermometer-high ml-2"></i>
-                            الأعراض الرئيسية
-                        </h3>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start">
-                                <i class="fas fa-temperature-high text-red-500 ml-2 mt-1"></i>
-                                <span data-i18n="diseases.sepsis.s1"><strong>حمى عالية:</strong> درجة حرارة أعلى من 38°C أو انخفاض شديد في درجة الحرارة</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-heartbeat text-red-500 ml-2 mt-1"></i>
-                                <span data-i18n="diseases.sepsis.s2"><strong>تسارع ضربات القلب:</strong> أكثر من 160 ضربة في الدقيقة</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-lungs text-red-500 ml-2 mt-1"></i>
-                                <span data-i18n="diseases.sepsis.s3"><strong>صعوبة في التنفس:</strong> تنفس سريع أو صعوبة في التنفس</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-brain text-red-500 ml-2 mt-1"></i>
-                                <span data-i18n="diseases.sepsis.s4"><strong>تغير في الوعي:</strong> خمول شديد أو عدم استجابة</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-tint text-red-500 ml-2 mt-1"></i>
-                                <span data-i18n="diseases.sepsis.s5"><strong>بقع جلدية:</strong> طفح جلدي أرجواني لا يختفي عند الضغط</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.sepsis.action_title">
-                            <i class="fas fa-ambulance ml-2"></i>
-                            الإجراءات الفورية
-                        </h3>
-                        <div class="space-y-4">
-                            <div class="bg-red-100 rounded-lg p-4">
-                                <h4 class="font-bold text-red-700 mb-2" data-i18n="diseases.sepsis.action_title">اتصل بالطوارئ فوراً</h4>
-                                <p class="text-gray-700" data-i18n="diseases.sepsis.action_desc">إذا لاحظت أيًا من هذه العلامات، فتوجه فورًا إلى أقرب قسم طوارئ للأطفال. التأخير قد يعرض حياة الرضيع للخطر</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Common Diseases Section -->
     <section class="py-16 bg-gray-100">
@@ -279,7 +218,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.respiratory.title">التهابات الجهاز التنفسي</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p data-i18n="diseases.common.respiratory.desc">تشمل نزلات البرد والتهاب القصيبات. راقبي سرعة التنفس أو الأصوات غير الطبيعية</p>
+                        <p data-i18n="diseases.common.respiratory.desc">لاحظى علامات الخطر مثل سرعة التنفس وصوت الصدر غير الطبيعى (نهجان أو تزييق) واستشيري الطبيب فوراً.</p>
                     </div>
                 </div>
                 
@@ -290,18 +229,29 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.digestive.title">أمراض الجهاز الهضمي</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p data-i18n="diseases.common.digestive.desc">مثل المغص والارتجاع والإسهال والإمساك. راقبي عدد الحفاضات وشكل البراز</p>
+                        <p data-i18n="diseases.common.digestive.desc">الإسهال، المغص، والارتجاع. يحب مراقبة عدد مرات الحمام وقوام البراز.</p>
+                    </div>
+                    <div class="mt-4 p-3 bg-red-50 rounded-lg border border-red-100">
+                        <h4 class="text-sm font-bold text-red-600 mb-2" data-i18n="diseases.common.digestive.diarrhea.title">علامات الخطر عند الإسهال:</h4>
+                        <ul class="text-xs text-red-700 space-y-1">
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle opacity-50"></i> <span data-i18n="diseases.common.digestive.diarrhea.list.0">زيادة عدد مرات التبرز بشكل ملحوظ</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle opacity-50"></i> <span data-i18n="diseases.common.digestive.diarrhea.list.1">وجود دم في البراز</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle opacity-50"></i> <span data-i18n="diseases.common.digestive.diarrhea.list.2">ارتفاع شديد في درجة الحرارة</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle opacity-50"></i> <span data-i18n="diseases.common.digestive.diarrhea.list.3">ترجيع مستمر مصحوب مع الإسهال</span></li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check-circle opacity-50"></i> <span data-i18n="diseases.common.digestive.diarrhea.list.4">حدوث تشنجات</span></li>
+                        </ul>
                     </div>
                 </div>
                 
                 <!-- Skin Conditions -->
                 <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center mb-4">
-                        <i class="fas fa-allergies text-4xl text-yellow-500"></i>
+                        <img src="assets/oral_thrush_demo.png" alt="Oral Thrush" class="w-24 h-24 mx-auto rounded-full object-cover mb-2 border-2 border-yellow-200">
+                        <h4 class="text-xs font-bold text-yellow-600 uppercase tracking-wider" data-i18n="diseases.common.skin.thrush_title">فطريات الفم</h4>
                     </div>
                     <h3 class="text-xl font-bold mb-3 text-gray-800 text-center" data-i18n="diseases.common.skin.title">أمراض الجلد</h3>
                     <div class="space-y-3 text-gray-600">
-                        <p data-i18n="diseases.common.skin.desc">مثل طفح الحفاض، الأكزيما، وفطريات الفم (بقع بيضاء)</p>
+                        <p data-i18n="diseases.common.skin.desc">أهمها فطريات الفم (بقع بيضاء كثيفة على اللسان والخد من الداخل) وطفح الحفاض.</p>
                     </div>
                 </div>
             </div>
@@ -386,55 +336,39 @@
         </div>
     </section>
     
-    <!-- Dehydration Section -->
-    <section class="py-16 bg-yellow-50">
+    <!-- Dehydration Protocol Section -->
+    <section class="py-16 bg-blue-50">
         <div class="container mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-xl p-8" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-8 text-yellow-600">
-                    <i class="fas fa-tint text-yellow-500 ml-2"></i>
-                    <span data-i18n="diseases.dehydration.title">علامات الجفاف - خطر شائع</span>
-                </h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="text-center">
-                        <div class="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-check text-green-600 text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-green-600 mb-2" data-i18n="diseases.dehydration.mild">جفاف خفيف</h3>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li data-i18n="missing_diseases_206">• عطش متزايد</li>
-                            <li data-i18n="missing_diseases_207">• جفاف الفم قليلاً</li>
-                            <li data-i18n="missing_diseases_208">• بكاء بدون دموع</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-yellow-600 mb-2" data-i18n="diseases.dehydration.moderate">جفاف متوسط</h3>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li data-i18n="missing_diseases_214">• جفاف الفم والشفاه</li>
-                            <li data-i18n="missing_diseases_215">• غور العينين</li>
-                            <li data-i18n="missing_diseases_216">• بلل حفاض أقل</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="text-center">
-                        <div class="bg-red-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-times text-red-600 text-2xl"></i>
-                        </div>
-                        <h3 class="font-bold text-red-600 mb-2" data-i18n="diseases.dehydration.severe">جفاف شديد</h3>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li data-i18n="missing_diseases_222">• غور العينين بشدة</li>
-                            <li data-i18n="missing_diseases_223">• عدم بلل الحفاض</li>
-                            <li data-i18n="missing_diseases_224">• خمول أو فقدان الوعي</li>
-                        </ul>
-                    </div>
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row" data-aos="fade-up">
+                <div class="md:w-1/3 relative">
+                    <img src="assets/ors_packet.png" alt="ORS Packet" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-sky-600/10 hover:bg-transparent transition-colors"></div>
                 </div>
-                
-                <div class="bg-yellow-100 rounded-lg p-4 mt-6 text-center">
-                    <p class="text-yellow-800 font-bold" data-i18n="missing_diseases_226">الجفاف الشديد يتطلب علاجاً طارئاً في المستشفى</p>
+                <div class="md:w-2/3 p-8">
+                    <h2 class="text-3xl font-bold text-sky-600 mb-6 flex items-center gap-3">
+                        <i class="fas fa-kit-medical"></i>
+                        <span data-i18n="diseases.common.digestive.dehydration_treatment.title">بروتوكول معالجة الجفاف (المجفاف)</span>
+                    </h2>
+                    <p class="text-gray-600 mb-8" data-i18n="missing_diseases_dehydration_desc">عند حدوث إسهال، اتبعي الخطوات التالية فوراً لمنع تدهور الحالة:</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start gap-4 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                            <div class="bg-sky-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                            <p class="text-sm font-medium text-slate-700" data-i18n="diseases.common.digestive.dehydration_treatment.step1">أخذ محلول معالجة الجفاف في المنزل حسب الإرشادات الطبية.</p>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                            <div class="bg-sky-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                            <p class="text-sm font-medium text-slate-700" data-i18n="diseases.common.digestive.dehydration_treatment.step2">الاستمرار في الرضاعة الطبيعية أو الصناعية بانتظام.</p>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                            <div class="bg-sky-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                            <p class="text-sm font-medium text-slate-700" data-i18n="diseases.common.digestive.dehydration_treatment.step3">إعطاء الزنك (دواء شرب) لتقليل حدة الإسهال.</p>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-sky-50 rounded-xl border border-sky-100">
+                            <div class="bg-sky-500 text-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                            <p class="text-sm font-medium text-slate-700" data-i18n="diseases.common.digestive.dehydration_treatment.step4">الاهتمام الفائق بنظافة اليدين والأدوات.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

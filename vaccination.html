@@ -161,7 +161,7 @@
                             جدول التطعيمات
                         </h1>
                         <p class="text-xl mb-8 text-sky-50 leading-relaxed" data-i18n="vaccination.subtitle">
-                            الجدول الكامل للتطعيمات الإلزامية للأشهر الستة الأولى مع إرشادات مهمة للآثار الجانبية
+                            الجدول الكامل للتطعيمات الإلزامية للثمانية عشر شهراً الأولى مع إرشادات مهمة للآثار الجانبية
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 mb-8">
                             <a href="#schedule" class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105" data-i18n="vaccination.btn_schedule">
@@ -196,7 +196,7 @@
                     <div class="relative">
                         <!-- Main Image -->
                         <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&h=500&fit=crop" alt="تطعيمات الأطفال" class="w-full h-auto object-cover">
+                            <img src="assets/baby_vaccination_banner.png" alt="تطعيمات الأطفال" class="w-full h-auto object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-sky-900/30 to-transparent"></div>
                         </div>
                         
@@ -222,169 +222,118 @@
     <section id="schedule" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="bg-slate-50 rounded-2xl shadow-lg p-8 border border-slate-100" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-center mb-12 text-slate-800" data-i18n="vaccination.schedule.title">
-                    جدول التطعيمات للأشهر الستة الأولى
+                <h2 class="text-3xl font-bold text-slate-800 mb-8" data-aos="fade-up" data-i18n="vaccination.schedule_title">
+                    جدول التطعيمات للأشهر الـ 18 الأولى
                 </h2>
 
-                <div class="space-y-8">
+                <div class="space-y-6">
                     <!-- At Birth -->
-                    <div class="timeline-item">
-                        <div class="flex items-start">
-                            <div class="timeline-dot bg-sky-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
-                                0
-                            </div>
-                            <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.0.age">عند الولادة</h3>
-                                <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="flex items-center">
-                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-syringe text-sky-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.0.v1">التهاب الكبد B (الجرعة الأولى)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-shield-virus text-sky-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.0.v2">BCG (درن)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div class="bg-sky-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-virus text-sky-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الأولى)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold shadow-lg z-10">0</div>
+                            <div class="w-1 h-full bg-sky-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.birth.age">عند الميلاد</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.birth.desc">التهاب الكبد B + شلل الأطفال (فموي)</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 6 Weeks -->
-                    <div class="timeline-item">
-                        <div class="flex items-start">
-                            <div class="timeline-dot bg-teal-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
-                                6
-                            </div>
-                            <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.6w.age">6 أسابيع (شهر ونصف)</h3>
-                                <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="flex items-center">
-                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-syringe text-teal-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.schedule.6w.v1">DTP (خانوق، تيتانوس، سعال ديكي)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-virus text-teal-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الثانية)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-bacterium text-teal-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.hib">Hib (انفلونزا المستدمية)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <div class="bg-teal-100 rounded-full w-10 h-10 flex items-center justify-center ml-3">
-                                                <i class="fas fa-lungs text-teal-600"></i>
-                                            </div>
-                                            <span class="font-medium text-slate-700" data-i18n="vaccination.vaccines.pneumococcal">التهاب الرئة (PCV)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- 0-2 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold shadow-lg z-10">1</div>
+                            <div class="w-1 h-full bg-teal-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month2preg.age">من الميلاد حتى شهرين</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month2preg.desc">طعم بي سي جي (الدرن)</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 10 Weeks -->
-                    <div class="timeline-item">
-                        <div class="flex items-start">
-                            <div class="timeline-dot bg-sky-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold shadow-lg">
-                                10
-                            </div>
-                            <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="vaccination.schedule.10w.age">10 أسابيع (شهرين ونصف)</h3>
-                                <div class="bg-yellow-50 rounded-lg p-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="flex items-center">
-                                            <i class="fas fa-syringe text-yellow-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.10w.v1">DTP (الجرعة الثانية)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-virus text-yellow-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.polio">شلل الأطفال (الجرعة الثالثة)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-bacterium text-yellow-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.10w.v3">Hib (الجرعة الثانية)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-lungs text-yellow-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.10w.v2">التهاب الرئة (الجرعة الثانية)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- 2 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-sky-500 text-white flex items-center justify-center font-bold shadow-lg z-10">2</div>
+                            <div class="w-1 h-full bg-sky-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month2.age">شهرين</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month2.desc">شلل أطفال (فموي + حقن) + الطعم الخماسي</p>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 14 Weeks -->
-                    <div class="timeline-item">
-                        <div class="flex items-start">
-                            <div class="timeline-dot bg-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
-                                14
-                            </div>
-                            <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="vaccination.schedule.14w.age">14 أسبوع (3.5 شهر)</h3>
-                                <div class="bg-orange-50 rounded-lg p-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="flex items-center">
-                                            <i class="fas fa-syringe text-orange-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.14w.v1">DTP (الجرعة الثالثة)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-bacterium text-orange-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.14w.v2">Hib (الجرعة الثالثة)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-lungs text-orange-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.14w.v3">التهاب الرئة (الجرعة الثالثة)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- 4 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-teal-500 text-white flex items-center justify-center font-bold shadow-lg z-10">4</div>
+                            <div class="w-1 h-full bg-teal-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month4.age">4 شهور</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month4.desc">شلل أطفال (فموي + حقن) + الطعم الخماسي</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- 6 Months -->
-                    <div class="timeline-item">
-                        <div class="flex items-start">
-                            <div class="timeline-dot bg-purple-500 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold">
-                                24
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold shadow-lg z-10">6</div>
+                            <div class="w-1 h-full bg-purple-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all border-purple-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month6.age">6 شهور</h3>
+                                <p class="text-slate-600 font-medium" data-i18n="vaccination.schedule.month6.desc">شلل أطفال (فموي + حقن) + الطعم الخماسي + فيتامين أ (100 ألف وحدة دولية)</p>
                             </div>
-                            <div class="mr-8 flex-1">
-                                <h3 class="text-xl font-bold text-gray-800 mb-2" data-i18n="vaccination.schedule.6m.age">6 أشهر (24 أسبوع)</h3>
-                                <div class="bg-purple-50 rounded-lg p-4">
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                        <div class="flex items-center">
-                                            <i class="fas fa-syringe text-purple-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.6m.v1">التهاب الكبد B (الجرعة الثالثة)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-virus text-purple-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.schedule.6m.v2">شلل الأطفال (الجرعة الرابعة)</span>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <i class="fas fa-bacterium text-purple-500 ml-2"></i>
-                                            <span class="font-medium" data-i18n="vaccination.vaccines.dtp">DTP (الجرعة الرابعة)</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- 9 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold shadow-lg z-10">9</div>
+                            <div class="w-1 h-full bg-orange-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month9.age">9 شهور</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month9.desc">شلل أطفال (فموي)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold shadow-lg z-10">12</div>
+                            <div class="w-1 h-full bg-blue-200"></div>
+                        </div>
+                        <div class="pb-8 flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all border-blue-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month12.age">12 شهر (سنة)</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month12.desc">شلل أطفال (فموي) + طعم MMR + فيتامين أ (200 ألف وحدة دولية)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 18 Months -->
+                    <div class="timeline-item flex gap-6" data-aos="fade-up">
+                        <div class="flex flex-col items-center">
+                            <div class="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center font-bold shadow-lg z-10">18</div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md transition-all border-red-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2" data-i18n="vaccination.schedule.month18.age">18 شهر (سنة ونصف)</h3>
+                                <p class="text-slate-600" data-i18n="vaccination.schedule.month18.desc">شلل أطفال (فموي) + طعم MMR + الطعم الثلاثي البكتيري + فيتامين أ (200 ألف وحدة دولية)</p>
                             </div>
                         </div>
                     </div>
@@ -427,7 +376,7 @@
                     <div class="bg-blue-50 rounded-lg p-3">
                         <h4 class="font-bold text-blue-700 mb-2" data-i18n="vaccination.side_effects.title">كيفية التعامل:</h4>
                         <ul class="text-sm text-gray-700 space-y-1">
-                            <li data-i18n="vaccination.side_effects.pain.handle">كمادات باردة على مكان الحقنة، تجنب فرك المنطقة، وإبقائها نظيفة</li>
+                            <li data-i18n="vaccination.side_effects.pain.handle_new">وضع كمادات باردة في أول الحقن وبعد ذلك كمادات دافئة لمدة 15 دقيقة.</li>
                         </ul>
                     </div>
                 </div>
@@ -442,7 +391,7 @@
                     <div class="bg-yellow-50 rounded-lg p-3">
                         <h4 class="font-bold text-yellow-700 mb-2" data-i18n="vaccination.side_effects.title">كيفية التعامل:</h4>
                         <ul class="text-sm text-gray-700 space-y-1">
-                            <li data-i18n="vaccination.side_effects.mood.handle">زيادة الاحتضان والرضاعة الطبيعية لتهدئة الطفل، وتوفير بيئة هادئة</li>
+                            <li data-i18n="vaccination.side_effects.mood.handle_new">الاستمرار في الرضاعة الطبيعية من أهم الأشياء أثناء التطعيم وبعدها لتهدئة الطفل والاضطراب والبكاء.</li>
                         </ul>
                     </div>
                 </div>
@@ -480,26 +429,47 @@
                         </ul>
                     </div>
 
-                    <div class="bg-white rounded-lg p-4">
-                        <h3 class="font-bold text-red-600 mb-3" data-i18n="missing_vaccination_232" data-i18n-html="true">
+                    <div class="bg-white rounded-lg p-4 border border-red-100 shadow-sm hover:shadow-md transition-all">
+                        <h3 class="font-bold text-red-600 mb-3" data-i18n="vaccination.warning.convulsions">
                             <i class="fas fa-brain ml-2"></i>
-                            الأعراض العصبية
+                            نوبات التشنج
                         </h3>
-                        <ul class="text-gray-700 space-y-2">
-                            <li data-i18n="vaccination.warning.crying">بكاء مستمر لأكثر من 3 ساعات</li>
-                        </ul>
+                        <p class="text-gray-700 text-sm" data-i18n="vaccination.warning.convulsions_desc">حدوث تشنجات أو فقدان مفاجئ للوعي</p>
                     </div>
 
-                    <div class="bg-white rounded-lg p-4">
-                        <h3 class="font-bold text-red-600 mb-3" data-i18n="missing_vaccination_237" data-i18n-html="true">
+                    <div class="bg-white rounded-lg p-4 border border-red-100 shadow-sm hover:shadow-md transition-all">
+                        <h3 class="font-bold text-red-600 mb-3" data-i18n="vaccination.warning.abscess">
                             <i class="fas fa-hand-paper ml-2"></i>
-                            تورم شديد
+                            خراج مكان الحقن
                         </h3>
-                        <ul class="text-gray-700 space-y-2">
-                            <li data-i18n="vaccination.warning.swelling">تورم شديد أو خروج صديد من مكان الحقنة</li>
-                        </ul>
+                        <p class="text-gray-700 text-sm" data-i18n="vaccination.warning.abscess_desc">ظهور خراج أو تكتل صديدي مكان الحقنة</p>
                     </div>
                 </div>
+
+                <!-- New Section: Oral Vaccine Precautions -->
+                <div class="mt-12 bg-white rounded-xl p-8 border border-sky-100 shadow-lg">
+                    <h2 class="text-2xl font-bold text-sky-700 mb-6 flex items-center" data-i18n="vaccination.notes.opv.title">
+                        <i class="fas fa-info-circle ml-3"></i>
+                        ملاحظات هامة حول التطعيم الفموي (شلل الأطفال)
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3 p-3 bg-sky-50 rounded-lg">
+                            <i class="fas fa-check-circle text-sky-500 mt-1"></i>
+                            <p class="text-slate-700" data-i18n="vaccination.notes.opv.breastfeeding">الرضاعة الطبيعية لا تؤثر على شلل الأطفال الفموي.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-sky-50 rounded-lg">
+                            <i class="fas fa-check-circle text-sky-500 mt-1"></i>
+                            <p class="text-slate-700" data-i18n="vaccination.notes.opv.spit">إذا بصق الطفل التطعيم يعاد مرة أخرى دون ضرر.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-sky-50 rounded-lg">
+                            <i class="fas fa-check-circle text-sky-500 mt-1"></i>
+                            <p class="text-slate-700" data-i18n="vaccination.notes.opv.health">يجب إعطاء الطفل التطعيم وهو معافى تماماً من أي مرض.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-sky-50 rounded-lg">
+                            <i class="fas fa-exclamation-circle text-orange-500 mt-1"></i>
+                            <p class="text-slate-700" data-i18n="vaccination.notes.opv.diarrhea">الإسهال من الأمراض التي تجعل التطعيمات ليس لها تأثير.</p>
+                        </div>
+                    </div>
 
                 <div class="bg-red-100 rounded-lg p-4 mt-6 text-center">
                     <p class="text-red-800 font-bold text-lg" data-i18n="missing_vaccination_242" data-i18n-html="true">
@@ -529,6 +499,7 @@
                         <li class="flex items-start" data-i18n="vaccination.tips_before.t1">أخبر الطبيب إذا كان الطفل مريضاً أو يعاني من حساسية</li>
                         <li class="flex items-start" data-i18n="vaccination.tips_before.t2">أرضعي الطفل قبل 30 دقيقة من التطعيم لتهدئته</li>
                         <li class="flex items-start" data-i18n="vaccination.tips_before.t3">ألبسي الطفل ملابس سهلة النزع</li>
+                        <li class="flex items-start" data-i18n="vaccination.tips_before.t4">تجنبي إعطاء الطفل التطعيم (خاصة الفموي) إذا كان يعاني من الإسهال، حيث يمنع الإسهال امتصاص التطعيم بفعالية مما يستوجب إعادته لاحقاً بعد التعافي.</li>
                     </ul>
                 </div>
 
