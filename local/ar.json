@@ -333,6 +333,9 @@
       "w2": "لا يبتسم اجتماعياً عند عمر 3 أشهر",
       "w3": "لا يتفاعل مع الأصوات أو الضوء",
       "w4": "فقدان مهارات كان قد اكتسبها سابقاً"
+    },
+    "chart": {
+      "title": "منحنى نمو الطفل"
     }
   },
   "care": {
@@ -1630,5 +1633,6 @@
   "missing_vaccination_293": "السلامة",
   "missing_vaccination_295": "المتابعة",
   "stats_available_desc": "نصيحة وإرشاد",
-  "footer.designed_by": "BEDAYET HAYA | تحت إشراف د مني شاهين"
+  "footer.designed_by": "BEDAYET HAYA | تحت إشراف د مني شاهين",
+  "missing_growth_weight_actual": "الوزن الحالي (كجم) - اختياري"
 }

@@ -333,6 +333,9 @@
       "w2": "No social smile by 3 months",
       "w3": "Does not respond to sounds or light",
       "w4": "Loss of skills previously acquired"
+    },
+    "chart": {
+      "title": "Child Growth Chart"
     }
   },
   "care": {
@@ -1630,5 +1633,6 @@
   "missing_vaccination_293": "Safety",
   "missing_vaccination_295": "Routine Checkups",
   "stats_available_desc": "tips & guidelines",
-  "footer.designed_by": "BEDAYET HAYA | Under the supervision of Dr. Mona Shahin"
+  "footer.designed_by": "BEDAYET HAYA | Under the supervision of Dr. Mona Shahin",
+  "missing_growth_weight_actual": "Actual Weight (kg) - Optional"
 }

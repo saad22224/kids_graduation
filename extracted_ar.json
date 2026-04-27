@@ -866,4 +866,6 @@
   "footer.site_desc": "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.",
   "footer.quick_links": "روابط سريعة",
   "footer.rights": "جميع الحقوق محفوظة",
+  "growth.chart.title": "منحنى نمو الطفل",
+  "missing_growth_weight_actual": "الوزن الحالي (كجم) - اختياري"
 }
