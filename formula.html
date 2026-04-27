@@ -78,7 +78,7 @@
     <nav class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-lg border-b border-slate-200">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-3">
-                <a href="index.html" class="hover:opacity-90 transition-opacity">
+                <a href="index.html" class="hover:opacity-90 transition-opacity flex-shrink-0">
                     <img src="assets/Gemini_Generated_Image_ldkzaxldkzaxldkz-removebg-preview.webp" alt="بداية حياة"
                         class="h-16 w-auto object-contain">
                 </a>
@@ -146,11 +146,11 @@
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="#preparation"
                                 class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
-                                <i class="fas fa-flask ml-2"></i>خطوات التحضير
+                                <i class="fas fa-flask ml-2"></i><span data-i18n="formula.btn_prep">خطوات التحضير</span>
                             </a>
                             <a href="#safety"
                                 class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-sky-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
-                                <i class="fas fa-shield-alt ml-2"></i>نصائح الأمان
+                                <i class="fas fa-shield-alt ml-2"></i><span data-i18n="formula.btn_safety">نصائح الأمان</span>
                             </a>
                         </div>
                     </div>
@@ -169,10 +169,10 @@
     <section id="preparation" class="py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4" data-i18n="formula.prep_title">
                     طريقة تحضير الرضاعة الصناعية
                 </h2>
-                <p class="text-lg text-slate-500">اتباع الخطوات الصحيحة يضمن سلامة طفلك وصحته</p>
+                <p class="text-lg text-slate-500" data-i18n="formula.prep_subtitle">اتباع الخطوات الصحيحة يضمن سلامة طفلك وصحته</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -183,9 +183,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
-                        <h3 class="text-xl font-bold text-slate-800">نظافة اليدين والأدوات</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step1_title">نظافة اليدين والأدوات</h3>
                     </div>
-                    <p class="text-slate-600">اغسلي يديك جيداً بالماء والصابون. تأكدي من تعقيم الزجاجة (الببرونة) والحلمة قبل الاستخدام.</p>
+                    <p class="text-slate-600" data-i18n="formula.step1_desc">اغسلي يديك جيداً بالماء والصابون. تأكدي من تعقيم الزجاجة (الببرونة) والحلمة قبل الاستخدام.</p>
                 </div>
 
                 <!-- Step 2 -->
@@ -195,9 +195,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
-                        <h3 class="text-xl font-bold text-slate-800">تحضير الماء</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step2_title">تحضير الماء</h3>
                     </div>
-                    <p class="text-slate-600">اغلي ماءً نقياً واتركيه يبرد قليلاً حتى يصبح دافئاً (لا تزيد درجة حرارته عن 70 درجة مئوية للحفاظ على فوائد الحليب).</p>
+                    <p class="text-slate-600" data-i18n="formula.step2_desc">اغلي ماءً نقياً واتركيه يبرد قليلاً حتى يصبح دافئاً (لا تزيد درجة حرارته عن 70 درجة مئوية للحفاظ على فوائد الحليب).</p>
                 </div>
 
                 <!-- Step 3 -->
@@ -207,9 +207,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
-                        <h3 class="text-xl font-bold text-slate-800">إضافة الماء أولاً</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step3_title">إضافة الماء أولاً</h3>
                     </div>
-                    <p class="text-slate-600">صبي كمية الماء المطلوبة في الزجاجة أولاً قبل إضافة المسحوق لضمان دقة المعايير.</p>
+                    <p class="text-slate-600" data-i18n="formula.step3_desc">صبي كمية الماء المطلوبة في الزجاجة أولاً قبل إضافة المسحوق لضمان دقة المعايير.</p>
                 </div>
 
                 <!-- Step 4 -->
@@ -219,9 +219,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
-                        <h3 class="text-xl font-bold text-slate-800">إضافة مسحوق الحليب</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step4_title">إضافة مسحوق الحليب</h3>
                     </div>
-                    <p class="text-slate-600">استخدمي المكيال المرفق مع العبوة. ضعي مكيالاً واحداً لكل 30 مل من الماء (أو حسب تعليمات الشركة المصنعة).</p>
+                    <p class="text-slate-600" data-i18n="formula.step4_desc">استخدمي المكيال المرفق مع العبوة. ضعي مكيالاً واحداً لكل 30 مل من الماء (أو حسب تعليمات الشركة المصنعة).</p>
                 </div>
 
                 <!-- Step 5 -->
@@ -231,9 +231,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
-                        <h3 class="text-xl font-bold text-slate-800">الرج جيداً</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step5_title">الرج جيداً</h3>
                     </div>
-                    <p class="text-slate-600">أغلقي الزجاجة ورجيها جيداً حتى يذوب المسحوق تماماً ولا تظهر أي تكتلات.</p>
+                    <p class="text-slate-600" data-i18n="formula.step5_desc">أغلقي الزجاجة ورجيها جيداً حتى يذوب المسحوق تماماً ولا تظهر أي تكتلات.</p>
                 </div>
 
                 <!-- Step 6 -->
@@ -243,9 +243,9 @@
                     </div>
                     <div class="flex items-center gap-3 mb-3">
                         <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
-                        <h3 class="text-xl font-bold text-slate-800">اختبار الحرارة</h3>
+                        <h3 class="text-xl font-bold text-slate-800" data-i18n="formula.step6_title">اختبار الحرارة</h3>
                     </div>
-                    <p class="text-slate-600">اختبري درجة حرارة الحليب بوضع قطرات على باطن رسغك. يجب أن يكون دافئاً وليس ساخناً.</p>
+                    <p class="text-slate-600" data-i18n="formula.step6_desc">اختبري درجة حرارة الحليب بوضع قطرات على باطن رسغك. يجب أن يكون دافئاً وليس ساخناً.</p>
                 </div>
             </div>
         </div>
@@ -255,7 +255,7 @@
     <section id="safety" class="py-16 bg-slate-50">
         <div class="container mx-auto px-4">
             <div class="bg-white rounded-3xl shadow-2xl p-10 border border-slate-100" data-aos="zoom-in">
-                <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">
+                <h2 class="text-3xl font-bold text-center mb-10 text-slate-800" data-i18n="formula.safety_title">
                     <i class="fas fa-shield-alt text-teal-500 ml-2"></i>
                     نصائح أمان هامة للرضاعة الصناعية
                 </h2>
@@ -266,8 +266,8 @@
                             <i class="fas fa-clock text-teal-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-2">مدة الصلاحية</h4>
-                            <p class="text-slate-600 text-sm">تخلصي من أي حليب متبقي في الزجاجة بعد ساعة من بدء الرضاعة بسبب نمو البكتيريا.</p>
+                            <h4 class="font-bold text-slate-800 mb-2" data-i18n="formula.safety_tip1_title">مدة الصلاحية</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="formula.safety_tip1_desc">تخلصي من أي حليب متبقي في الزجاجة بعد ساعة من بدء الرضاعة بسبب نمو البكتيريا.</p>
                         </div>
                     </div>
 
@@ -276,8 +276,8 @@
                             <i class="fas fa-snowflake text-teal-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-2">التخزين</h4>
-                            <p class="text-slate-600 text-sm">يمكن حفظ الرضعة المحضرة في الثلاجة لمدة تصل إلى 24 ساعة إذا لم يرضع منها الطفل.</p>
+                            <h4 class="font-bold text-slate-800 mb-2" data-i18n="formula.safety_tip2_title">التخزين</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="formula.safety_tip2_desc">يمكن حفظ الرضعة المحضرة في الثلاجة لمدة تصل إلى 24 ساعة إذا لم يرضع منها الطفل.</p>
                         </div>
                     </div>
 
@@ -286,8 +286,8 @@
                             <i class="fas fa-ban text-teal-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-2">لا للميكروويف</h4>
-                            <p class="text-slate-600 text-sm">تجنبي تسخين الرضعة في الميكروويف لأنه يسخن الحليب بشكل غير متساوٍ وقد يحرق فم الطفل.</p>
+                            <h4 class="font-bold text-slate-800 mb-2" data-i18n="formula.safety_tip3_title">لا للميكروويف</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="formula.safety_tip3_desc">تجنبي تسخين الرضعة في الميكروويف لأنه يسخن الحليب بشكل غير متساوٍ وقد يحرق فم الطفل.</p>
                         </div>
                     </div>
 
@@ -296,8 +296,8 @@
                             <i class="fas fa-vial text-teal-600 text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800 mb-2">التركيز الصحيح</h4>
-                            <p class="text-slate-600 text-sm">لا تخففي الحليب بماء إضافي ولا تزيديه تركيزاً، فكلاهما قد يضر بكليتي طفلك أو يسبب سوء تغذية.</p>
+                            <h4 class="font-bold text-slate-800 mb-2" data-i18n="formula.safety_tip4_title">التركيز الصحيح</h4>
+                            <p class="text-slate-600 text-sm" data-i18n="formula.safety_tip4_desc">لا تخففي الحليب بماء إضافي ولا تزيديه تركيزاً، فكلاهما قد يضر بكليتي طفلك أو يسبب سوء تغذية.</p>
                         </div>
                     </div>
                 </div>
@@ -308,42 +308,100 @@
     <!-- Footer -->
     <footer class="bg-slate-900 text-white py-12">
         <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4 text-sky-400">بداية حياة | BEDAYA HAYAT</h3>
-                    <p class="text-slate-400 max-w-md">دليل شامل للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى بناءً على توصيات طبية.</p>
+                    <h3 class="text-xl font-bold mb-4 text-sky-400" data-i18n="footer.site_name">بداية حياة | BEDAYA
+                        HAYAT</h3>
+                    <p class="text-slate-400 mb-4" data-i18n="footer.site_desc">دليل شامل وموثوق للأمهات لرعاية الأطفال
+                        حديثي الولادة في الأشهر الستة الأولى.</p>
                 </div>
+
                 <div>
-                    <h3 class="text-xl font-bold mb-4 text-sky-400">روابط سريعة</h3>
-                    <div class="grid grid-cols-2 gap-2 text-slate-400">
-                        <a href="index.html" class="hover:text-white transition">الرئيسية</a>
-                        <a href="breastfeeding.html" class="hover:text-white transition">الرضاعة الطبيعية</a>
-                        <a href="care.html" class="hover:text-white transition">الرعاية اليومية</a>
-                        <a href="vaccination.html" class="hover:text-white transition">التطعيمات</a>
-                        <a href="growth.html" class="hover:text-white transition">النمو والتطور</a>
-                        <a href="safety.html" class="hover:text-white transition">السلامة</a>
-                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-sky-400" data-i18n="footer.quick_links">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="vaccination.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.vaccination">التطعيمات</a></li>
+                        <li><a href="diseases.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.diseases">الأمراض</a></li>
+                        <li><a href="growth.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.growth">النمو والتطور</a></li>
+                        <li><a href="care.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.care">الرعاية اليومية</a></li>
+                        <li><a href="breastfeeding.html"
+                                class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a></li>
+                        <li><a href="safety.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.safety">السلامة</a></li>
+                        <li><a href="followup.html" class="text-slate-400 hover:text-sky-400 transition duration-300"
+                                data-i18n="nav.followup">المتابعة</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-                <p>&copy; 2026 بداية حياة | جميع الحقوق محفوظة</p>
+
+            <!-- Developer Credit -->
+            <div class="border-t border-slate-800 mt-8 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-slate-500 text-center mb-4 md:mb-0">
+                        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> &copy; <span
+                            class="copyright-year">2026</span> <span data-i18n="footer.designed_by">BEDAYET HAYA | تحت
+                            إشراف د مني شاهين</span>
+                    </p>
+                    <div class="text-center" style="direction: ltr;">
+                        <a href="https://wa.me/201099615358" target="_blank"
+                            class="inline-flex items-center text-sky-400 hover:text-sky-300 transition-all duration-300 group">
+                            <span class="text-sm">Developed with</span>
+                            <i class="fas fa-heart text-sky-500 mx-2 animate-pulse"></i>
+                            <span class="font-bold text-white hover:text-sky-300 transition-colors"> By Eng Saad
+                                Harera</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Initialize AOS
         AOS.init({
             duration: 1000,
-            once: true
+            once: true,
+            offset: 100
         });
 
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+        // Dynamic copyright year
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentYear = new Date().getFullYear();
+            const copyrightElements = document.querySelectorAll('.copyright-year');
+            copyrightElements.forEach(element => {
+                element.textContent = currentYear;
+            });
+        });
 
-        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function () {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
+
+    <!-- i18n Library -->
+    <script src="js/i18n.js"></script>
 </body>
 
 </html>

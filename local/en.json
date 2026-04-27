@@ -1634,5 +1634,37 @@
   "missing_vaccination_295": "Routine Checkups",
   "stats_available_desc": "tips & guidelines",
   "footer.designed_by": "BEDAYET HAYA | Under the supervision of Dr. Mona Shahin",
-  "missing_growth_weight_actual": "Actual Weight (kg) - Optional"
+  "missing_growth_weight_actual": "Actual Weight (kg) - Optional",
+  "formula": {
+    "meta": {
+      "title": "Formula Feeding - Bedaya Hayat | BEDAYA HAYAT"
+    },
+    "title": "Formula Feeding",
+    "subtitle": "A comprehensive guide to preparing formula milk safely, appropriate amounts for infants by age, and safety tips.",
+    "btn_prep": "Preparation Steps",
+    "btn_safety": "Safety Tips",
+    "prep_title": "How to Prepare Formula Feeding",
+    "prep_subtitle": "Following the correct steps ensures your baby's safety and health",
+    "step1_title": "Hand and Tool Hygiene",
+    "step1_desc": "Wash your hands thoroughly with soap and water. Ensure the bottle and nipple are sterilized before use.",
+    "step2_title": "Water Preparation",
+    "step2_desc": "Boil pure water and let it cool slightly until lukewarm (temperature should not exceed 70°C to preserve milk benefits).",
+    "step3_title": "Add Water First",
+    "step3_desc": "Pour the required amount of water into the bottle first before adding the powder to ensure accurate measurement.",
+    "step4_title": "Add Milk Powder",
+    "step4_desc": "Use the scoop provided with the package. Add one scoop for every 30 ml of water (or as per manufacturer instructions).",
+    "step5_title": "Shake Well",
+    "step5_desc": "Close the bottle and shake well until the powder is completely dissolved and no clumps appear.",
+    "step6_title": "Temperature Test",
+    "step6_desc": "Test the milk temperature by placing drops on the inside of your wrist. It should be lukewarm, not hot.",
+    "safety_title": "Important Safety Tips for Formula Feeding",
+    "safety_tip1_title": "Shelf Life",
+    "safety_tip1_desc": "Discard any remaining milk in the bottle one hour after starting the feed due to bacterial growth.",
+    "safety_tip2_title": "Storage",
+    "safety_tip2_desc": "Prepared formula can be kept in the refrigerator for up to 24 hours if the child has not fed from it.",
+    "safety_tip3_title": "No Microwave",
+    "safety_tip3_desc": "Avoid heating the formula in the microwave as it heats the milk unevenly and may burn the baby's mouth.",
+    "safety_tip4_title": "Correct Concentration",
+    "safety_tip4_desc": "Do not dilute the milk with extra water or increase its concentration; both can harm your baby's kidneys or cause malnutrition."
+  }
 }
