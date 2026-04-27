@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="formula.meta.title">الرضاعة الصناعية - بداية حياة | BEDAYA HAYAT</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/Gemini_Generated_Image_ldkzaxldkzaxldkz-removebg-preview.webp">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #0ea5e9;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .step-card {
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-lg border-b border-slate-200">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-3">
+                <a href="index.html" class="hover:opacity-90 transition-opacity">
+                    <img src="assets/Gemini_Generated_Image_ldkzaxldkzaxldkz-removebg-preview.webp" alt="بداية حياة"
+                        class="h-16 w-auto object-contain">
+                </a>
+
+                <div class="hidden md:flex items-center space-x-1 space-x-reverse">
+                    <a href="index.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                    <a href="breastfeeding.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                    <a href="formula.html" class="nav-link text-sky-600 bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium border-b-2 border-sky-600" data-i18n="nav.formula">الرضاعة الصناعية</a>
+                    <a href="care.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                    <a href="vaccination.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                    <a href="safety.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                    <a href="growth.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                    <a href="diseases.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                    <a href="followup.html" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+
+                    <button id="lang-switcher" onclick="toggleLang()"
+                        class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-full transition-all duration-300 font-bold ml-4">
+                        English
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn"
+                    class="md:hidden text-slate-700 hover:bg-sky-50 p-2 rounded-lg transition-all duration-300">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-slate-200 mt-3 pt-3">
+                <a href="index.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.home">الرئيسية</a>
+                <a href="breastfeeding.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.breastfeeding">الرضاعة الطبيعية</a>
+                <a href="formula.html" class="block py-2 bg-sky-50 text-sky-600 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.formula">الرضاعة الصناعية</a>
+                <a href="care.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.care">الرعاية اليومية</a>
+                <a href="vaccination.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.vaccination">التطعيمات</a>
+                <a href="safety.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.safety">السلامة</a>
+                <a href="growth.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.growth">النمو والتطور</a>
+                <a href="diseases.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.diseases">الأمراض</a>
+                <a href="followup.html" class="block py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium" data-i18n="nav.followup">المتابعة</a>
+                <button onclick="toggleLang()"
+                    class="w-full text-left py-2 hover:bg-sky-50 px-3 rounded-lg transition-all duration-300 font-medium mt-2 border-t border-slate-200 pt-2">
+                    <i class="fas fa-globe ml-2"></i>
+                    <span data-i18n="lang.en">English</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-sky-500 to-teal-500 text-white py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-200 rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight" data-i18n="formula.title">
+                            الرضاعة الصناعية
+                        </h1>
+                        <p class="text-xl mb-8 text-sky-50 leading-relaxed" data-i18n="formula.subtitle">
+                            دليل شامل لتحضير الحليب الصناعي بأمان، والكميات المناسبة للطفل حسب العمر، ونصائح للسلامة.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#preparation"
+                                class="bg-white text-sky-600 px-8 py-4 rounded-full font-bold hover:bg-sky-50 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-flask ml-2"></i>خطوات التحضير
+                            </a>
+                            <a href="#safety"
+                                class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-sky-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <i class="fas fa-shield-alt ml-2"></i>نصائح الأمان
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="assets/formula_banner.png"
+                            alt="الرضاعة الصناعية" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preparation Steps -->
+    <section id="preparation" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    طريقة تحضير الرضاعة الصناعية
+                </h2>
+                <p class="text-lg text-slate-500">اتباع الخطوات الصحيحة يضمن سلامة طفلك وصحته</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up">
+                    <div class="bg-sky-50 text-sky-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-hands-wash text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
+                        <h3 class="text-xl font-bold text-slate-800">نظافة اليدين والأدوات</h3>
+                    </div>
+                    <p class="text-slate-600">اغسلي يديك جيداً بالماء والصابون. تأكدي من تعقيم الزجاجة (الببرونة) والحلمة قبل الاستخدام.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-teal-50 text-teal-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-temperature-arrow-up text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">2</div>
+                        <h3 class="text-xl font-bold text-slate-800">تحضير الماء</h3>
+                    </div>
+                    <p class="text-slate-600">اغلي ماءً نقياً واتركيه يبرد قليلاً حتى يصبح دافئاً (لا تزيد درجة حرارته عن 70 درجة مئوية للحفاظ على فوائد الحليب).</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-50 text-blue-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-glass-water-droplet text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">3</div>
+                        <h3 class="text-xl font-bold text-slate-800">إضافة الماء أولاً</h3>
+                    </div>
+                    <p class="text-slate-600">صبي كمية الماء المطلوبة في الزجاجة أولاً قبل إضافة المسحوق لضمان دقة المعايير.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-indigo-50 text-indigo-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-spoon text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">4</div>
+                        <h3 class="text-xl font-bold text-slate-800">إضافة مسحوق الحليب</h3>
+                    </div>
+                    <p class="text-slate-600">استخدمي المكيال المرفق مع العبوة. ضعي مكيالاً واحداً لكل 30 مل من الماء (أو حسب تعليمات الشركة المصنعة).</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-cyan-50 text-cyan-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-arrows-rotate text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">5</div>
+                        <h3 class="text-xl font-bold text-slate-800">الرج جيداً</h3>
+                    </div>
+                    <p class="text-slate-600">أغلقي الزجاجة ورجيها جيداً حتى يذوب المسحوق تماماً ولا تظهر أي تكتلات.</p>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 step-card border border-slate-100 flex flex-col" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-emerald-50 text-emerald-500 w-full h-40 rounded-xl mb-6 flex items-center justify-center shadow-inner">
+                        <i class="fas fa-temperature-half text-6xl"></i>
+                    </div>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="bg-sky-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">6</div>
+                        <h3 class="text-xl font-bold text-slate-800">اختبار الحرارة</h3>
+                    </div>
+                    <p class="text-slate-600">اختبري درجة حرارة الحليب بوضع قطرات على باطن رسغك. يجب أن يكون دافئاً وليس ساخناً.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Tips -->
+    <section id="safety" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-3xl shadow-2xl p-10 border border-slate-100" data-aos="zoom-in">
+                <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">
+                    <i class="fas fa-shield-alt text-teal-500 ml-2"></i>
+                    نصائح أمان هامة للرضاعة الصناعية
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-100 p-3 rounded-xl flex-shrink-0">
+                            <i class="fas fa-clock text-teal-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-2">مدة الصلاحية</h4>
+                            <p class="text-slate-600 text-sm">تخلصي من أي حليب متبقي في الزجاجة بعد ساعة من بدء الرضاعة بسبب نمو البكتيريا.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-100 p-3 rounded-xl flex-shrink-0">
+                            <i class="fas fa-snowflake text-teal-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-2">التخزين</h4>
+                            <p class="text-slate-600 text-sm">يمكن حفظ الرضعة المحضرة في الثلاجة لمدة تصل إلى 24 ساعة إذا لم يرضع منها الطفل.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-100 p-3 rounded-xl flex-shrink-0">
+                            <i class="fas fa-ban text-teal-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-2">لا للميكروويف</h4>
+                            <p class="text-slate-600 text-sm">تجنبي تسخين الرضعة في الميكروويف لأنه يسخن الحليب بشكل غير متساوٍ وقد يحرق فم الطفل.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="bg-teal-100 p-3 rounded-xl flex-shrink-0">
+                            <i class="fas fa-vial text-teal-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 mb-2">التركيز الصحيح</h4>
+                            <p class="text-slate-600 text-sm">لا تخففي الحليب بماء إضافي ولا تزيديه تركيزاً، فكلاهما قد يضر بكليتي طفلك أو يسبب سوء تغذية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-sky-400">بداية حياة | BEDAYA HAYAT</h3>
+                    <p class="text-slate-400 max-w-md">دليل شامل للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى بناءً على توصيات طبية.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-sky-400">روابط سريعة</h3>
+                    <div class="grid grid-cols-2 gap-2 text-slate-400">
+                        <a href="index.html" class="hover:text-white transition">الرئيسية</a>
+                        <a href="breastfeeding.html" class="hover:text-white transition">الرضاعة الطبيعية</a>
+                        <a href="care.html" class="hover:text-white transition">الرعاية اليومية</a>
+                        <a href="vaccination.html" class="hover:text-white transition">التطعيمات</a>
+                        <a href="growth.html" class="hover:text-white transition">النمو والتطور</a>
+                        <a href="safety.html" class="hover:text-white transition">السلامة</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                <p>&copy; 2026 بداية حياة | جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMenu);
+    </script>
+</body>
+
+</html>

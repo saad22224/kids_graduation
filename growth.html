@@ -19,6 +19,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
@@ -40,6 +43,7 @@
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .nav-link::after {
@@ -79,12 +83,13 @@
 
                 <div class="hidden md:flex items-center space-x-1 space-x-reverse">
                     <a href="index.html" data-i18n="nav.home" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرئيسية</a>
-                    <a href="vaccination.html" data-i18n="nav.vaccination" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
-                    <a href="diseases.html" data-i18n="nav.diseases" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
-                    <a href="growth.html" data-i18n="nav.growth" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
-                    <a href="care.html" data-i18n="nav.care" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
                     <a href="breastfeeding.html" data-i18n="nav.breastfeeding" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الطبيعية</a>
+                    <a href="formula.html" data-i18n="nav.formula" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرضاعة الصناعية</a>
+                    <a href="care.html" data-i18n="nav.care" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الرعاية اليومية</a>
+                    <a href="vaccination.html" data-i18n="nav.vaccination" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">التطعيمات</a>
                     <a href="safety.html" data-i18n="nav.safety" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">السلامة</a>
+                    <a href="growth.html" data-i18n="nav.growth" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">النمو والتطور</a>
+                    <a href="diseases.html" data-i18n="nav.diseases" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">الأمراض</a>
                     <a href="followup.html" data-i18n="nav.followup" class="nav-link text-slate-700 hover:bg-sky-50 px-4 py-2 rounded-lg transition-all duration-300 font-medium">المتابعة</a>
                     
                     <button id="lang-switcher" onclick="toggleLang()" class="bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-full transition-all duration-300 font-bold ml-4">
@@ -224,28 +229,40 @@
                                     <option value="female" data-i18n="missing_growth_106">أنثى</option>
                                 </select>
                             </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2" data-i18n="missing_growth_weight_actual">الوزن الحالي (كجم) - اختياري</label>
+                                <input type="number" id="actual-weight" min="1" max="15" step="0.1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="أدخل وزن طفلك الحالي">
+                            </div>
                             <button onclick="calculateWeight()" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300" data-i18n="missing_growth_107" data-i18n-html="true">
                                 <i class="fas fa-calculator ml-2"></i>
-                                احسب الوزن
+                                احسب واعرض الرسم البياني
                             </button>
+                        </div>
+                        
+                        <!-- Results Div -->
+                        <div id="weight-results" class="hidden mt-6 bg-white border rounded-lg p-4 transition-all duration-300">
+                            <h4 class="text-lg font-bold text-gray-800 mb-3 border-b pb-2">نتائج التقييم</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">الوزن المتوقع:</span>
+                                    <span id="expected-weight" class="font-bold text-blue-600 text-lg"></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">النطاق الطبيعي:</span>
+                                    <span id="weight-range" class="font-medium text-gray-800"></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-600">معدل النمو المتوقع:</span>
+                                    <span id="growth-rate" class="font-medium text-gray-800"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="bg-green-50 rounded-lg p-6">
-                        <h3 class="text-xl font-bold text-green-600 mb-4" data-i18n="missing_growth_110">النتائج</h3>
-                        <div id="weight-results" class="space-y-3">
-                            <div class="bg-white rounded-lg p-4">
-                                <p class="text-gray-600" data-i18n="missing_growth_113">الوزن المتوقع:</p>
-                                <p id="expected-weight" class="text-2xl font-bold text-green-600">--</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-4">
-                                <p class="text-gray-600" data-i18n="missing_growth_116">النطاق الطبيعي:</p>
-                                <p id="weight-range" class="text-lg font-semibold text-gray-800">--</p>
-                            </div>
-                            <div class="bg-white rounded-lg p-4">
-                                <p class="text-gray-600" data-i18n="missing_growth_119">معدل النمو الشهري:</p>
-                                <p id="growth-rate" class="text-lg font-semibold text-gray-800">--</p>
-                            </div>
+                    <div class="bg-white rounded-lg p-6 border border-gray-100 shadow-inner">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4 text-center" data-i18n="growth.chart.title">منحنى نمو الطفل</h3>
+                        <div class="relative h-64 md:h-80">
+                            <canvas id="growthChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -846,9 +863,13 @@
         });
 
         // Weight calculation function
+        let growthChartInstance = null;
+
         function calculateWeight() {
             const age = parseFloat(document.getElementById('age-months').value);
             const gender = document.getElementById('gender').value;
+            const actualWeightStr = document.getElementById('actual-weight').value;
+            const actualWeight = actualWeightStr ? parseFloat(actualWeightStr) : null;
 
             if (isNaN(age) || age < 0 || age > 6) {
                 alert('الرجاء إدخال عمر صحيح بين 0 و 6 أشهر');
@@ -886,6 +907,8 @@
 
             // Add color coding based on age
             const resultsDiv = document.getElementById('weight-results');
+            resultsDiv.classList.remove('hidden');
+            resultsDiv.className = 'mt-6 bg-white border-2 rounded-lg p-4 transition-all duration-300';
             if (age <= 1) {
                 resultsDiv.classList.add('border-blue-200');
             } else if (age <= 3) {
@@ -893,6 +916,136 @@
             } else {
                 resultsDiv.classList.add('border-yellow-200');
             }
+
+            renderChart(gender, age, expectedWeight, actualWeight);
+        }
+
+        function renderChart(gender, currentAge, expectedWeight, actualWeight) {
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            
+            if (growthChartInstance) {
+                growthChartInstance.destroy();
+            }
+
+            const labels = [0, 1, 2, 3, 4, 5, 6];
+            
+            // WHO data for 0-6 months (Weight in kg)
+            const boysData = {
+                p3: [2.5, 3.4, 4.4, 5.1, 5.6, 6.0, 6.3],
+                p15: [2.9, 3.9, 5.1, 5.8, 6.4, 6.8, 7.1],
+                p50: [3.3, 4.5, 5.7, 6.6, 7.2, 7.7, 8.0],
+                p85: [3.7, 5.1, 6.4, 7.4, 8.0, 8.6, 8.9],
+                p97: [4.1, 5.7, 7.1, 8.2, 8.8, 9.5, 9.8]
+            };
+            
+            const girlsData = {
+                p3: [2.4, 3.2, 4.0, 4.6, 5.1, 5.4, 5.7],
+                p15: [2.8, 3.7, 4.6, 5.3, 5.8, 6.1, 6.4],
+                p50: [3.2, 4.2, 5.2, 6.0, 6.5, 6.9, 7.2],
+                p85: [3.6, 4.8, 5.9, 6.7, 7.3, 7.7, 8.0],
+                p97: [4.0, 5.4, 6.6, 7.5, 8.1, 8.6, 8.9]
+            };
+
+            const data = gender === 'male' ? boysData : girlsData;
+            const colorPrimary = gender === 'male' ? 'rgba(54, 162, 235, 1)' : 'rgba(255, 99, 132, 1)';
+            const colorLight = gender === 'male' ? 'rgba(54, 162, 235, 0.2)' : 'rgba(255, 99, 132, 0.2)';
+            
+            const datasets = [
+                {
+                    label: 'الحد الأعلى (97%)',
+                    data: data.p97,
+                    borderColor: 'rgba(200, 200, 200, 0.5)',
+                    borderDash: [5, 5],
+                    fill: false,
+                    pointRadius: 0
+                },
+                {
+                    label: '85%',
+                    data: data.p85,
+                    borderColor: colorLight,
+                    fill: false,
+                    pointRadius: 0
+                },
+                {
+                    label: 'المتوسط (50%)',
+                    data: data.p50,
+                    borderColor: colorPrimary,
+                    backgroundColor: colorLight,
+                    fill: '-1',
+                    tension: 0.4,
+                    borderWidth: 2,
+                    pointRadius: 0
+                },
+                {
+                    label: '15%',
+                    data: data.p15,
+                    borderColor: colorLight,
+                    fill: '-1',
+                    pointRadius: 0
+                },
+                {
+                    label: 'الحد الأدنى (3%)',
+                    data: data.p3,
+                    borderColor: 'rgba(200, 200, 200, 0.5)',
+                    borderDash: [5, 5],
+                    fill: '-1',
+                    pointRadius: 0
+                }
+            ];
+
+            if (actualWeight !== null) {
+                datasets.push({
+                    label: 'وزن طفلك الحالي',
+                    data: [{x: currentAge, y: actualWeight}],
+                    backgroundColor: '#10B981', // green
+                    borderColor: '#059669',
+                    pointRadius: 8,
+                    pointHoverRadius: 10,
+                    type: 'scatter'
+                });
+            }
+
+            growthChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                usePointStyle: true,
+                                boxWidth: 8
+                            }
+                        },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'العمر (بالشهور)'
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'الوزن (كجم)'
+                            },
+                            min: 2,
+                            max: 10
+                        }
+                    }
+                }
+            });
         }
     </script>
 
