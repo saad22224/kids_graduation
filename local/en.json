@@ -688,9 +688,9 @@
       },
       "numbers": {
         "title": "Emergency Numbers",
-        "medical": "123 Medical Emergency",
-        "ambulance": "999 Ambulance",
-        "poison": "911 Poison Center"
+        "medical": "123 Ambulance",
+        "ambulance": "122 Police",
+        "poison": "02-26840902 Poison Control"
       }
     },
     "seasonal": {
@@ -887,7 +887,7 @@
   "missing_breastfeeding_213": "Causes:",
   "missing_breastfeeding_215": "• Incorrect feeding position",
   "missing_breastfeeding_216": "• Improper latch",
-  "missing_breastfeeding_217": "• Excessive hygiene",
+  "missing_breastfeeding_217": "• Use of soap, chemicals, or alcohol",
   "missing_breastfeeding_219": "Solutions:",
   "missing_breastfeeding_221": "• Correct the feeding position",
   "missing_breastfeeding_222": "• Apply breastmilk to nipples",
@@ -1023,8 +1023,8 @@
   "missing_breastfeeding_443": "• Spicy foods",
   "missing_breastfeeding_444": "• Canned foods",
   "missing_breastfeeding_447": "<i class=\"fas fa-question-circle text-indigo-500 ml-2\"></i>\n                FAQs",
-  "missing_breastfeeding_451": "How often should I breastfeed my baby?",
-  "missing_breastfeeding_452": "8-12 times a day in the first weeks, then on demand. Watch for hunger cues.",
+  "missing_breastfeeding_451": "On-demand breastfeeding",
+  "missing_breastfeeding_452": "On Demand. Watch for hunger cues.",
   "missing_breastfeeding_454": "How do I know my baby is getting enough milk?",
   "missing_breastfeeding_455": "6 wet diapers daily, weight gain, baby seems happy and active after feeding.",
   "missing_breastfeeding_457": "Can I take medications while breastfeeding?",
@@ -1567,8 +1567,8 @@
   "missing_safety_344": "• Monitor wet diapers",
   "missing_safety_345": "• Go to hospital in severe cases",
   "missing_safety_347": "<i class=\"fas fa-phone-alt text-red-500 ml-2\"></i>\n                        Important Emergency Numbers",
-  "missing_safety_352": "Medical Emergency",
-  "missing_safety_355": "Ambulance",
+  "missing_safety_352": "Ambulance",
+  "missing_safety_355": "Police",
   "missing_safety_358": "Poison Control",
   "missing_safety_367": "Summer",
   "missing_safety_369": "• Sun protection",
