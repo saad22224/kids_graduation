@@ -282,6 +282,52 @@
         "Bleeding from anywhere in the body",
         "Blue tint on tongue or lips"
       ]
+    },
+    "modal": {
+      "read_more": "Read More",
+      "close": "Close",
+      "overview_title": "Disease Overview",
+      "management_title": "How to Deal with It",
+      "respiratory": {
+        "title": "Respiratory Infections",
+        "overview": "Respiratory diseases are very common in infants due to weak immunity and small airway size. They include colds, bronchitis, and pneumonia.",
+        "management": "• Consult a doctor immediately.\n• Ensure good room ventilation.\n• Use saline solution for nasal congestion.\n• Avoid passive smoking near the baby.\n• Do not give any medication without medical advice."
+      },
+      "digestive": {
+        "title": "Digestive System Diseases",
+        "overview": "Diarrhea, colic, and reflux are the most common digestive problems in infants. Severe diarrhea can lead to dangerous dehydration if not treated quickly.",
+        "management": "• Continue breastfeeding or formula feeding regularly.\n• Give Oral Rehydration Salts (ORS) during diarrhea.\n• Avoid giving irritating foods.\n• Consult a doctor immediately if diarrhea lasts more than 24 hours."
+      },
+      "skin": {
+        "title": "Skin & Oral Conditions",
+        "overview": "Oral thrush appears as dense white patches on the tongue and inner cheeks. Diaper rash causes redness and irritation in the diaper area due to moisture and friction.",
+        "management": "• For thrush: consult a doctor for appropriate antifungal treatment.\n• For diaper rash: change diapers frequently and clean and dry the area well.\n• Use a protective cream (such as zinc oxide) after each change.\n• Leave the baby without a diaper for short periods to air the skin."
+      },
+      "breathing": {
+        "title": "Breathing Problems",
+        "overview": "Breathing difficulty may indicate a serious respiratory infection or airway obstruction. Signs include flaring nostrils and pulling in of the chest wall during breathing.",
+        "management": "• Go to emergency immediately.\n• Keep the baby calm and still.\n• Do not try to give any fluids or medicines if breathing is difficult.\n• Make sure the air reaching the baby's face is fresh and not hot."
+      },
+      "fever": {
+        "title": "High Fever",
+        "overview": "Fever in infants under 3 months requires immediate medical evaluation. It may be a sign of a serious infection such as meningitis or sepsis.",
+        "management": "• Go to emergency or consult a doctor immediately.\n• Do not give any medicine to the baby without medical advice (especially under 3 months).\n• Undress the baby and place in a cool, comfortable place.\n• Measure temperature continuously."
+      },
+      "feeding": {
+        "title": "Feeding Problems",
+        "overview": "Inability to feed or persistent vomiting leads to rapid dehydration and a sharp decline in the baby's condition. These are danger signs requiring urgent medical intervention.",
+        "management": "• Go to the hospital immediately.\n• Try to give small drops of rehydration solution if the baby is awake.\n• Do not force feeding if the baby refuses.\n• Note the number of vomiting and diarrhea episodes."
+      },
+      "neuro": {
+        "title": "Neurological Symptoms",
+        "overview": "Seizures, severe lethargy, or high-pitched crying may indicate meningitis, brain bleeding, or another serious infection.",
+        "management": "• Go to emergency immediately.\n• Place the baby on their side to prevent choking.\n• Do not try to restrain movement during a seizure.\n• Note the duration and type of seizure for the doctor."
+      },
+      "dehydration": {
+        "title": "Dehydration Management Protocol",
+        "overview": "Dehydration usually occurs due to diarrhea or persistent vomiting. It ranges from mild (dry mouth) to severe (sunken fontanelle and loss of consciousness).",
+        "management": "• Give Oral Rehydration Salts (ORS) slowly and in small, frequent amounts.\n• Continue breastfeeding or formula feeding.\n• Consult a doctor immediately at signs of severe dehydration.\n• Maintain hand and tool hygiene."
+      }
     }
   },
   "growth": {
@@ -1193,6 +1239,7 @@
   "missing_diseases_273": "• World Health Organization (WHO)",
   "missing_diseases_274": "• American Academy of Pediatrics (AAP)",
   "missing_diseases_275": "• UNICEF",
+  "missing_diseases_dehydration_desc": "When diarrhea occurs, follow these steps immediately to prevent deterioration:",
   "missing_followup_56": "<i class=\"fas fa-calendar-alt ml-2\"></i>Schedule",
   "missing_followup_58": "<i class=\"fas fa-clipboard-check ml-2\"></i>Checklist",
   "missing_followup_63": "6 Visits",
