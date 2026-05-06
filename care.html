@@ -82,6 +82,26 @@
             background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
             border: 2px dashed #9ca3af;
         }
+    
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50">
@@ -149,11 +169,13 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-sky-500 to-teal-500 text-white py-20 overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-teal-200 rounded-full filter blur-3xl"></div>
+    <section class="relative bg-gradient-to-br from-indigo-600 via-sky-500 to-teal-400 text-white py-24 overflow-hidden">
+        <!-- Animated Background Shapes -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
+            <div class="absolute top-1/2 -left-24 w-96 h-96 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-50"></div>
         </div>
         
         <div class="container mx-auto px-4 relative z-10">
@@ -204,7 +226,7 @@
                         </div>
                         
                         <!-- Floating Card -->
-                        <div class="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg" data-aos="fade-up" data-aos-delay="300">
+                        <div class="absolute -bottom-4 -right-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/50" data-aos="fade-up" data-aos-delay="300">
                             <div class="flex items-center gap-3">
                                 <div class="bg-teal-100 rounded-full w-12 h-12 flex items-center justify-center">
                                     <i class="fas fa-hand-holding-heart text-teal-600 text-xl"></i>

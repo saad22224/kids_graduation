@@ -78,6 +78,26 @@
             background: linear-gradient(45deg, #fce7f3, #fbcfe8);
             border: 2px dashed #ec4899;
         }
+    
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
     </style>
 </head>
 
@@ -491,7 +511,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Sore Nipples -->
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100" data-aos="fade-up">
                     <div class="text-center mb-4">
                         <img src="assets/breastfeeding/WhatsApp Image 2026-05-05 at 3.56.45 PM.jpeg" alt="تشقق الحلمات"
                             class="w-full h-48 object-cover rounded-lg mb-4">
@@ -524,7 +544,7 @@
 
 
                 <!-- Engorgement -->
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center mb-4">
                         <img src="assets/breastfeeding/WhatsApp Image 2026-05-05 at 3.56.48 PM.jpeg" alt="احتقان الثدي"
                             class="w-full h-48 object-cover rounded-lg mb-4">
@@ -555,7 +575,7 @@
                 </div>
 
                 <!-- Mastitis -->
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100" data-aos="fade-up" data-aos-delay="300">
                     <div class="text-center mb-4">
                         <img src="assets/breastfeeding/WhatsApp Image 2026-05-05 at 3.56.53 PM.jpeg" alt="التهاب الثدي"
                             class="w-full h-48 object-cover rounded-lg mb-4">
@@ -586,7 +606,7 @@
                 </div>
 
                 <!-- Thrush -->
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="400">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100" data-aos="fade-up" data-aos-delay="400">
                     <div class="text-center mb-4">
                         <img src="assets/breastfeeding/WhatsApp Image 2026-05-05 at 3.56.54 PM.jpeg" alt="القلاع الفموي"
                             class="w-full h-48 object-cover rounded-lg mb-4">
@@ -616,7 +636,7 @@
                 </div>
 
                 <!-- Refusal to Feed -->
-                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" data-aos="fade-up" data-aos-delay="500">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100" data-aos="fade-up" data-aos-delay="500">
                     <div class="text-center mb-4">
                         <img src="assets/breastfeeding/Gemini_Generated_Image_wfpnzhwfpnzhwfpn.png" alt="رفض الرضاعة"
                             class="w-full h-48 object-cover rounded-lg mb-4">
