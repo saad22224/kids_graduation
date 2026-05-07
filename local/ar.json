@@ -11,9 +11,10 @@
                 "feeding":  "الرضاعة",
                 "followup":  "المتابعة"
             },
-    "hero":  {
-                 "title":  "بداية حياة - BEDAYET HAYA",
-                 "subtitle":  "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة بناءً على أحدث التوصيات الطبية العالمية",
+        "hero":  {
+                     "title":  "بداية حياة - BEDAYET HAYAH",
+                     "heading": "حديثي الولادة في أول 6 أشهر",
+                     "subtitle":  "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة بناءً على أحدث التوصيات الطبية العالمية",
                  "btn_vaccination":  "جدول التطعيمات",
                  "btn_care":  "الرعاية اليومية",
                  "stats_months":  "6 أشهر",
@@ -104,18 +105,18 @@
                  "toggle":  "English"
              },
     "header":  {
-                   "logo":  "بداية حياة | BEDAYET HAYA",
+                   "logo":  "بداية حياة | BEDAYET HAYAH",
                    "subtitle":  "دليلك الشامل للأشهر الستة الأولى"
                },
     "footer":  {
-                   "site_name":  "بداية حياة | BEDAYET HAYA",
+                   "site_name":  "بداية حياة | BEDAYET HAYAH",
                    "site_desc":  "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.",
                    "quick_links":  "روابط سريعة",
                    "contact_us":  "اتصل بنا",
                    "emergency":  "الطوارئ: 123",
                    "country":  "مصر",
                    "rights":  "جميع الحقوق محفوظة",
-                   "designed_by":  "بداية حياة | BEDAYET HAYA | مصمم بعناية وحب للأمهات والأطفال",
+                   "designed_by":  "بداية حياة | BEDAYET HAYAH | مصمم بعناية وحب للأمهات والأطفال",
                    "desc":  "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة في الأشهر الستة الأولى.",
                    "medical_sources":  "المصادر الطبية",
                    "sources_desc":  "المحتوى معتمد على:",
@@ -1413,8 +1414,8 @@
     "missing_followup_499":  "• منظمة الصحة العالمية (WHO)",
     "missing_followup_500":  "• الأكاديمية الأمريكية لطب الأطفال (AAP)",
     "missing_followup_501":  "• اليونيسف (UNICEF)",
-    "missing_growth_4":  "النمو والتطور - بداية حياة | BEDAYA HAYAH",
-    "missing_growth_19":  "بداية حياة | BEDAYA HAYAH",
+    "missing_growth_4":  "النمو والتطور - بداية حياة | BEDAYET HAYAH",
+    "missing_growth_19":  "بداية حياة | BEDAYET HAYAH",
     "missing_growth_20":  "دليلك الشامل للأشهر الستة الأولى",
     "missing_growth_97":  "احسب الوزن المتوقع لطفلك",
     "missing_growth_100":  "عمر الطفل (بالشهور)",
@@ -1515,8 +1516,8 @@
     "missing_growth_485":  "• منظمة الصحة العالمية (WHO)",
     "missing_growth_486":  "• الأكاديمية الأمريكية لطب الأطفال (AAP)",
     "missing_growth_487":  "• اليونيسف (UNICEF)",
-    "missing_growth_490":  "\u003cspan data-i18n=\"footer.rights\"\u003eجميع الحقوق محفوظة\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYA | تحت إشراف د مني شاهين",
-    "missing_index_481":  "\u003cspan data-i18n=\"footer.rights\"\u003eجميع الحقوق محفوظة\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYA | \u003cspan data-i18n=\"footer.designed_by\"\u003eتحت إشراف د مني شاهين\u003c/span\u003e",
+    "missing_growth_490":  "\u003cspan data-i18n=\"footer.rights\"\u003eجميع الحقوق محفوظة\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | تحت إشراف د مني شاهين",
+    "missing_index_481":  "\u003cspan data-i18n=\"footer.rights\"\u003eجميع الحقوق محفوظة\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | \u003cspan data-i18n=\"footer.designed_by\"\u003eتحت إشراف د مني شاهين\u003c/span\u003e",
     "missing_safety_67":  "قانون",
     "missing_safety_68":  "مقعد الأمان",
     "missing_safety_72":  "استعداد",
@@ -1684,11 +1685,11 @@
     "missing_vaccination_293":  "السلامة",
     "missing_vaccination_295":  "المتابعة",
     "stats_available_desc":  "نصيحة وإرشاد",
-    "footer.designed_by":  "BEDAYET HAYA | تحت إشراف د مني شاهين",
+    "footer.designed_by":  "BEDAYET HAYAH | تحت إشراف د مني شاهين",
     "missing_growth_weight_actual":  "الوزن الحالي (كجم) - اختياري",
     "formula":  {
                     "meta":  {
-                                 "title":  "الرضاعة الصناعية - بداية حياة | BEDAYA HAYAH"
+                                 "title":  "الرضاعة الصناعية - بداية حياة | BEDAYET HAYAH"
                              },
                     "title":  "الرضاعة الصناعية",
                     "subtitle":  "دليل شامل لتحضير الحليب الصناعي بأمان، والكميات المناسبة للطفل حسب العمر، ونصائح للسلامة.",

@@ -11,9 +11,10 @@
                 "feeding":  "Feeding",
                 "followup":  "Follow-up"
             },
-    "hero":  {
-                 "title":  "بداية حياة - BEDAYET HAYA",
-                 "subtitle":  "A comprehensive and reliable guide for mothers to care for newborns based on the latest global medical recommendations",
+        "hero":  {
+                     "title":  "BEDAYET HAYAH",
+                     "heading": "Newborns in the first 6 months",
+                     "subtitle":  "A comprehensive and reliable guide for mothers to care for newborns based on the latest global medical recommendations",
                  "btn_vaccination":  "Vaccination Schedule",
                  "btn_care":  "Daily Care",
                  "stats_months":  "6 Months",
@@ -104,18 +105,18 @@
                  "toggle":  "Arabic"
              },
     "header":  {
-                   "logo":  "BEDAYET HAYA",
+                   "logo":  "BEDAYET HAYAH",
                    "subtitle":  "Your complete guide for the first 6 months"
                },
     "footer":  {
-                   "site_name":  "BEDAYET HAYA",
+                   "site_name":  "BEDAYET HAYAH",
                    "site_desc":  "A comprehensive and trusted guide for mothers to care for newborns in the first six months.",
                    "quick_links":  "Quick Links",
                    "contact_us":  "Contact Us",
                    "emergency":  "Emergency: 123",
                    "country":  "Egypt",
                    "rights":  "All rights reserved",
-                   "designed_by":  "BEDAYET HAYA | Designed with care and love for mothers and babies",
+                   "designed_by":  "BEDAYET HAYAH | Designed with care and love for mothers and babies",
                    "desc":  "Comprehensive and reliable guide for mothers to care for newborns in the first six months.",
                    "medical_sources":  "Medical Sources",
                    "sources_desc":  "Content approved by:",
@@ -123,7 +124,7 @@
                },
     "vaccination":  {
                         "meta":  {
-                                     "title":  "Vaccination Schedule - Bedaya HAYAH"
+                                     "title":  "Vaccination Schedule - BEDAYET HAYAH"
                                  },
                         "title":  "Vaccination Schedule",
                         "subtitle":  "Complete schedule of mandatory vaccinations for the first 18 months with important side-effect instructions",
@@ -1413,8 +1414,8 @@
     "missing_followup_499":  "• World Health Organization (WHO)",
     "missing_followup_500":  "• American Academy of Pediatrics (AAP)",
     "missing_followup_501":  "• UNICEF",
-    "missing_growth_4":  "Growth and Development - BEDAYA HAYAH",
-    "missing_growth_19":  "BEDAYA HAYAH",
+    "missing_growth_4":  "Growth and Development - BEDAYET HAYAH",
+    "missing_growth_19":  "BEDAYET HAYAH",
     "missing_growth_20":  "Comprehensive Guide for First 6 Months",
     "missing_growth_97":  "Calculate Expected Baby Weight",
     "missing_growth_100":  "Baby\u0027s Age (Months)",
@@ -1515,8 +1516,8 @@
     "missing_growth_485":  "• World Health Organization (WHO)",
     "missing_growth_486":  "• American Academy of Pediatrics (AAP)",
     "missing_growth_487":  "• UNICEF",
-    "missing_growth_490":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYA | Under the supervision of Dr. Mona Shahin",
-    "missing_index_481":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYA | \u003cspan data-i18n=\"footer.designed_by\"\u003eUnder the supervision of Dr. Mona Shahin\u003c/span\u003e",
+    "missing_growth_490":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | Under the supervision of Dr. Mona Shahin",
+    "missing_index_481":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | \u003cspan data-i18n=\"footer.designed_by\"\u003eUnder the supervision of Dr. Mona Shahin\u003c/span\u003e",
     "missing_safety_67":  "Law",
     "missing_safety_68":  "Car Seat",
     "missing_safety_72":  "Readiness",
@@ -1684,11 +1685,11 @@
     "missing_vaccination_293":  "Safety",
     "missing_vaccination_295":  "Routine Checkups",
     "stats_available_desc":  "tips \u0026 guidelines",
-    "footer.designed_by":  "BEDAYET HAYA | Under the supervision of Dr. Mona Shahin",
+    "footer.designed_by":  "BEDAYET HAYAH | Under the supervision of Dr. Mona Shahin",
     "missing_growth_weight_actual":  "Actual Weight (kg) - Optional",
     "formula":  {
                     "meta":  {
-                                 "title":  "Formula Feeding - Bedaya HAYAH | BEDAYA HAYAH"
+                                 "title":  "Formula Feeding - BEDAYET HAYAH | BEDAYET HAYAH"
                              },
                     "title":  "Formula Feeding",
                     "subtitle":  "A comprehensive guide to preparing formula milk safely, appropriate amounts for infants by age, and safety tips.",
