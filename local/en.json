@@ -14,7 +14,7 @@
         "hero":  {
                      "title":  "BEDAYET HAYAH",
                      "heading": "Newborns in the first 6 months",
-                     "subtitle":  "A comprehensive and reliable guide for mothers to care for newborns based on the latest global medical recommendations",
+                     "subtitle":  "A comprehensive and reliable guide for mothers to care for newborns up to 6 months of age, based on the latest global medical recommendations from the World Health Organization (WHO), UNICEF, and the Egyptian Ministry of Health.",
                  "btn_vaccination":  "Vaccination Schedule",
                  "btn_care":  "Daily Care",
                  "stats_months":  "6 Months",
@@ -219,7 +219,9 @@
                                            "t1":  "Monitor temperature every 4 hours",
                                            "t2":  "Increase breastfeeding to maintain hydration",
                                            "t3":  "Record next appointment date"
-                                       }
+                                       },
+                        "gallery_title": "Important Vaccination Documents and Schedules",
+                        "gallery_desc": "Illustrative images of the vaccination schedules approved by the Egyptian Ministry of Health"
                     },
     "diseases":  {
                      "meta":  {
@@ -1037,6 +1039,11 @@
     "missing_breastfeeding_384":  "• Negative thoughts",
     "missing_breastfeeding_385":  "• Difficulty caring for baby",
     "missing_breastfeeding_386":  "Consult your doctor immediately",
+    "missing_breastfeeding_p_m_title": "Management and Solutions:",
+    "missing_breastfeeding_p_m_1": "• Seek professional psychological help immediately",
+    "missing_breastfeeding_p_m_2": "• Share your feelings with your partner or family",
+    "missing_breastfeeding_p_m_3": "• Get adequate sleep and rest",
+    "missing_breastfeeding_p_m_4": "• Practice simple relaxation exercises",
     "missing_breastfeeding_394":  "Fluids",
     "missing_breastfeeding_395":  "Drink 2-3 liters of water daily",
     "missing_breastfeeding_397":  "• Water",
@@ -1517,7 +1524,7 @@
     "missing_growth_486":  "• American Academy of Pediatrics (AAP)",
     "missing_growth_487":  "• UNICEF",
     "missing_growth_490":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | Under the supervision of Dr. Mona Shahin",
-    "missing_index_481":  "\u003cspan data-i18n=\"footer.rights\"\u003eAll Rights Reserved\u003c/span\u003e © \u003cspan class=\"copyright-year\"\u003e2026\u003c/span\u003e BEDAYET HAYAH | \u003cspan data-i18n=\"footer.designed_by\"\u003eUnder the supervision of Dr. Mona Shahin\u003c/span\u003e",
+    "missing_index_481": "BEDAYET HAYAH 2026 © All Rights Reserved <br> ♕ Graduation Project - Faculty of Nursing, Damanhour University ♕ <br> Under the supervision of: <br> Dr. Mona Shahin. <br> Prepared by: <br> ◆ Mahmoud Jamal Hassan Toaima. ◆ Mohamed Eid Farhat Toaima. <br> ◆ Mohamed Mamdouh Abdel Fattah El-Ashry. ◆ Mohamed Mahmoud Mohamed El-Hofey. <br> ◆ Mohamed Mahmoud Abdullah Taj El-Din. ◆ Mohamed Fawzi Mohamed Haroun. <br> ◆ Mohamed Fayez Ali Mohamed El-Gazzar.◆ Mahmoud Bassiouni Shehata Manaa. <br> ◆ Mohamed Monawar Mahrous Abdel Razek.◆ Mohamed Nagi Mahmoud Kholaif. <br> ◆ Mahmoud El-Sayed Abdel Sayed Ragheb.◆ Mohamed Nasser Abdel Mawla El-Amoury. <br> ◆ Mohamed Hany Fathy Saad.◆ Mohamed Hany Bahnasy Mahmoud. <br> ◆ Mahmoud Ahmed Mohamed Moussa.◆ Mohamed Yehia Ismail Baliha.",
     "missing_safety_67":  "Law",
     "missing_safety_68":  "Car Seat",
     "missing_safety_72":  "Readiness",
