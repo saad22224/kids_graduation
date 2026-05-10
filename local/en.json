@@ -39,6 +39,7 @@
                      },
     "features":  {
                      "title":  "Important Topics",
+                     "subtitle": "Browse all sections of the site to easily access the information you need",
                      "vaccination":  "Vaccination",
                      "vaccination_desc":  "Mandatory vaccination schedule for the first six months and how to deal with side effects",
                      "diseases":  "Diseases \u0026 Danger Signs",
@@ -1151,6 +1152,22 @@
     "missing_care_289":  "• Fold diaper away from cord",
     "missing_care_290":  "• Wait for it to fall off naturally",
     "missing_care_292":  "Alert: Consult doctor if red or swollen",
+    "missing_care_dr_treatment_title": "Home Treatment and Care for Diaper Rash:",
+    "missing_care_dr_treatment_1_title": "Frequent Changes:",
+    "missing_care_dr_treatment_1_desc": "Change diapers as soon as they are soiled to prevent moisture.",
+    "missing_care_dr_treatment_2_title": "Gentle Cleaning:",
+    "missing_care_dr_treatment_2_desc": "Use warm water and a soft cloth, and avoid wipes containing alcohol or fragrances.",
+    "missing_care_dr_treatment_3_title": "Air Out:",
+    "missing_care_dr_treatment_3_desc": "Leave your baby without a diaper for short periods during the day to allow the skin to \"breathe\" and dry naturally.",
+    "missing_care_dr_treatment_4_title": "Barrier Creams:",
+    "missing_care_dr_treatment_4_desc": "Apply a thick layer of creams containing Zinc Oxide or Petroleum Jelly to form a barrier that protects the skin.",
+    "missing_care_dr_treatment_5_title": "Loose Diapering:",
+    "missing_care_dr_treatment_5_desc": "Make sure the diaper is not closed too tightly to allow air flow.",
+    "missing_care_dr_doctor_title": "When should you consult a doctor?",
+    "missing_care_dr_doctor_1": "• If the rash does not improve after 2-3 days of home care.",
+    "missing_care_dr_doctor_2": "• Appearance of blisters, crusts, or pus (signs of bacterial or fungal infection).",
+    "missing_care_dr_doctor_3": "• If the child develops a fever.",
+    "missing_care_dr_doctor_4": "• Rash spreading to areas outside the diaper area.",
     "missing_care_296":  "\u003ci class=\"fas fa-cut text-indigo-500 ml-2\"\u003e\u003c/i\u003e\n                    Hair Care",
     "missing_care_300":  "Washing Hair",
     "missing_care_303":  "Instructions:",
@@ -1724,6 +1741,21 @@
                     "safety_tip3_title":  "No Microwave",
                     "safety_tip3_desc":  "Avoid heating the formula in the microwave as it heats the milk unevenly and may burn the baby\u0027s mouth.",
                     "safety_tip4_title":  "Correct Concentration",
-                    "safety_tip4_desc":  "Do not dilute the milk with extra water or increase its concentration; both can harm your baby\u0027s kidneys or cause malnutrition."
+                    "safety_tip4_desc":  "Do not dilute the milk with extra water or increase its concentration; both can harm your baby\u0027s kidneys or cause malnutrition.",
+                    "video_title": "Tutorial Video: The Correct Preparation Method",
+                    "video_desc": "Watch the practical steps to ensure equipment sterilization and accurate milk measurements",
+                    "table_title": "Suggested Feeding Quantities Table",
+                    "table_desc": "A guided guide for quantities by child age (always consult your doctor)",
+                    "table": {
+                        "age": "Age",
+                        "water": "Water Quantity (ml)",
+                        "scoops": "Number of Scoops",
+                        "feedings": "Number of Feedings/Day",
+                        "week1": "First Week",
+                        "weeks2_4": "2 - 4 Weeks",
+                        "months1_2": "1 - 2 Months",
+                        "months3_4": "3 - 4 Months",
+                        "months5_6": "5 - 6 Months"
+                    }
                 }
 }
