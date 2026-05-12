@@ -251,7 +251,7 @@
                                                                                 ]
                                                                    },
                                                       "dehydration_treatment":  {
-                                                                                    "title":  "بروتوكول معالجة الجفاف (المجفاف)",
+                                                                                    "title":  "بروتوكول معالجة الجفاف ",
                                                                                     "step1":  "أخذ محلول معالجة الجفاف في المنزل حسب الإرشادات الطبية.",
                                                                                     "step2":  "الاستمرار في الرضاعة الطبيعية أو الصناعية بانتظام.",
                                                                                     "step3":  "إعطاء الزنك (دواء شرب) لتقليل حدة الإسهال.",
@@ -1070,12 +1070,12 @@
     "missing_breastfeeding_426":  "• سبانخ",
     "missing_breastfeeding_427":  "• عدس",
     "missing_breastfeeding_429":  "أطعمة يجب تجنبها",
-    "missing_breastfeeding_432":  "تجنب:",
+    "missing_breastfeeding_432":  "تجنبي:",
     "missing_breastfeeding_434":  "• الكحول تماماً",
     "missing_breastfeeding_435":  "• الكافيين بكثرة",
     "missing_breastfeeding_436":  "• الأسماك عالية الزئبق",
     "missing_breastfeeding_437":  "• الأطعمة غير المطهوة جيداً",
-    "missing_breastfeeding_439":  "قلل من:",
+    "missing_breastfeeding_439":  "قللي من:",
     "missing_breastfeeding_441":  "• الأطعمة المسببة للغازات",
     "missing_breastfeeding_442":  "• التوابل القوية",
     "missing_breastfeeding_443":  "• الأطعمة الحارة",
