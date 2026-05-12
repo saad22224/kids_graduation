@@ -167,26 +167,36 @@
         .card-clickable {
             cursor: pointer;
         }
-    
+
         @keyframes blob {
-            0% { transform: translate(0px, 0px) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-            100% { transform: translate(0px, 0px) scale(1); }
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
         }
-        
+
         .animate-blob {
             animation: blob 7s infinite;
         }
-        
+
         .animation-delay-2000 {
             animation-delay: 2s;
         }
-        
+
         .animation-delay-4000 {
             animation-delay: 4s;
         }
-
     </style>
 </head>
 
@@ -294,13 +304,22 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-indigo-600 via-sky-500 to-teal-400 text-white py-24 overflow-hidden">
+    <section
+        class="relative bg-gradient-to-br from-indigo-600 via-sky-500 to-teal-400 text-white py-24 overflow-hidden">
         <!-- Animated Background Shapes -->
         <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-            <div class="absolute top-1/2 -left-24 w-96 h-96 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-24 right-1/4 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-50"></div>
+            <div
+                class="absolute -top-24 -right-24 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob">
+            </div>
+            <div
+                class="absolute top-1/2 -left-24 w-96 h-96 bg-teal-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000">
+            </div>
+            <div
+                class="absolute -bottom-24 right-1/4 w-96 h-96 bg-sky-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000">
+            </div>
+            <div
+                class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNykiLz48L3N2Zz4=')] opacity-50">
+            </div>
         </div>
 
         <div class="container mx-auto px-4 relative z-10">
@@ -350,8 +369,8 @@
                         </div>
 
                         <!-- Floating Card -->
-                        <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/50" data-aos="fade-up"
-                            data-aos-delay="300">
+                        <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-white/50"
+                            data-aos="fade-up" data-aos-delay="300">
                             <div class="flex items-center gap-3">
                                 <div class="bg-teal-100 rounded-full w-12 h-12 flex items-center justify-center">
                                     <i class="fas fa-stethoscope text-teal-600 text-xl"></i>
@@ -380,7 +399,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Respiratory Infections -->
-                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable" data-aos="fade-up" onclick="openModal('respiratory')">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable"
+                    data-aos="fade-up" onclick="openModal('respiratory')">
                     <div class="text-center mb-4">
                         <i class="fas fa-lungs-virus text-4xl text-blue-500"></i>
                     </div>
@@ -391,12 +411,14 @@
                             غير الطبيعى (نهجان أو تزييق) واستشيري الطبيب فوراً.</p>
                     </div>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-blue-100 text-blue-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
 
                 <!-- Gastrointestinal -->
-                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable" data-aos="fade-up" data-aos-delay="100" onclick="openModal('digestive')">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable"
+                    data-aos="fade-up" data-aos-delay="100" onclick="openModal('digestive')">
                     <div class="text-center mb-4">
                         <i class="fas fa-stomach text-4xl text-green-500"></i>
                     </div>
@@ -426,12 +448,14 @@
                         </ul>
                     </div>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-green-100 text-green-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
 
                 <!-- Skin Conditions -->
-                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable" data-aos="fade-up" data-aos-delay="200" onclick="openModal('skin')">
+                <div class="bg-white rounded-3xl shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 p-6 relative overflow-hidden group border border-slate-100 card-clickable"
+                    data-aos="fade-up" data-aos-delay="200" onclick="openModal('skin')">
                     <div class="text-center mb-4">
                         <img src="assets/oral_thrush_demo.png" alt="Oral Thrush"
                             class="w-24 h-24 mx-auto rounded-full object-cover mb-2 border-2 border-yellow-200">
@@ -445,7 +469,9 @@
                             الداخل) وطفح الحفاض.</p>
                     </div>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span
+                            class="inline-block bg-yellow-100 text-yellow-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
             </div>
@@ -463,7 +489,8 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Breathing Issues -->
-                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up" onclick="openModal('breathing')">
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up"
+                    onclick="openModal('breathing')">
                     <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.danger_signs.breathing_title">
                         <i class="fas fa-lungs text-red-500 ml-2"></i>
                         مشاكل التنفس
@@ -476,12 +503,14 @@
                         </li>
                     </ul>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
 
                 <!-- Fever and Temperature -->
-                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up" data-aos-delay="100" onclick="openModal('fever')">
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up"
+                    data-aos-delay="100" onclick="openModal('fever')">
                     <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="diseases.danger_signs.fever_title">
                         <i class="fas fa-thermometer text-red-500 ml-2"></i>
                         الحمى ودرجة الحرارة
@@ -504,12 +533,14 @@
                         </li>
                     </ul>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
 
                 <!-- Feeding Issues -->
-                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up" data-aos-delay="200" onclick="openModal('feeding')">
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up"
+                    data-aos-delay="200" onclick="openModal('feeding')">
                     <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="missing_diseases_181"
                         data-i18n-html="true">
                         <i class="fas fa-baby-bottle text-red-500 ml-2"></i>
@@ -523,12 +554,14 @@
                         </li>
                     </ul>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
 
                 <!-- Neurological Signs -->
-                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up" data-aos-delay="300" onclick="openModal('neuro')">
+                <div class="bg-red-50 border-2 border-red-200 rounded-xl p-6 card-clickable" data-aos="fade-up"
+                    data-aos-delay="300" onclick="openModal('neuro')">
                     <h3 class="text-xl font-bold text-red-600 mb-4" data-i18n="missing_diseases_188"
                         data-i18n-html="true">
                         <i class="fas fa-brain text-red-500 ml-2"></i>
@@ -542,7 +575,8 @@
                         </li>
                     </ul>
                     <div class="mt-4 text-center">
-                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
             </div>
@@ -552,7 +586,8 @@
     <!-- Dehydration Protocol Section -->
     <section class="py-16 bg-blue-50">
         <div class="container mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row card-clickable" data-aos="fade-up" onclick="openModal('dehydration')">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row card-clickable"
+                data-aos="fade-up" onclick="openModal('dehydration')">
                 <div class="md:w-1/3 relative">
                     <img src="assets/ors_packet.png" alt="ORS Packet" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-sky-600/10 hover:bg-transparent transition-colors"></div>
@@ -561,7 +596,7 @@
                     <h2 class="text-3xl font-bold text-sky-600 mb-6 flex items-center gap-3">
                         <i class="fas fa-kit-medical"></i>
                         <span data-i18n="diseases.common.digestive.dehydration_treatment.title">بروتوكول معالجة الجفاف
-                           </span>
+                        </span>
                     </h2>
                     <p class="text-gray-600 mb-8" data-i18n="missing_diseases_dehydration_desc">عند حدوث إسهال، اتبعي
                         الخطوات التالية فوراً لمنع تدهور الحالة:</p>
@@ -601,7 +636,8 @@
                         </div>
                     </div>
                     <div class="mt-6 text-center">
-                        <span class="inline-block bg-sky-100 text-sky-600 px-4 py-2 rounded-full text-sm font-bold" data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
+                        <span class="inline-block bg-sky-100 text-sky-600 px-4 py-2 rounded-full text-sm font-bold"
+                            data-i18n="diseases.modal.read_more">اقرأ المزيد</span>
                     </div>
                 </div>
             </div>
@@ -643,7 +679,8 @@
                 </div>
 
                 <div class="text-center mt-8">
-                    <a href="tel:123" class="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg hover:bg-red-50 transition-colors"
+                    <a href="tel:123"
+                        class="inline-flex items-center bg-white text-red-600 px-6 py-3 rounded-full font-bold text-lg hover:bg-red-50 transition-colors"
                         data-i18n="missing_diseases_250" data-i18n-html="true">
                         <i class="fas fa-phone-alt ml-2"></i>
                         الطوارئ الطبية: 123
@@ -658,7 +695,8 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <img src="assets/WhatsApp Image 2026-05-08 at 8.51.50 PM.jpeg" alt="بداية حياة" class="h-16 w-auto mb-4 object-contain">
+                    <img src="assets/WhatsApp Image 2026-05-08 at 8.51.50 PM.jpeg" alt="بداية حياة"
+                        class="h-16 w-auto mb-4 object-contain">
                     <h3 class="text-xl font-bold mb-4 text-sky-400" data-i18n="footer.site_name">بداية حياة | BEDAYET
                         HAYAH</h3>
                     <p class="text-slate-400 mb-4" data-i18n="footer.site_desc">دليل شامل وموثوق للأمهات لرعاية الأطفال
@@ -690,8 +728,8 @@
             <!-- Developer Credit -->
             <div class="border-t border-slate-800 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-slate-500 text-center mb-4 md:mb-0 text-xs md:text-sm leading-relaxed" data-i18n="missing_index_481"
-                        data-i18n-html="true">
+                    <p class="text-slate-500 text-center mb-4 md:mb-0 text-xs md:text-sm leading-relaxed"
+                        data-i18n="missing_index_481" data-i18n-html="true">
                         BEDAYET HAYAH 2026 ©جميع الحقوق محفوظة <br>
                         ♕مشروع تخرج طلاب كلية التمريض جامعة دمنهور♕ <br>
                         تحت إشراف: د. منى شاهين. <br>
@@ -803,7 +841,7 @@
             }
         }
 
-        document.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
                 closeModal();
             }
