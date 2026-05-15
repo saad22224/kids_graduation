@@ -1,4 +1,4 @@
-const CACHE_NAME = 'bedayet-hayah-v1';
+const CACHE_NAME = 'bedayet-hayah-v2';
 const ASSETS_TO_CACHE = [
   './',
   'index.html',
@@ -13,8 +13,10 @@ const ASSETS_TO_CACHE = [
   'js/i18n.js',
   'local/ar.json',
   'local/en.json',
-  'assets/logo.jpg'
+  'icon-192.png',
+  'icon-512.png'
 ];
+
 
 // Install Event
 self.addEventListener('install', (event) => {

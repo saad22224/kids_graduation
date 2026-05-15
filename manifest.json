@@ -1,38 +1,27 @@
 {
   "id": "/",
   "scope": "/",
-  "name": "بداية حياة - BEDAYET HAYAH",
+  "name": "بداية حياة",
   "short_name": "بداية حياة",
   "description": "دليل شامل وموثوق للأمهات لرعاية الأطفال حديثي الولادة حتى عمر 6 شهور",
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0ea5e9",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "assets/logo.jpg",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "any"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "assets/logo.jpg",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "any"
-    },
-    {
-      "src": "assets/logo.jpg",
-      "sizes": "192x192",
-      "type": "image/jpeg",
-      "purpose": "maskable"
-    },
-    {
-      "src": "assets/logo.jpg",
-      "sizes": "512x512",
-      "type": "image/jpeg",
-      "purpose": "maskable"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
-  ],
-  "orientation": "portrait"
+  ]
 }
+
