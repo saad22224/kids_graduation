@@ -13,7 +13,7 @@ const ASSETS_TO_CACHE = [
   'js/i18n.js',
   'local/ar.json',
   'local/en.json',
-  'assets/WhatsApp Image 2026-05-08 at 8.51.50 PM.jpeg'
+  'assets/logo.jpg'
 ];
 
 // Install Event
