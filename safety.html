@@ -5,6 +5,8 @@
     
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="assets/WhatsApp Image 2026-05-08 at 8.51.50 PM.jpeg">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0ea5e9">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -363,6 +365,10 @@
                                 <i class="fas fa-baby text-blue-500 ml-2 mt-1"></i>
                                 <span data-i18n="missing_safety_160">استخدمي كيس النوم بدلاً من البطانيات</span>
                             </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 ml-2 mt-1"></i>
+                                <span data-i18n="breastfeeding.safe_sleep.pacifier_rule"><strong>لا تعطي المصاصة (Pacifier) للطفل أثناء فترة الرضاعة الطبيعية</strong> لتجنب تشوش الحلمة.</span>
+                            </li>
                         </ul>
                         <ul class="space-y-2 text-gray-700">
                             <!-- <li class="flex items-start">
@@ -628,23 +634,28 @@
                                     ارتفاع درجة الحرارة
                                 </h4>
                                 <ul class="text-sm text-gray-700 space-y-1">
-                                    <li data-i18n="missing_safety_326">• قيسي درجة الحرارة</li>
-                                    <li data-i18n="missing_safety_327">• أعطي خافض حرارة مناسباً</li>
-                                    <li data-i18n="missing_safety_328">• خففي الملابس</li>
-                                    <li data-i18n="missing_safety_329">• استشيري الطبيب إذا زادت عن 38.5°C</li>
+                                    <li data-i18n="breastfeeding.emergency.fever_step1_desc">• قومي بعمل كمادات ماء فاتر على جبهة الطفل وتحت الإبطين وبين الفخذين.</li>
+                                    <li data-i18n="missing_safety_327">• أعطي خافض حرارة مناسباً لعمر الطفل حسب إرشادات الطبيب.</li>
+                                    <li data-i18n="missing_safety_328">• خففي ملابس الطفل لتهوية جسمه.</li>
+                                    <li data-i18n="missing_safety_329">• استشيري الطبيب فوراً إذا زادت الحرارة عن 38.5°C.</li>
                                 </ul>
                             </div>
                             
                             <div class="bg-orange-50 rounded-lg p-4">
-                                <h4 class="font-bold text-orange-700 mb-2" data-i18n="missing_safety_331" data-i18n-html="true">
+                                <h4 class="font-bold text-orange-700 mb-2" data-i18n="breastfeeding.emergency.choking_title" data-i18n-html="true">
                                     <i class="fas fa-lungs text-orange-500 ml-2"></i>
                                     الاختناق
                                 </h4>
+                                <div class="mb-3 rounded-lg overflow-hidden shadow-sm aspect-video">
+                                    <video controls class="w-full h-full object-cover">
+                                        <source src="assets/choking_aid.mp4" type="video/mp4">
+                                        متصفحك لا يدعم تشغيل الفيديو.
+                                    </video>
+                                </div>
                                 <ul class="text-sm text-gray-700 space-y-1">
-                                    <li data-i18n="missing_safety_334">• اتصلي بالطوارئ فوراً</li>
-                                    <li data-i18n="missing_safety_335">• لا تضربي على ظهر الطفل</li>
-                                    <li data-i18n="missing_safety_336">• لا تحاولي إزالة الجسم باليد</li>
-                                    <li data-i18n="missing_safety_337">• ابدئي الإسعافات إذا كنت مدربة</li>
+                                    <li data-i18n="breastfeeding.emergency.choking_step2">• قومي بالضرب على ظهر الطفل (Back Blows) - 5 ضربات بين لوحي الكتف.</li>
+                                    <li data-i18n="breastfeeding.emergency.choking_warning" class="text-red-600 font-bold">• ممنوع: لا تحاولي ضم الطفل أو الضغط على صدره.</li>
+                                    <li data-i18n="breastfeeding.emergency.choking_call">• اتصلي بالطوارئ (123) فوراً أثناء قيامك بالإسعافات.</li>
                                 </ul>
                             </div>
                             
