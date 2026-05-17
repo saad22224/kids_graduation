@@ -1,4 +1,9 @@
 {
+    "install": {
+        "title": "Bedayet Hayah",
+        "desc": "Install app on your device",
+        "btn": "Install"
+    },
     "nav":  {
                 "home":  "Home",
                 "vaccination":  "Vaccination",
@@ -9,7 +14,8 @@
                 "formula":  "Formula Feeding",
                 "safety":  "Safety",
                 "feeding":  "Feeding",
-                "followup":  "Follow-up"
+                "followup":  "Follow-up",
+                "intro_video": "Introduction Video"
             },
         "hero":  {
                      "title":  "BEDAYET HAYAH",

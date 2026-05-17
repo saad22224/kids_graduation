@@ -8,7 +8,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="icon-192.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json?v=2">
     <meta name="theme-color" content="#ffffff">
 
 
@@ -414,6 +414,18 @@
                 data-i18n="features.subtitle">تصفحي جميع أقسام الموقع للوصول إلى المعلومات التي تحتاجينها بسهولة</p>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                <!-- Introductory Video -->
+                <button onclick="openVideoModal()"
+                    class="bg-white rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 p-6 flex flex-col items-center justify-center text-center group border border-slate-100 cursor-pointer"
+                    data-aos="fade-up">
+                    <div
+                        class="bg-sky-50 text-sky-500 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-circle-play text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-sky-600 transition-colors"
+                        data-i18n="nav.intro_video">فيديو تعريفي بالموقع</h3>
+                </button>
+
                 <!-- Breastfeeding -->
                 <a href="breastfeeding.html"
                     class="bg-white rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 p-6 flex flex-col items-center justify-center text-center group border border-slate-100"
@@ -1115,6 +1127,122 @@
                 }
             });
         });
+    </script>
+
+    <!-- PWA Install Prompt Button -->
+    <div id="installBtn" style="display:none; opacity:0; transform: translateY(-150%); transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);"
+        class="fixed top-4 left-0 right-0 mx-auto z-[100] flex items-center justify-between gap-2 md:gap-4 bg-white px-3 md:px-4 py-3 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)] border border-gray-100 w-[92%] max-w-sm">
+        <div class="flex items-center gap-2 md:gap-3 overflow-hidden">
+            <div class="flex-shrink-0">
+                <img src="icon-192.png" class="w-10 h-10 rounded-xl shadow-sm border border-gray-50 object-cover" alt="App Icon">
+            </div>
+            <div class="flex-1 min-w-0">
+                <h4 class="text-[13px] md:text-sm font-bold text-gray-900 leading-tight truncate" data-i18n="install.title">بداية حياة</h4>
+                <p class="text-[10px] md:text-xs text-gray-500 mt-0.5 truncate" data-i18n="install.desc">تثبيت التطبيق على جهازك</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-1.5 md:gap-2 flex-shrink-0">
+            <button onclick="installApp()" class="bg-sky-600 text-white text-[11px] md:text-xs font-bold px-3 py-2 rounded-xl hover:bg-sky-700 transition-colors shadow-md shadow-sky-500/20 active:scale-95 whitespace-nowrap" data-i18n="install.btn">
+                تثبيت
+            </button>
+            <button onclick="hideInstallBtn()" class="w-7 h-7 md:w-8 md:h-8 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:bg-gray-200 hover:text-gray-700 transition-colors active:scale-95 flex-shrink-0">
+                <i class="fas fa-times text-xs md:text-sm"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            console.log('👍 PWA beforeinstallprompt event fired!');
+            e.preventDefault();
+            deferredPrompt = e;
+            const installBtn = document.getElementById('installBtn');
+            if (installBtn) {
+                installBtn.style.display = 'flex';
+                // Trigger reflow for animation
+                setTimeout(() => {
+                    installBtn.style.transform = 'translateY(0)';
+                    installBtn.style.opacity = '1';
+                }, 50);
+
+                // Auto-hide after 10 seconds
+                setTimeout(() => {
+                    hideInstallBtn();
+                }, 10000);
+            }
+        });
+
+        async function installApp() {
+            console.log('👍 Install button clicked');
+            if (!deferredPrompt) {
+                console.log('❌ No deferredPrompt saved.');
+                return;
+            }
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            console.log(`👍 User choice outcome: ${outcome}`);
+            deferredPrompt = null;
+            hideInstallBtn();
+        }
+
+        function hideInstallBtn() {
+            console.log('👍 Hiding install button');
+            const installBtn = document.getElementById('installBtn');
+            if (installBtn) {
+                installBtn.style.transform = 'translateY(-150%)';
+                installBtn.style.opacity = '0';
+                setTimeout(() => {
+                    installBtn.style.display = 'none';
+                }, 600);
+            }
+        }
+    </script>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="fixed inset-0 z-[150] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="relative bg-white rounded-3xl overflow-hidden w-full max-w-3xl shadow-2xl border border-white/20">
+            <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
+                <h3 class="text-lg font-bold text-slate-800" data-i18n="nav.intro_video">فيديو تعريفي بالموقع</h3>
+                <button onclick="closeVideoModal()" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-600 hover:bg-gray-300 hover:text-slate-800 transition-colors active:scale-95">
+                    <i class="fas fa-times text-sm"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-black">
+                <video id="introVideo" class="w-full h-full" controls>
+                    <source src="assets/WhatsApp Video 2026-05-16 at 1.54.38 PM.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('introVideo');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+            if (video) {
+                video.play().catch(e => console.log("Video auto-play blocked", e));
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            const video = document.getElementById('introVideo');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
     </script>
 
     <!-- i18n Library -->
